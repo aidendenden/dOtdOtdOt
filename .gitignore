@@ -7,3 +7,7 @@ Assembly-CSharp-Editor.csproj
 Assembly-CSharp.csproj
 Temp
 dOtdOtdOt.sln
+.idea/.idea.dOtdOtdOt
+obj
+*.csproj
+dOtdOtdOt.sln
