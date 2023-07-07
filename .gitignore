@@ -1,0 +1,7 @@
+﻿*.vsconfig
+Library
+UserSettings
+Logs
+cigj2023.sln
+Assembly-CSharp-Editor.csproj
+Assembly-CSharp.csproj
