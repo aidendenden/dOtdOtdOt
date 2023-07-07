@@ -42,4 +42,16 @@ public class ScenceChange : MonoBehaviour
             isFinshed = false;
         }
     }
+
+
+
+    private void ifFinshedgoToLoad()
+    {
+        if (isFinshed && gameObject.CompareTag("ZhuanChang"))
+        {
+            loadMainScence();
+            isFinshed = false;
+        }
+    }
+
 }
