@@ -10,6 +10,10 @@ public class Flutter : MonoBehaviour
     
     public void FlutterImage(int index)
     {
+        if (index>image.Count)
+        {
+            return;
+        }
         for (int i = 0; i < index; i++)
         {
             var n =RandomCount();
