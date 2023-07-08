@@ -90,7 +90,7 @@ public class TypingSpeedCalculator : MonoBehaviour
         //_dotCilck = GameObject.FindGameObjectWithTag("Dot").GetComponent<DotCilck>();
         inputList.Add(false);
         inputList.Add(false);
-        AddListenerEndDelegate(delegate (string message) { _dotCilck.HuaDongDot(); });
+        AddListenerEndDelegate(delegate (string message) { LeftHuaDot(); });
 
         //ContinuousEndDelegate += _dotCilck.HuaDongDot();
     }
@@ -210,6 +210,10 @@ public class TypingSpeedCalculator : MonoBehaviour
         Vector2 d = InputEd - InputSt;
         PanDuanFangXiang(d);
 
+
+
+
+        
     }
 
 
@@ -219,6 +223,18 @@ public class TypingSpeedCalculator : MonoBehaviour
 
 
 
+
+    public void LeftHuaDot()
+    {
+        if (HuaDongFangXiang.x < 0)
+        {
+            _dotCilck.HuaDongDotL();
+        }
+        if (HuaDongFangXiang.x > 0)
+        {
+            _dotCilck.HuaDongDotR();
+        }
+    }
 
 
 

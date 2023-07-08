@@ -11,6 +11,7 @@ public class DotCilck : MonoBehaviour
 
     public float DianJiJinDu = 0;
     public Transform _transform;
+    
 
 
     public void DotCilcked()
@@ -21,14 +22,23 @@ public class DotCilck : MonoBehaviour
 
     private void Update()
     {
-        dotdotcheck();
+        
+            dotdotcheck();
+        
     }
 
-    public void HuaDongDot()
+    public void HuaDongDotL()
     {
-        _transform.Rotate(5,5,5);
-        return;
+        _transform.Rotate(0,0,5);
         
+        
+    }
+
+    public void HuaDongDotR()
+    {
+        _transform.Rotate(0,0,-5);
+
+
     }
 
     public void dotdotcheck()
