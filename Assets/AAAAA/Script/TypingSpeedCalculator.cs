@@ -17,6 +17,8 @@ public class TypingSpeedCalculator : MonoBehaviour
     private float lastKeyPressTime; // 上一次按键事件的时间戳
     List<bool> inputList = new List<bool>();
 
+    public int playerFraction;
+
     #region 事件
 
     public delegate void KeyDownDelegate(string message);
@@ -85,11 +87,18 @@ public class TypingSpeedCalculator : MonoBehaviour
         inputList.Add(false);
         inputList.Add(false);
         AddListenerEndDelegate(delegate(string message) { LeftHuaDot(); });
-        AddListenerUpdateDelegate(delegate (string message) { LeftHuaDot(); });
+        AddListenerUpdateDelegate(delegate (string message) { LeftHuaDot();
+            scoreCalculation();
+        });
 
         //ContinuousEndDelegate += _dotCilck.HuaDongDot();
+
     }
 
+    public void scoreCalculation()
+    {
+        playerFraction++;
+    }
 
     public void LeftHuaDot()
     {
@@ -196,8 +205,8 @@ public class TypingSpeedCalculator : MonoBehaviour
 
         if (inputList[0] == true && inputList[1] == true)
         {
-            Debug.Log("连续中");
-            // ContinuousUpdateDelegate();
+            Debug.Log("连续中"); 
+            UpdateDelegate("chixuzho");
         }
 
         if (inputList[0] == true && inputList[1] == false)
