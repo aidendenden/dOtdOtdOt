@@ -198,9 +198,7 @@ public class TypingSpeedCalculator : MonoBehaviour
             //StartCoroutine("kaishi");
 
             InputSt = KeyCodeToV(inputNow);
-
-
-            InputSt = KeyCodeToV(inputNow);
+            
         }
 
         if (inputList[0] == true && inputList[1] == true)
@@ -226,120 +224,96 @@ public class TypingSpeedCalculator : MonoBehaviour
         PanDuanFangXiang(d);
     }
 
+    public Vector2 GetScreenCoordinates(Vector2 keyboardPosition)
+    {
+        Vector2 screenPixelPosition = default;
+        int screenWidth = Screen.width;
+        int screenHeight = Screen.height;
+        // float screenDpi = Screen.dpi;
+        // ScreenOrientation screenOrientation = Screen.orientation;
+
+        screenPixelPosition.x = keyboardPosition.x / 10 * screenWidth;
+        screenPixelPosition.y = keyboardPosition.y / 10 * screenHeight;
+
+        return screenPixelPosition;
+    }
 
     public Vector2 KeyCodeToV(KeyCode key)
     {
         switch (key)
         {
             case KeyCode.Alpha1:
-                return new Vector2(0, 0);
-            //break;
+                return new Vector2(0, 3);
             case KeyCode.Alpha2:
-                return new Vector2(1, 0);
-            //break;
+                return new Vector2(1, 3);
             case KeyCode.Alpha3:
-                return new Vector2(2, 0);
-            //break;
+                return new Vector2(2, 3);
             case KeyCode.Alpha4:
-                return new Vector2(3, 0);
-            //break;
+                return new Vector2(3, 3);
             case KeyCode.Alpha5:
-                return new Vector2(4, 0);
-            //break;
+                return new Vector2(4, 3);
             case KeyCode.Alpha6:
-                return new Vector2(5, 0);
-            //break;
+                return new Vector2(5, 3);
             case KeyCode.Alpha7:
-                return new Vector2(6, 0);
-            // break;
+                return new Vector2(6, 3);
             case KeyCode.Alpha8:
-                return new Vector2(7, 0);
-            // break;
+                return new Vector2(7, 3);
             case KeyCode.Alpha9:
-                return new Vector2(8, 0);
-            //break;
+                return new Vector2(8, 3);
             case KeyCode.Alpha0:
-                return new Vector2(9, 0);
-            // break;
+                return new Vector2(10, 3);
             case KeyCode.Q:
-                return new Vector2(1, -1);
-            // break;
+                return new Vector2(0, 2);
             case KeyCode.W:
-                return new Vector2(2, -1);
-            //  break;
+                return new Vector2(1, 2);
             case KeyCode.E:
-                return new Vector2(3, -1);
-            // break;
+                return new Vector2(2, 2);
             case KeyCode.R:
-                return new Vector2(4, -1);
-            // break;
+                return new Vector2(3, 2);
             case KeyCode.T:
-                return new Vector2(5, -1);
-            // break;
+                return new Vector2(4, 2);
             case KeyCode.Y:
-                return new Vector2(6, -1);
-            // break;
+                return new Vector2(5, 2);
             case KeyCode.U:
-                return new Vector2(7, -1);
-            // break;
+                return new Vector2(6, 2);
             case KeyCode.I:
-                return new Vector2(8, -1);
-            // break;
+                return new Vector2(7, 2);
             case KeyCode.O:
-                return new Vector2(9, -1);
-            //break;
+                return new Vector2(8, 2);
             case KeyCode.P:
-                return new Vector2(10, -1);
-            // break;
+                return new Vector2(10, 2);
             case KeyCode.A:
-                return new Vector2(1, -2);
-            // break;
+                return new Vector2(0, 1);
             case KeyCode.S:
-                return new Vector2(2, -2);
-            //break;
+                return new Vector2(1, 1);
             case KeyCode.D:
-                return new Vector2(3, -2);
-            //break;
+                return new Vector2(2, 1);
             case KeyCode.F:
-                return new Vector2(4, -2);
-            //break;
+                return new Vector2(3, 1);
             case KeyCode.G:
-                return new Vector2(5, -2);
-            //break;
+                return new Vector2(5, 1);
             case KeyCode.H:
-                return new Vector2(6, -2);
-            // break;
+                return new Vector2(7, 1);
             case KeyCode.J:
-                return new Vector2(7, -2);
-            //break;
+                return new Vector2(8, 1);
             case KeyCode.K:
-                return new Vector2(8, -2);
-            // break;
+                return new Vector2(9, 1);
             case KeyCode.L:
-                return new Vector2(9, -2);
-            //  break;
+                return new Vector2(10, 1);
             case KeyCode.Z:
-                return new Vector2(1, -3);
-            // break;
+                return new Vector2(0, 0);
             case KeyCode.X:
-                return new Vector2(2, -3);
-            //break;
+                return new Vector2(1, 0);
             case KeyCode.C:
-                return new Vector2(3, -3);
-            // break;
+                return new Vector2(2, 0);
             case KeyCode.V:
-                return new Vector2(4, -3);
-            //break;
+                return new Vector2(5, 0);
             case KeyCode.B:
-                return new Vector2(5, -3);
-            // break;
+                return new Vector2(8, 0);
             case KeyCode.N:
-                return new Vector2(6, -3);
-            // break;
+                return new Vector2(9, 0);
             case KeyCode.M:
-                return new Vector2(7, -3);
-            // break;
-
+                return new Vector2(10, 0);
 
             default: return new Vector2(0, 0);
         }
