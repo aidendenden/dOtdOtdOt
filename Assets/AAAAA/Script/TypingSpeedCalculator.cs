@@ -20,7 +20,9 @@ public class TypingSpeedCalculator : MonoBehaviour
     public IncrementalDisplay _incrementalDisplay;
     public int eyeLevel = 0;
     public int itemLevel = 0;
-    
+    public Flutter _flutter;
+    public int flyLevel = 0;
+
 
     private float lastKeyPressTime; // 上一次按键事件的时间戳
     List<bool> inputList = new List<bool>();
@@ -124,11 +126,18 @@ public class TypingSpeedCalculator : MonoBehaviour
     {
         _EYEanimator.SetTrigger("Change");
         eyeLevel+= UnityEngine.Random.Range(0, 3);
-        if (eyeLevel > 10)
+        if (eyeLevel >= 30)
         {
             _incrementalDisplay.IncrementalImage();
             eyeLevel = 0;
-            eyeLevel += UnityEngine.Random.Range(0, 3);
+            itemLevel += UnityEngine.Random.Range(0, 3);
+            if(itemLevel >= 10)
+            {
+                itemLevel = 0;
+                   flyLevel += UnityEngine.Random.Range(0, 3);
+                _flutter.FlutterImage(flyLevel);
+            }
+
         }
 
     }
