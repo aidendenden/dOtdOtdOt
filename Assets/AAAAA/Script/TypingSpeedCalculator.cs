@@ -203,7 +203,8 @@ public class TypingSpeedCalculator : MonoBehaviour
             //StartCoroutine("kaishi");
 
             InputSt = KeyCodeToV(inputNow);
-            
+
+            GetScreenCoordinates(InputSt);
         }
 
         if (inputList[0] == true && inputList[1] == true)
@@ -237,8 +238,8 @@ public class TypingSpeedCalculator : MonoBehaviour
         // float screenDpi = Screen.dpi;
         // ScreenOrientation screenOrientation = Screen.orientation;
 
-        screenPixelPosition.x = keyboardPosition.x / 10 * screenWidth;
-        screenPixelPosition.y = keyboardPosition.y / 10 * screenHeight;
+        screenPixelPosition.x = keyboardPosition.x / 11 * screenWidth;
+        screenPixelPosition.y = keyboardPosition.y / 4 * screenHeight;
 
         return screenPixelPosition;
     }
