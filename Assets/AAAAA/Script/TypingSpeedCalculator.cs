@@ -131,12 +131,12 @@ public class TypingSpeedCalculator : MonoBehaviour
     {
         _EYEanimator.SetTrigger("Change");
         eyeLevel+= UnityEngine.Random.Range(0, 3);
-        if (eyeLevel >= 35)
+        if (eyeLevel >= 45)
         {
             _incrementalDisplay.IncrementalImage();
             eyeLevel = 0;
             itemLevel += UnityEngine.Random.Range(0, 3);
-            if(itemLevel >= 5)
+            if(itemLevel >= 3)
             {
 
                 itemLevel = 0;

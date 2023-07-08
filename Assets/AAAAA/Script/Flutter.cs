@@ -22,7 +22,7 @@ public class Flutter : MonoBehaviour
     IEnumerator SetShow(int i)
     {
         image[i].SetActive(true);
-        yield return new WaitForSeconds(5.0f);
+        yield return new WaitForSeconds(10.0f);
         image[i].SetActive(false);
     }
 }
