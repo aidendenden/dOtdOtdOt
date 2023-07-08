@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -160,8 +160,8 @@ Camera:
   m_GameObject: {fileID: 330585543}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.8773585, g: 0.85477597, b: 0.75734246, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -240,7 +240,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 1
+  m_RenderPostProcessing: 0
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -479,8 +479,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 25.2908, y: 44}
-  m_SizeDelta: {x: 1365.0842, y: 384.0046}
+  m_AnchoredPosition: {x: 25.2908, y: 30.579712}
+  m_SizeDelta: {x: 1365.0842, y: 868.4686}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &889462702
 MonoBehaviour:
@@ -499,11 +499,7 @@ MonoBehaviour:
   _typingSpeedCalculator: {fileID: 1307054602}
   DianJiJinDu: 1
   _transform: {fileID: 889462701}
-  acs:
-  - {fileID: 8300000, guid: 6bbd103f446b0b542964ccaeb1db0a34, type: 3}
-  - {fileID: 8300000, guid: 6bbd103f446b0b542964ccaeb1db0a34, type: 3}
-  - {fileID: 8300000, guid: 6bbd103f446b0b542964ccaeb1db0a34, type: 3}
-  - {fileID: 8300000, guid: 6bbd103f446b0b542964ccaeb1db0a34, type: 3}
+  acs: {fileID: 8300000, guid: 6bbd103f446b0b542964ccaeb1db0a34, type: 3}
 --- !u!95 &889462703
 Animator:
   serializedVersion: 5
@@ -695,6 +691,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeThreshold: 0.3
+  offset: -50
   inputNow: 0
   InputSt: {x: 0, y: 0}
   InputEd: {x: 0, y: 0}
@@ -1134,7 +1131,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 330585545}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -1184,6 +1181,7 @@ MonoBehaviour:
   objectPrefab: {fileID: 5652191143876294679, guid: a9b47b961e45d5049a556a909c6ffbe4,
     type: 3}
   father: {fileID: 1876548119}
+  _Ttransform: {fileID: 889462701}
   _typingSpeedCalculator: {fileID: 1307054602}
 --- !u!1 &1965668032
 GameObject:

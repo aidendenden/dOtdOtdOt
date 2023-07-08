@@ -12,15 +12,15 @@ public class DotCilck : MonoBehaviour
     public float DianJiJinDu = 1;
     public Transform _transform;
 
-    public AudioClip[] acs;
+    public AudioClip acs;
 
 
     public void DotCilcked()
     {
         _animator.SetTrigger("click");
-        int a = Random.Range(0, 4);
+        //int a = Random.Range(0, 4);
         float b = Random.Range(0.75f, 1f);
-        _audioSource.PlayOneShot(acs[a], b);
+        _audioSource.PlayOneShot(acs, b);
     }
 
     public void DotShuned()

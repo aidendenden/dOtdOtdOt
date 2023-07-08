@@ -96,7 +96,7 @@ public class TypingSpeedCalculator : MonoBehaviour
     public void scoreCalculation()
     {
         playerFraction++;
-        if (playerFraction >= 1000)
+        if (playerFraction >= 100)
         {
             playerFraction = 0;
             _dotCilck.DianJiJinDu++;
