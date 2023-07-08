@@ -16,31 +16,15 @@ public class Flutter : MonoBehaviour
         }
         for (int i = 0; i < index; i++)
         {
-            var n =RandomCount();
-            image[n].SetActive(true);
-            StartCoroutine(SetShow(n));
+            StartCoroutine(SetShow(i));
         }
     }
 
-    public int  RandomCount()
-    {
-        if (count.Count>5)
-        {
-            count.Clear();
-        }
-        var num=Random.Range(0, 7);
-        while (count.Contains(num))
-        {
-            num = Random.Range(0, 7);
-        }
-
-        count.Add(num);
-        return num;
-    }
-    
+   
     IEnumerator SetShow(int i)
     {
-        yield return new WaitForSeconds(4.0f);
+        image[i].SetActive(true);
+        yield return new WaitForSeconds(3.0f);
         image[i].SetActive(false);
     }
 }
