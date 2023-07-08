@@ -21,7 +21,7 @@ public class KeyboardSwipeDetector : MonoBehaviour
                 }
             }
 
-            for (int i = 0; i < keyList.Count; i++)
+            for (int i = 0; i < targetKeyList.Count; i++)
             {
                 JudgmentButton(i);
             }
