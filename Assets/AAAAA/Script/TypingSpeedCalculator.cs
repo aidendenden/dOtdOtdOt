@@ -9,14 +9,90 @@ public class TypingSpeedCalculator : MonoBehaviour
     public KeyCode inputNow;
     public Vector2 InputSt;
     public Vector2 InputEd;
-    
+    public bool isLianXueIng = false;
+    public Vector2 HuaDongFangXiang;
+    public DotCilck _dotCilck;
+
+
+
+    public delegate void KeyDownDelegate(string message);
+    public static  event KeyDownDelegate ContinuousStartDelegate;
+    public static  event KeyDownDelegate ContinuousUpdateDelegate;
+    public static  event KeyDownDelegate ContinuousEndDelegate;
+
+    // public DotCilck _dotCilck;
+
+
+    public void StartDelegate(string message)
+    {
+        Debug.Log("StartDelegate: " + message);
+        if (ContinuousStartDelegate != null)
+            ContinuousStartDelegate(message);
+    }
+
+    public void AddListenerStartDelegate(KeyDownDelegate listener)
+    {
+        ContinuousStartDelegate += listener;
+    }
+
+    public void RemoveListenerStartDelegate(KeyDownDelegate listener)
+    {
+        ContinuousStartDelegate -= listener;
+    }
+
+    public void UpdateDelegate(string message)
+    {
+        Debug.Log("UpdateDelegate: " + message);
+        if (ContinuousUpdateDelegate != null)
+            ContinuousUpdateDelegate(message);
+    }
+
+    public void AddListenerUpdateDelegate(KeyDownDelegate listener)
+    {
+        ContinuousUpdateDelegate += listener;
+    }
+
+    public void RemoveListenerUpdateDelegate(KeyDownDelegate listener)
+    {
+        ContinuousUpdateDelegate -= listener;
+    }
+
+   
+
+    public void EndDelegate(string message)
+    {
+        Debug.Log("EndDelegate: " + message);
+        if (ContinuousEndDelegate != null)
+            ContinuousEndDelegate(message);
+    }
+
+    public void AddListenerEndDelegate(KeyDownDelegate listener)
+    {
+        ContinuousEndDelegate += listener;
+    }
+
+    public void RemoveListenerEndDelegate(KeyDownDelegate listener)
+    {
+        ContinuousEndDelegate -= listener;
+    }
+
+
+
+
+
+
+
     private float lastKeyPressTime; // 上一次按键事件的时间戳
     List<bool> inputList = new List<bool>();
 
     private void Start()
     {
+        //_dotCilck = GameObject.FindGameObjectWithTag("Dot").GetComponent<DotCilck>();
         inputList.Add(false);
         inputList.Add(false);
+        AddListenerEndDelegate(delegate (string message) { _dotCilck.HuaDongDot(); });
+
+        //ContinuousEndDelegate += _dotCilck.HuaDongDot();
     }
 
     void Update()
@@ -105,17 +181,27 @@ public class TypingSpeedCalculator : MonoBehaviour
         if (inputList[0] == false && inputList[1] == true)
         {
             //Debug.Log("连续开始");
+
+            //StartCoroutine("kaishi");
+
             InputSt = KeyCodeToV(inputNow);
+           
+            
             
         }
         if (inputList[0] == true && inputList[1] == true)
         {
-           // Debug.Log("连续中");
+            // Debug.Log("连续中");
+           // ContinuousUpdateDelegate();
         }
         if (inputList[0] == true && inputList[1] == false)
         {
-          //  Debug.Log("连续结束");
+            //  Debug.Log("连续结束");
+
+            
+            isLianXueIng = false;
             InputEd = KeyCodeToV(inputNow);
+            EndDelegate("aaa");
         }
 
         Vector2 d = InputEd - InputSt;
@@ -161,112 +247,112 @@ public class TypingSpeedCalculator : MonoBehaviour
         {
             case KeyCode.Alpha1:
                 return new Vector2(0, 0);
-                break;
+                //break;
             case KeyCode.Alpha2:
                 return new Vector2(1, 0);
-                break;
+                //break;
             case KeyCode.Alpha3:
                 return new Vector2(2, 0);
-                break;
+                //break;
             case KeyCode.Alpha4:
                 return new Vector2(3, 0);
-                break;
+                //break;
             case KeyCode.Alpha5:
                 return new Vector2(4, 0);
-                break;
+                //break;
             case KeyCode.Alpha6:
                 return new Vector2(5, 0);
-                break;
+                //break;
             case KeyCode.Alpha7:
                 return new Vector2(6, 0);
-                break;
+               // break;
             case KeyCode.Alpha8:
                 return new Vector2(7, 0);
-                break;
+               // break;
             case KeyCode.Alpha9:
                 return new Vector2(8, 0);
-                break;
+                //break;
             case KeyCode.Alpha0:
                 return new Vector2(9, 0);
-                break;
+               // break;
             case KeyCode.Q:
                 return new Vector2(1, -1);
-                break;
+               // break;
             case KeyCode.W:
                 return new Vector2(2, -1);
-                break;
+              //  break;
             case KeyCode.E:
                 return new Vector2(3, -1);
-                break;
+               // break;
             case KeyCode.R:
                 return new Vector2(4, -1);
-                break;
+               // break;
             case KeyCode.T:
                 return new Vector2(5, -1);
-                break;
+               // break;
             case KeyCode.Y:
                 return new Vector2(6, -1);
-                break;
+               // break;
             case KeyCode.U:
                 return new Vector2(7, -1);
-                break;
+               // break;
             case KeyCode.I:
                 return new Vector2(8, -1);
-                break;
+               // break;
             case KeyCode.O:
                 return new Vector2(9, -1);
-                break;
+                //break;
             case KeyCode.P:
                 return new Vector2(10, -1);
-                break;
+               // break;
             case KeyCode.A:
                 return new Vector2(1, -2);
-                break;
+               // break;
             case KeyCode.S:
                 return new Vector2(2, -2);
-                break;
+                //break;
             case KeyCode.D:
                 return new Vector2(3, -2);
-                break;
+                //break;
             case KeyCode.F:
                 return new Vector2(4, -2);
-                break;
+                //break;
             case KeyCode.G:
                 return new Vector2(5, -2);
-                break;
+                //break;
             case KeyCode.H:
                 return new Vector2(6, -2);
-                break;
+               // break;
             case KeyCode.J:
                 return new Vector2(7, -2);
-                break;
+                //break;
             case KeyCode.K:
                 return new Vector2(8, -2);
-                break;
+               // break;
             case KeyCode.L:
                 return new Vector2(9, -2);
-                break;
+              //  break;
             case KeyCode.Z:
                 return new Vector2(1, -3);
-                break;
+               // break;
             case KeyCode.X:
                 return new Vector2(2, -3);
-                break;
+                //break;
             case KeyCode.C:
                 return new Vector2(3, -3);
-                break;
+               // break;
             case KeyCode.V:
                 return new Vector2(4, -3);
-                break;
+                //break;
             case KeyCode.B:
                 return new Vector2(5, -3);
-                break;
+               // break;
             case KeyCode.N:
                 return new Vector2(6, -3);
-                break;
+               // break;
             case KeyCode.M:
                 return new Vector2(7, -3);
-                break;
+               // break;
 
 
 
@@ -279,28 +365,23 @@ public class TypingSpeedCalculator : MonoBehaviour
 
 
 
-    void test()
-    {
-        Vector2 a = new Vector2(0, 0);
-
-        a = KeyCodeToV(KeyCode.Z) - KeyCodeToV(KeyCode.K);
-
-        PanDuanFangXiang(a);
-        Debug.Log(a);
-    }
+    
 
     void PanDuanFangXiang(Vector2 D)
     {
         if (D.x < 0)
         {
+            HuaDongFangXiang.x = D.x;
             Debug.Log("向左");
         }
         if (D.x > 0)
         {
+            HuaDongFangXiang.x = D.x;
             Debug.Log("向右");
         }
         if (D.x == 0)
         {
+            HuaDongFangXiang.x = D.x;
             Debug.Log("X为0");
         }
 
@@ -308,16 +389,20 @@ public class TypingSpeedCalculator : MonoBehaviour
 
         if (D.y < 0)
         {
+            HuaDongFangXiang.y = D.y;
             Debug.Log("向下");
         }
         if (D.y > 0)
         {
+            HuaDongFangXiang.y = D.y;
             Debug.Log("向上");
         }
         if (D.y == 0)
         {
+            HuaDongFangXiang.y = D.y;
             Debug.Log("y为0");
         }
+
     }
 
     

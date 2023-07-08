@@ -7,6 +7,11 @@ public class DotCilck : MonoBehaviour
     public Animator _animator;
     public AudioSource _audioSource;
 
+    public TypingSpeedCalculator _typingSpeedCalculator;
+
+    public float DianJiJinDu = 0;
+    public Transform _transform;
+
 
     public void DotCilcked()
     {
@@ -14,4 +19,58 @@ public class DotCilck : MonoBehaviour
         _audioSource.PlayOneShot(_audioSource.clip);
     }
 
+    private void Update()
+    {
+        dotdotcheck();
+    }
+
+    public void HuaDongDot()
+    {
+        _transform.Rotate(1,1,1);
+        return;
+        
+    }
+
+    public void dotdotcheck()
+    {
+       
+        
+            if (Input.GetKeyDown(KeyCode.G))
+            {
+                DotCilcked();
+            }
+            if (Input.GetKeyDown(KeyCode.H))
+            {
+                DotCilcked();
+            }
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                DotCilcked();
+            }
+            if (Input.GetKeyDown(KeyCode.V))
+            {
+                DotCilcked();
+            }
+            if (Input.GetKeyDown(KeyCode.B))
+            {
+                DotCilcked();
+            }
+            if (Input.GetKeyDown(KeyCode.T))
+            {
+                DotCilcked();
+            }
+            if (Input.GetKeyDown(KeyCode.Y))
+            {
+                DotCilcked();
+            }
+            if (Input.GetKeyDown(KeyCode.C))
+            {
+                DotCilcked();
+            }
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                DotCilcked();
+            }
+        
+    }
 }
