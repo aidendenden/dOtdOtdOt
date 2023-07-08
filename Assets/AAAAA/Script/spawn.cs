@@ -6,12 +6,15 @@ public class spawn : MonoBehaviour
 
     public GameObject father;
 
+    public TypingSpeedCalculator _typingSpeedCalculator;
+
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.anyKeyDown)
         {
+
             // 在父对象的位置生成一个新的物体
-            GameObject newObject = Instantiate(objectPrefab, transform.position, Quaternion.identity);
+            GameObject newObject = Instantiate(objectPrefab, _typingSpeedCalculator.GetScreenCoordinates( _typingSpeedCalculator.KeyCodeToV(_typingSpeedCalculator.inputNow)), Quaternion.identity);
             // 将生成的物体设置为父对象的子对象
             newObject.transform.parent = father.transform;
         }

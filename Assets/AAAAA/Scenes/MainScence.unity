@@ -701,6 +701,7 @@ MonoBehaviour:
   isLianXueIng: 0
   HuaDongFangXiang: {x: 0, y: 0}
   _dotCilck: {fileID: 889462702}
+  nowScreenPosition: {x: 0, y: 0}
   playerFraction: 0
 --- !u!4 &1307054603
 Transform:
@@ -1183,6 +1184,7 @@ MonoBehaviour:
   objectPrefab: {fileID: 5652191143876294679, guid: a9b47b961e45d5049a556a909c6ffbe4,
     type: 3}
   father: {fileID: 1876548119}
+  _typingSpeedCalculator: {fileID: 1307054602}
 --- !u!1 &1965668032
 GameObject:
   m_ObjectHideFlags: 0
