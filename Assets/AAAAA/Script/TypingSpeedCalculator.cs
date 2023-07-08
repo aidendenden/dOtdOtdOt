@@ -85,6 +85,7 @@ public class TypingSpeedCalculator : MonoBehaviour
         inputList.Add(false);
         inputList.Add(false);
         AddListenerEndDelegate(delegate(string message) { LeftHuaDot(); });
+        AddListenerUpdateDelegate(delegate (string message) { LeftHuaDot(); });
 
         //ContinuousEndDelegate += _dotCilck.HuaDongDot();
     }

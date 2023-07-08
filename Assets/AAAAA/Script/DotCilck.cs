@@ -20,26 +20,37 @@ public class DotCilck : MonoBehaviour
         _audioSource.PlayOneShot(_audioSource.clip);
     }
 
+    public void DotShuned()
+    {
+        _animator.SetTrigger("Shun");
+        //_audioSource.PlayOneShot(_audioSource.clip);
+    }
     private void Update()
     {
-        
-            dotdotcheck();
+
+        if (Input.anyKeyDown)
+        {
+            DotCilcked();
+        }
         
     }
 
     public void HuaDongDotL()
     {
-        _transform.Rotate(0,0,5);
-        
-        
+        DotShuned();
+
+
+
     }
 
     public void HuaDongDotR()
     {
-        _transform.Rotate(0,0,-5);
+        DotShuned();
 
 
     }
+    
+
 
     public void dotdotcheck()
     {
