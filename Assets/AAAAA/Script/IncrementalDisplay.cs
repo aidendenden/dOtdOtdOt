@@ -5,12 +5,12 @@ using System.Linq;
 
 public class IncrementalDisplay : MonoBehaviour
 {
-    public List<GameObject> image;
+    public List<GameObject> image = new List<GameObject>();
     private int index = 0;
     
     public void IncrementalImage()
     {
-        if (index>image.Count)
+        if (index>=image.Count)
         {
             return;
         }
