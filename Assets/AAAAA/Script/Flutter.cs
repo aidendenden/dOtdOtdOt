@@ -10,40 +10,6 @@ public class Flutter : MonoBehaviour
     
     public void FlutterImage(int index)
     {
-        if (index==1)
-        {
-            pupu(index);
-        }
-
-        if (index==2)
-        {
-            pupu(index);
-        }
-
-        if (index==3)
-        {
-            pupu(index);
-        }
-        
-        if (index==4)
-        {
-            pupu(index);
-        }
-        
-        if (index==5)
-        {
-            pupu(index);
-        }
-        
-        if (index==6)
-        {
-            pupu(index);
-        }
-       
-    }
-
-    public void pupu(int index)
-    {
         for (int i = 0; i < index; i++)
         {
             var n =RandomCount();
