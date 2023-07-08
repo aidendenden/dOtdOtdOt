@@ -26,6 +26,7 @@ public class DotCilck : MonoBehaviour
     public void DotShuned()
     {
         _animator.SetTrigger("Shun");
+        Debug.Log("shun");
         //_audioSource.PlayOneShot(_audioSource.clip);
     }
 
