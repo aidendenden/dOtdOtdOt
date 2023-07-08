@@ -26,7 +26,7 @@ public class DotCilck : MonoBehaviour
 
     public void HuaDongDot()
     {
-        _transform.Rotate(1,1,1);
+        _transform.Rotate(5,5,5);
         return;
         
     }

@@ -146,7 +146,7 @@ public class TypingSpeedCalculator : MonoBehaviour
 
 
     private float idleTime = 0f;
-    private float idleThreshold = 0.5f; // 设置空闲阈值为5秒
+    private float idleThreshold = 0.2f; // 设置空闲阈值
 
     private void isKeyInputNoInput()
     {
@@ -180,7 +180,7 @@ public class TypingSpeedCalculator : MonoBehaviour
     {
         if (inputList[0] == false && inputList[1] == true)
         {
-            //Debug.Log("连续开始");
+            Debug.Log("连续开始");
 
             //StartCoroutine("kaishi");
 
@@ -191,17 +191,20 @@ public class TypingSpeedCalculator : MonoBehaviour
         }
         if (inputList[0] == true && inputList[1] == true)
         {
-            // Debug.Log("连续中");
+             Debug.Log("连续中");
            // ContinuousUpdateDelegate();
         }
         if (inputList[0] == true && inputList[1] == false)
         {
-            //  Debug.Log("连续结束");
+            if (!Input.anyKey)
+            {
+                Debug.Log("连续结束");
 
-            
-            isLianXueIng = false;
-            InputEd = KeyCodeToV(inputNow);
-            EndDelegate("aaa");
+
+                isLianXueIng = false;
+                InputEd = KeyCodeToV(inputNow);
+                EndDelegate("aaa");
+            }
         }
 
         Vector2 d = InputEd - InputSt;
