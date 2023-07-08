@@ -126,15 +126,10 @@ public class TypingSpeedCalculator : MonoBehaviour
 
     public void LeftHuaDot()
     {
-        if (HuaDongFangXiang.x < 0)
-        {
-            _dotCilck.HuaDongDotL();
-        }
+        
+            _dotCilck.DotShuned();
 
-        if (HuaDongFangXiang.x > 0)
-        {
-            _dotCilck.HuaDongDotR();
-        }
+        
     }
 
 
