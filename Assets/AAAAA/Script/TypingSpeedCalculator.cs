@@ -13,6 +13,7 @@ public class TypingSpeedCalculator : MonoBehaviour
     public bool isLianXueIng = false;
     public Vector2 HuaDongFangXiang;
     public DotCilck _dotCilck;
+    public Vector2 nowScreenPosition;
 
     private float lastKeyPressTime; // 上一次按键事件的时间戳
     List<bool> inputList = new List<bool>();
@@ -203,8 +204,8 @@ public class TypingSpeedCalculator : MonoBehaviour
             //StartCoroutine("kaishi");
 
             InputSt = KeyCodeToV(inputNow);
-
-            GetScreenCoordinates(InputSt);
+            
+            nowScreenPosition =GetScreenCoordinates(InputSt);
         }
 
         if (inputList[0] == true && inputList[1] == true)
