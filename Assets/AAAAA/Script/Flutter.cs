@@ -5,8 +5,6 @@ using UnityEngine;
 public class Flutter : MonoBehaviour
 {  
     public List<GameObject> image = new List<GameObject>();
-
-    List<int> count = null;
     
     public void FlutterImage(int index)
     {
