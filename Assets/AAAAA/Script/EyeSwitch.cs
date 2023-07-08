@@ -35,9 +35,14 @@ public class EyeSwitch : MonoBehaviour
         Texture2D texture = new Texture2D(2, 2);
         texture.LoadImage(imageData);
 
+
+
         // 将 Texture2D 对象设置为 Image 的源图像
         image.sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), Vector2.zero);
-        
+
+        RectTransform rectTransform = image.rectTransform;
+        rectTransform.sizeDelta = new Vector2(image.sprite.rect.width, image.sprite.rect.height);
+
     }
 
     private void Update()

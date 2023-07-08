@@ -22,6 +22,11 @@ public class TypingSpeedCalculator : MonoBehaviour
     public int itemLevel = 0;
     public Flutter _flutter;
     public int flyLevel = 0;
+    public int tabLvel = 0;
+
+    public Animator _lanshanhu;
+    public Animator _lvshanhu;
+    public Animator _zishanhu;
 
 
     private float lastKeyPressTime; // 上一次按键事件的时间戳
@@ -126,16 +131,28 @@ public class TypingSpeedCalculator : MonoBehaviour
     {
         _EYEanimator.SetTrigger("Change");
         eyeLevel+= UnityEngine.Random.Range(0, 3);
-        if (eyeLevel >= 30)
+        if (eyeLevel >= 35)
         {
             _incrementalDisplay.IncrementalImage();
             eyeLevel = 0;
             itemLevel += UnityEngine.Random.Range(0, 3);
-            if(itemLevel >= 10)
+            if(itemLevel >= 5)
             {
+
                 itemLevel = 0;
+                _lanshanhu.SetTrigger("up");
                    flyLevel += UnityEngine.Random.Range(0, 3);
-                _flutter.FlutterImage(flyLevel);
+                _flutter.FlutterImage(flyLevel+2);
+                if(flyLevel >= 3)
+                {
+                    flyLevel = 0;
+                    tabLvel++;
+                    _lvshanhu.SetTrigger("up");
+                    if (tabLvel >= 2 )
+                    {
+                        _zishanhu.SetTrigger("up");
+                    }
+                }
             }
 
         }
