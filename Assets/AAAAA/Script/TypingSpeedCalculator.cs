@@ -256,7 +256,7 @@ public class TypingSpeedCalculator : MonoBehaviour
             case KeyCode.Alpha9:
                 return new Vector2(8, 3);
             case KeyCode.Alpha0:
-                return new Vector2(10, 3);
+                return new Vector2(9, 3);
             case KeyCode.Q:
                 return new Vector2(0, 2);
             case KeyCode.W:
@@ -276,7 +276,7 @@ public class TypingSpeedCalculator : MonoBehaviour
             case KeyCode.O:
                 return new Vector2(8, 2);
             case KeyCode.P:
-                return new Vector2(10, 2);
+                return new Vector2(9, 2);
             case KeyCode.A:
                 return new Vector2(0, 1);
             case KeyCode.S:
@@ -286,15 +286,15 @@ public class TypingSpeedCalculator : MonoBehaviour
             case KeyCode.F:
                 return new Vector2(3, 1);
             case KeyCode.G:
-                return new Vector2(5, 1);
+                return new Vector2(4, 1);
             case KeyCode.H:
-                return new Vector2(7, 1);
+                return new Vector2(5, 1);
             case KeyCode.J:
-                return new Vector2(8, 1);
+                return new Vector2(6, 1);
             case KeyCode.K:
-                return new Vector2(9, 1);
+                return new Vector2(7, 1);
             case KeyCode.L:
-                return new Vector2(10, 1);
+                return new Vector2(8, 1);
             case KeyCode.Z:
                 return new Vector2(0, 0);
             case KeyCode.X:
@@ -302,13 +302,13 @@ public class TypingSpeedCalculator : MonoBehaviour
             case KeyCode.C:
                 return new Vector2(2, 0);
             case KeyCode.V:
-                return new Vector2(5, 0);
+                return new Vector2(3, 0);
             case KeyCode.B:
-                return new Vector2(8, 0);
+                return new Vector2(4, 0);
             case KeyCode.N:
-                return new Vector2(9, 0);
+                return new Vector2(5, 0);
             case KeyCode.M:
-                return new Vector2(10, 0);
+                return new Vector2(6, 0);
 
             default: return new Vector2(0, 0);
         }
