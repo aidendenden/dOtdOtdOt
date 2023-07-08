@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+
 public class TypingSpeedCalculator : MonoBehaviour
 {
     public float timeThreshold = 0.5f; // 两次按键之间的时间阈值（秒）
@@ -85,6 +86,55 @@ public class TypingSpeedCalculator : MonoBehaviour
     private float lastKeyPressTime; // 上一次按键事件的时间戳
     List<bool> inputList = new List<bool>();
 
+    public delegate void KeyDownDelegate(string message);
+    public static event KeyDownDelegate ContinuousStartDelegate;
+    public static event KeyDownDelegate ContinuousUpdateDelegate;
+    public static event KeyDownDelegate ContinuousEndDelegate;
+
+    public void StartDelegate(string message) {
+        Debug.Log("StartDelegate: " + message);
+        if (ContinuousStartDelegate != null)
+            ContinuousStartDelegate(message);
+    }
+
+    public void AddListenerStartDelegate(KeyDownDelegate listener) {
+        ContinuousStartDelegate += listener;
+    }
+
+    public void RemoveListenerStartDelegate(KeyDownDelegate listener) {
+        ContinuousStartDelegate -= listener;
+    }
+    
+    public void UpdateDelegate(string message) {
+        Debug.Log("UpdateDelegate: " + message);
+        if (ContinuousUpdateDelegate != null)
+            ContinuousUpdateDelegate(message);
+    }
+
+    public void AddListenerUpdateDelegate(KeyDownDelegate listener) {
+        ContinuousUpdateDelegate += listener;
+    }
+
+    public void RemoveListenerUpdateDelegate(KeyDownDelegate listener) {
+        ContinuousUpdateDelegate -= listener;
+    }
+    
+    
+    public void EndDelegate(string message) {
+        Debug.Log("EndDelegate: " + message);
+        if (ContinuousEndDelegate != null)
+            ContinuousEndDelegate(message);
+    }
+
+    public void AddListenerEndDelegate(KeyDownDelegate listener) {
+        ContinuousEndDelegate += listener;
+    }
+
+    public void RemoveListenerEndDelegate(KeyDownDelegate listener) {
+        ContinuousEndDelegate -= listener;
+    }
+ 
+
     private void Start()
     {
         //_dotCilck = GameObject.FindGameObjectWithTag("Dot").GetComponent<DotCilck>();
@@ -97,21 +147,17 @@ public class TypingSpeedCalculator : MonoBehaviour
 
     void Update()
     {
-
         NowKeyDown();
         Debug.Log(inputNow);
         IsInputFast();
         isKeyInputNoInput();
         //Debug.Log(inputList[0]+"|"+ inputList[1]);
         inputACheck();
-
-
     }
 
 
     public bool IsInputFast()
     {
-
         if (Input.anyKeyDown)
         {
             float currentKeyPressTime = Time.time; // 获取当前时间戳
@@ -119,30 +165,26 @@ public class TypingSpeedCalculator : MonoBehaviour
 
             if (timeSinceLastKeyPress <= timeThreshold)
             {
-               // Debug.Log("连续按键间隔小于时间阈值：" + timeSinceLastKeyPress + " 秒");
+                // Debug.Log("连续按键间隔小于时间阈值：" + timeSinceLastKeyPress + " 秒");
                 lastKeyPressTime = currentKeyPressTime; // 更新上一次按键事件的时间戳
                 inputList.RemoveAt(0);
                 inputList.Add(true);
                 return true;
-
             }
             else
             {
-              // Debug.Log("按键事件：" + currentKeyPressTime);
+                // Debug.Log("按键事件：" + currentKeyPressTime);
                 lastKeyPressTime = currentKeyPressTime; // 更新上一次按键事件的时间戳
                 inputList.RemoveAt(0);
                 inputList.Add(false);
                 return false;
             }
-
-            
         }
+
         //inputList.RemoveAt(0);
         //inputList.Add(false);
         return false;
     }
-
-
 
 
     private float idleTime = 0f;
@@ -158,21 +200,16 @@ public class TypingSpeedCalculator : MonoBehaviour
         else
         {
             idleTime += Time.deltaTime; // 如果没有键盘输入，增加空闲时间
-
         }
 
         if (idleTime >= idleThreshold)
         {
-           // Debug.Log("No keyboard input for " + idleThreshold + " seconds.");
+            // Debug.Log("No keyboard input for " + idleThreshold + " seconds.");
             inputList.RemoveAt(0);
             inputList.Add(false);
             //inputNow = KeyCode.Alpha1;
-           // InputSt = new Vector2(0, 0);
-           // InputEd = new Vector2(0, 0);
-
-
-
-
+            // InputSt = new Vector2(0, 0);
+            // InputEd = new Vector2(0, 0);
         }
     }
 
@@ -188,12 +225,15 @@ public class TypingSpeedCalculator : MonoBehaviour
            
             
             
+            InputSt = KeyCodeToV(inputNow);
         }
+
         if (inputList[0] == true && inputList[1] == true)
         {
              Debug.Log("连续中");
            // ContinuousUpdateDelegate();
         }
+
         if (inputList[0] == true && inputList[1] == false)
         {
             if (!Input.anyKey)
@@ -209,43 +249,12 @@ public class TypingSpeedCalculator : MonoBehaviour
 
         Vector2 d = InputEd - InputSt;
         PanDuanFangXiang(d);
-
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
+    
     public Vector2 KeyCodeToV(KeyCode key)
     {
-
         switch (key)
         {
             case KeyCode.Alpha1:
@@ -377,11 +386,13 @@ public class TypingSpeedCalculator : MonoBehaviour
             HuaDongFangXiang.x = D.x;
             Debug.Log("向左");
         }
+
         if (D.x > 0)
         {
             HuaDongFangXiang.x = D.x;
             Debug.Log("向右");
         }
+
         if (D.x == 0)
         {
             HuaDongFangXiang.x = D.x;
@@ -389,17 +400,18 @@ public class TypingSpeedCalculator : MonoBehaviour
         }
 
 
-
         if (D.y < 0)
         {
             HuaDongFangXiang.y = D.y;
             Debug.Log("向下");
         }
+
         if (D.y > 0)
         {
             HuaDongFangXiang.y = D.y;
             Debug.Log("向上");
         }
+
         if (D.y == 0)
         {
             HuaDongFangXiang.y = D.y;
@@ -408,50 +420,187 @@ public class TypingSpeedCalculator : MonoBehaviour
 
     }
 
-    
-
 
     public void NowKeyDown()
     {
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            inputNow = KeyCode.Alpha1;
+        }
 
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            inputNow = KeyCode.Alpha2;
+        }
 
-        if (Input.GetKeyDown(KeyCode.Alpha1)) { inputNow = KeyCode.Alpha1; }
-        if (Input.GetKeyDown(KeyCode.Alpha2)) { inputNow = KeyCode.Alpha2; }
-        if (Input.GetKeyDown(KeyCode.Alpha3)) { inputNow = KeyCode.Alpha3; }
-        if (Input.GetKeyDown(KeyCode.Alpha4)) { inputNow = KeyCode.Alpha4; }
-        if (Input.GetKeyDown(KeyCode.Alpha5)) { inputNow = KeyCode.Alpha5; }
-        if (Input.GetKeyDown(KeyCode.Alpha6)) { inputNow = KeyCode.Alpha6; }
-        if (Input.GetKeyDown(KeyCode.Alpha7)) { inputNow = KeyCode.Alpha7; }
-        if (Input.GetKeyDown(KeyCode.Alpha8)) { inputNow = KeyCode.Alpha8; }
-        if (Input.GetKeyDown(KeyCode.Alpha9)) { inputNow = KeyCode.Alpha9; }
-        if (Input.GetKeyDown(KeyCode.Alpha0)) { inputNow = KeyCode.Alpha0; }
-        if (Input.GetKeyDown(KeyCode.Q)) { inputNow = KeyCode.Q; }
-        if (Input.GetKeyDown(KeyCode.W)) { inputNow = KeyCode.W; }
-        if (Input.GetKeyDown(KeyCode.E)) { inputNow = KeyCode.E; }
-        if (Input.GetKeyDown(KeyCode.R)) { inputNow = KeyCode.R; }
-        if (Input.GetKeyDown(KeyCode.T)) { inputNow = KeyCode.T; }
-        if (Input.GetKeyDown(KeyCode.Y)) { inputNow = KeyCode.Y; }
-        if (Input.GetKeyDown(KeyCode.U)) { inputNow = KeyCode.U; }
-        if (Input.GetKeyDown(KeyCode.I)) { inputNow = KeyCode.I; }
-        if (Input.GetKeyDown(KeyCode.O)) { inputNow = KeyCode.O; }
-        if (Input.GetKeyDown(KeyCode.P)) { inputNow = KeyCode.P; }
-        if (Input.GetKeyDown(KeyCode.A)) { inputNow = KeyCode.A; }
-        if (Input.GetKeyDown(KeyCode.S)) { inputNow = KeyCode.S; }
-        if (Input.GetKeyDown(KeyCode.D)) { inputNow = KeyCode.D; }
-        if (Input.GetKeyDown(KeyCode.F)) { inputNow = KeyCode.F; }
-        if (Input.GetKeyDown(KeyCode.G)) { inputNow = KeyCode.G; }
-        if (Input.GetKeyDown(KeyCode.H)) { inputNow = KeyCode.H; }
-        if (Input.GetKeyDown(KeyCode.J)) { inputNow = KeyCode.J; }
-        if (Input.GetKeyDown(KeyCode.K)) { inputNow = KeyCode.K; }
-        if (Input.GetKeyDown(KeyCode.L)) { inputNow = KeyCode.L; }
-        if (Input.GetKeyDown(KeyCode.Z)) { inputNow = KeyCode.Z; }
-        if (Input.GetKeyDown(KeyCode.X)) { inputNow = KeyCode.X; }
-        if (Input.GetKeyDown(KeyCode.C)) { inputNow = KeyCode.C; }
-        if (Input.GetKeyDown(KeyCode.V)) { inputNow = KeyCode.V; }
-        if (Input.GetKeyDown(KeyCode.B)) { inputNow = KeyCode.B; }
-        if (Input.GetKeyDown(KeyCode.N)) { inputNow = KeyCode.N; }
-        if (Input.GetKeyDown(KeyCode.M)) { inputNow = KeyCode.M; }
-       
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            inputNow = KeyCode.Alpha3;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            inputNow = KeyCode.Alpha4;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha5))
+        {
+            inputNow = KeyCode.Alpha5;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha6))
+        {
+            inputNow = KeyCode.Alpha6;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha7))
+        {
+            inputNow = KeyCode.Alpha7;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha8))
+        {
+            inputNow = KeyCode.Alpha8;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha9))
+        {
+            inputNow = KeyCode.Alpha9;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha0))
+        {
+            inputNow = KeyCode.Alpha0;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            inputNow = KeyCode.Q;
+        }
+
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            inputNow = KeyCode.W;
+        }
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            inputNow = KeyCode.E;
+        }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            inputNow = KeyCode.R;
+        }
+
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            inputNow = KeyCode.T;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Y))
+        {
+            inputNow = KeyCode.Y;
+        }
+
+        if (Input.GetKeyDown(KeyCode.U))
+        {
+            inputNow = KeyCode.U;
+        }
+
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            inputNow = KeyCode.I;
+        }
+
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            inputNow = KeyCode.O;
+        }
+
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            inputNow = KeyCode.P;
+        }
+
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            inputNow = KeyCode.A;
+        }
+
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            inputNow = KeyCode.S;
+        }
+
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            inputNow = KeyCode.D;
+        }
+
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            inputNow = KeyCode.F;
+        }
+
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            inputNow = KeyCode.G;
+        }
+
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            inputNow = KeyCode.H;
+        }
+
+        if (Input.GetKeyDown(KeyCode.J))
+        {
+            inputNow = KeyCode.J;
+        }
+
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            inputNow = KeyCode.K;
+        }
+
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            inputNow = KeyCode.L;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            inputNow = KeyCode.Z;
+        }
+
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            inputNow = KeyCode.X;
+        }
+
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            inputNow = KeyCode.C;
+        }
+
+        if (Input.GetKeyDown(KeyCode.V))
+        {
+            inputNow = KeyCode.V;
+        }
+
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            inputNow = KeyCode.B;
+        }
+
+        if (Input.GetKeyDown(KeyCode.N))
+        {
+            inputNow = KeyCode.N;
+        }
+
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            inputNow = KeyCode.M;
+        }
     }
 }
-
