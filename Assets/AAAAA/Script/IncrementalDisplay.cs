@@ -10,6 +10,10 @@ public class IncrementalDisplay : MonoBehaviour
     
     public void IncrementalImage()
     {
+        if (index>image.Count)
+        {
+            return;
+        }
         image[index].SetActive(true);
         index++;
     }
