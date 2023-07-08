@@ -227,9 +227,9 @@ public class TypingSpeedCalculator : MonoBehaviour
         // float screenDpi = Screen.dpi;
         // ScreenOrientation screenOrientation = Screen.orientation;
 
-        screenPixelPosition.x = keyboardPosition.x / 10 * screenWidth;
-        screenPixelPosition.y = keyboardPosition.y / 4 * screenHeight;
-
+        screenPixelPosition.x = (keyboardPosition.x / 10 * screenWidth)-screenWidth/2;
+        screenPixelPosition.y = (keyboardPosition.y / 4 * screenHeight)-screenHeight/2;
+        screenPixelPosition.y += 1f;
         return screenPixelPosition;
     }
 
