@@ -15,73 +15,7 @@ public class TypingSpeedCalculator : MonoBehaviour
     public DotCilck _dotCilck;
 
 
-
-    public delegate void KeyDownDelegate(string message);
-    public static  event KeyDownDelegate ContinuousStartDelegate;
-    public static  event KeyDownDelegate ContinuousUpdateDelegate;
-    public static  event KeyDownDelegate ContinuousEndDelegate;
-
-    // public DotCilck _dotCilck;
-
-
-    public void StartDelegate(string message)
-    {
-        Debug.Log("StartDelegate: " + message);
-        if (ContinuousStartDelegate != null)
-            ContinuousStartDelegate(message);
-    }
-
-    public void AddListenerStartDelegate(KeyDownDelegate listener)
-    {
-        ContinuousStartDelegate += listener;
-    }
-
-    public void RemoveListenerStartDelegate(KeyDownDelegate listener)
-    {
-        ContinuousStartDelegate -= listener;
-    }
-
-    public void UpdateDelegate(string message)
-    {
-        Debug.Log("UpdateDelegate: " + message);
-        if (ContinuousUpdateDelegate != null)
-            ContinuousUpdateDelegate(message);
-    }
-
-    public void AddListenerUpdateDelegate(KeyDownDelegate listener)
-    {
-        ContinuousUpdateDelegate += listener;
-    }
-
-    public void RemoveListenerUpdateDelegate(KeyDownDelegate listener)
-    {
-        ContinuousUpdateDelegate -= listener;
-    }
-
-   
-
-    public void EndDelegate(string message)
-    {
-        Debug.Log("EndDelegate: " + message);
-        if (ContinuousEndDelegate != null)
-            ContinuousEndDelegate(message);
-    }
-
-    public void AddListenerEndDelegate(KeyDownDelegate listener)
-    {
-        ContinuousEndDelegate += listener;
-    }
-
-    public void RemoveListenerEndDelegate(KeyDownDelegate listener)
-    {
-        ContinuousEndDelegate -= listener;
-    }
-
-
-
-
-
-
+    
 
     private float lastKeyPressTime; // 上一次按键事件的时间戳
     List<bool> inputList = new List<bool>();
