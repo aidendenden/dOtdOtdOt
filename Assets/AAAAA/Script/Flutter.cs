@@ -59,13 +59,13 @@ public class Flutter : MonoBehaviour
             count.Clear();
         }
         var num=Random.Range(0, 7);
-        if (!count.Contains(num))
+        while (count.Contains(num))
         {
-            count.Add(num);
-            return num;
+            num = Random.Range(0, 7);
         }
 
-        return RandomCount();
+        count.Add(num);
+        return num;
     }
     
     IEnumerator SetShow(int i)
