@@ -15,6 +15,8 @@ public class TypingSpeedCalculator : MonoBehaviour
     public Vector2 HuaDongFangXiang;
     public DotCilck _dotCilck;
     public Vector2 nowScreenPosition;
+    public EyeSwitch _eyeSwith;
+    public Animator _EYEanimator;
 
     private float lastKeyPressTime; // 上一次按键事件的时间戳
     List<bool> inputList = new List<bool>();
@@ -28,6 +30,25 @@ public class TypingSpeedCalculator : MonoBehaviour
     public static event KeyDownDelegate ContinuousStartDelegate;
     public static event KeyDownDelegate ContinuousUpdateDelegate;
     public static event KeyDownDelegate ContinuousEndDelegate;
+    public static event KeyDownDelegate LevelUp;
+    
+    public void StartLevelUp(string message)
+    {
+        Debug.Log("LevelUp: " + message);
+        if (LevelUp != null)
+            LevelUp(message);
+    }
+
+    public void AddListenerLevelUp(KeyDownDelegate listener)
+    {
+        LevelUp += listener;
+    }
+
+    public void RemoveListenerLevelUp(KeyDownDelegate listener)
+    {
+        LevelUp -= listener;
+    }
+
 
     public void StartDelegate(string message)
     {
@@ -90,7 +111,14 @@ public class TypingSpeedCalculator : MonoBehaviour
         inputList.Add(false);
         AddListenerEndDelegate(delegate(string message) { LeftHuaDot(); });
         AddListenerUpdateDelegate(delegate(string message) { scoreCalculation(); });
+        //AddListenerLevelUp(delegate (string message) { _eyeSwith.changeImage(UnityEngine.Random.Range(0, 10)); });
+        AddListenerLevelUp(delegate (string message) { changeEye(); });
         //ContinuousEndDelegate += _dotCilck.HuaDongDot();
+    }
+
+    void changeEye()
+    {
+        _EYEanimator.SetTrigger("Change");
     }
 
     void Update()
@@ -114,10 +142,12 @@ public class TypingSpeedCalculator : MonoBehaviour
     public void scoreCalculation()
     {
         playerFraction++;
-        if (playerFraction >= 100)
+        playerFraction += UnityEngine.Random.Range(0,3);
+        if (playerFraction >= 20)
         {
             playerFraction = 0;
             _dotCilck.DianJiJinDu++;
+            StartLevelUp("aaaaaa");
             Debug.Log(_dotCilck.DianJiJinDu);
         }
 
@@ -128,6 +158,7 @@ public class TypingSpeedCalculator : MonoBehaviour
     {
         
             _dotCilck.DotShuned();
+
 
         
     }

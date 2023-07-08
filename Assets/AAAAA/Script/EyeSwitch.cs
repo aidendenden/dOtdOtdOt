@@ -7,6 +7,7 @@ using System.IO;
 
 public class EyeSwitch : MonoBehaviour
 {
+    public bool A = false;
     public Image image;
     public string[] imagePathList=
     {
@@ -33,5 +34,17 @@ public class EyeSwitch : MonoBehaviour
 
         // 将 Texture2D 对象设置为 Image 的源图像
         image.sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), Vector2.zero);
+        
     }
+
+    private void Update()
+    {
+        if (A)
+        {
+            A = false;
+            changeImage(UnityEngine.Random.Range(0, 9));
+        }
+    }
+
+
 }
