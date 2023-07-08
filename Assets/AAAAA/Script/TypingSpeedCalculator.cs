@@ -87,9 +87,7 @@ public class TypingSpeedCalculator : MonoBehaviour
         inputList.Add(false);
         inputList.Add(false);
         AddListenerEndDelegate(delegate(string message) { LeftHuaDot(); });
-        AddListenerUpdateDelegate(delegate (string message) { LeftHuaDot();
-            scoreCalculation();
-        });
+        AddListenerUpdateDelegate(delegate (string message) {scoreCalculation(); });
 
         //ContinuousEndDelegate += _dotCilck.HuaDongDot();
 
@@ -98,6 +96,13 @@ public class TypingSpeedCalculator : MonoBehaviour
     public void scoreCalculation()
     {
         playerFraction++;
+        if (playerFraction >= 1000)
+        {
+            playerFraction = 0;
+            _dotCilck.DianJiJinDu++;
+            Debug.Log(_dotCilck.DianJiJinDu);
+        }
+        Debug.Log(playerFraction);
     }
 
     public void LeftHuaDot()

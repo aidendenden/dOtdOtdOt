@@ -9,15 +9,20 @@ public class DotCilck : MonoBehaviour
 
     public TypingSpeedCalculator _typingSpeedCalculator;
 
-    public float DianJiJinDu = 0;
+    public float DianJiJinDu = 1;
     public Transform _transform;
+
+    public AudioClip[] acs;
     
+
 
 
     public void DotCilcked()
     {
         _animator.SetTrigger("click");
-        _audioSource.PlayOneShot(_audioSource.clip);
+        int a = Random.Range(0, 4);
+        float b = Random.Range(0.75f, 1f);
+        _audioSource.PlayOneShot(acs[a],b);
     }
 
     public void DotShuned()
@@ -28,7 +33,7 @@ public class DotCilck : MonoBehaviour
     private void Update()
     {
 
-        if (Input.anyKeyDown)
+        if (Input.anyKeyDown&&!Input.GetKeyDown(KeyCode.Mouse0)&&!Input.GetKeyDown(KeyCode.Mouse1))
         {
             DotCilcked();
         }
@@ -50,7 +55,7 @@ public class DotCilck : MonoBehaviour
 
     }
     
-
+  
 
     public void dotdotcheck()
     {
@@ -94,4 +99,8 @@ public class DotCilck : MonoBehaviour
             }
         
     }
+
+
+
+
 }
