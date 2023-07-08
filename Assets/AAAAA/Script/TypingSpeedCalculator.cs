@@ -119,23 +119,13 @@ public class TypingSpeedCalculator : MonoBehaviour
         }
     }
 
-    void Update()
+    public void KeyHandling(KeyCode keyCode)
     {
-        if (Input.anyKeyDown) // 检测是否有按键事件发生
-        {
-            foreach (KeyCode keyCode in System.Enum.GetValues(typeof(MyKeyCode))) // 遍历所有 KeyCode 枚举值
-            {
-                if (Input.GetKeyDown(keyCode)) // 检测按键是否被按下
-                {
-                    inputNow = keyCode;
-                    IsInputFast();
-                    isKeyInputNoInput();
-                    inputACheck();
-                    Debug.Log(inputNow); // 添加按下的键到键列表中
-                }
-            }
-        }
-        //Debug.Log(inputList[0]+"|"+ inputList[1]);
+        inputNow = keyCode;                     
+        IsInputFast();                          
+        isKeyInputNoInput();                    
+        inputACheck();                          
+        Debug.Log(inputNow);  
     }
 
 
@@ -232,10 +222,12 @@ public class TypingSpeedCalculator : MonoBehaviour
         Vector2 screenPixelPosition = default;
         int screenWidth = Screen.width;
         int screenHeight = Screen.height;
+        Debug.Log(screenWidth);
+        Debug.Log(screenHeight);
         // float screenDpi = Screen.dpi;
         // ScreenOrientation screenOrientation = Screen.orientation;
 
-        screenPixelPosition.x = keyboardPosition.x / 11 * screenWidth;
+        screenPixelPosition.x = keyboardPosition.x / 10 * screenWidth;
         screenPixelPosition.y = keyboardPosition.y / 4 * screenHeight;
 
         return screenPixelPosition;
