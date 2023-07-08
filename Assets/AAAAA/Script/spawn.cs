@@ -16,7 +16,9 @@ public class spawn : MonoBehaviour
             // 在父对象的位置生成一个新的物体
             GameObject newObject = Instantiate(objectPrefab, _typingSpeedCalculator.GetScreenCoordinates( _typingSpeedCalculator.KeyCodeToV(_typingSpeedCalculator.inputNow)), Quaternion.identity);
             // 将生成的物体设置为父对象的子对象
-            newObject.transform.parent = father.transform;
+
+            newObject.transform.SetParent(father.transform, false);
+            
         }
     }
 }
