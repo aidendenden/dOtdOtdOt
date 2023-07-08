@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,7 +7,7 @@ using UnityEngine.UI;
 public class TypingSpeedCalculator : MonoBehaviour
 {
     public float timeThreshold = 0.5f; // 两次按键之间的时间阈值（秒）
-    public float offset=150f;
+    public float offset = 150f;
     public KeyCode inputNow;
     public Vector2 InputSt;
     public Vector2 InputEd;
@@ -89,8 +90,25 @@ public class TypingSpeedCalculator : MonoBehaviour
         inputList.Add(false);
         AddListenerEndDelegate(delegate(string message) { LeftHuaDot(); });
         AddListenerUpdateDelegate(delegate(string message) { scoreCalculation(); });
-
         //ContinuousEndDelegate += _dotCilck.HuaDongDot();
+    }
+
+    void Update()
+    {
+        if (Input.anyKeyDown)
+        {
+            foreach (KeyCode keyCode in System.Enum.GetValues(typeof(MyKeyCode)))
+            {
+                if (Input.GetKeyDown(keyCode))
+                {
+                    inputNow = keyCode;
+                }
+            }
+        }
+
+        IsInputFast();
+        isKeyInputNoInput();
+        inputACheck();
     }
 
     public void scoreCalculation()
@@ -119,37 +137,33 @@ public class TypingSpeedCalculator : MonoBehaviour
         }
     }
 
-    public void KeyHandling(KeyCode keyCode)
-    {
-        inputNow = keyCode;                     
-        IsInputFast();                          
-        isKeyInputNoInput();                    
-        inputACheck();                          
-        Debug.Log(inputNow);  
-    }
-
 
     public bool IsInputFast()
     {
-        float currentKeyPressTime = Time.time; // 获取当前时间戳
-        float timeSinceLastKeyPress = currentKeyPressTime - lastKeyPressTime; // 计算距离上一次按键事件的时间差
+        if (Input.anyKeyDown)
+        {
+            float currentKeyPressTime = Time.time; // 获取当前时间戳
+            float timeSinceLastKeyPress = currentKeyPressTime - lastKeyPressTime; // 计算距离上一次按键事件的时间差
 
-        if (timeSinceLastKeyPress <= timeThreshold)
-        {
-            // Debug.Log("连续按键间隔小于时间阈值：" + timeSinceLastKeyPress + " 秒");
-            lastKeyPressTime = currentKeyPressTime; // 更新上一次按键事件的时间戳
-            inputList.RemoveAt(0);
-            inputList.Add(true);
-            return true;
+            if (timeSinceLastKeyPress <= timeThreshold)
+            {
+                // Debug.Log("连续按键间隔小于时间阈值：" + timeSinceLastKeyPress + " 秒");
+                lastKeyPressTime = currentKeyPressTime; // 更新上一次按键事件的时间戳
+                inputList.RemoveAt(0);
+                inputList.Add(true);
+                return true;
+            }
+            else
+            {
+                // Debug.Log("按键事件：" + currentKeyPressTime);
+                lastKeyPressTime = currentKeyPressTime; // 更新上一次按键事件的时间戳
+                inputList.RemoveAt(0);
+                inputList.Add(false);
+                return false;
+            }
         }
-        else
-        {
-            // Debug.Log("按键事件：" + currentKeyPressTime);
-            lastKeyPressTime = currentKeyPressTime; // 更新上一次按键事件的时间戳
-            inputList.RemoveAt(0);
-            inputList.Add(false);
-            return false;
-        }
+
+        return false;
         //inputList.RemoveAt(0);
         //inputList.Add(false);
     }
@@ -205,8 +219,6 @@ public class TypingSpeedCalculator : MonoBehaviour
             if (!Input.anyKey)
             {
                 Debug.Log("连续结束");
-
-
                 isLianXueIng = false;
                 InputEd = KeyCodeToV(inputNow);
                 EndDelegate("aaa");
@@ -227,8 +239,8 @@ public class TypingSpeedCalculator : MonoBehaviour
         // float screenDpi = Screen.dpi;
         // ScreenOrientation screenOrientation = Screen.orientation;
 
-        screenPixelPosition.x = (keyboardPosition.x / 10 * screenWidth)-screenWidth/2;
-        screenPixelPosition.y = (keyboardPosition.y / 4 * screenHeight)-screenHeight/2;
+        screenPixelPosition.x = (keyboardPosition.x / 10 * screenWidth) - screenWidth / 2;
+        screenPixelPosition.y = (keyboardPosition.y / 4 * screenHeight) - screenHeight / 2;
         screenPixelPosition.y += offset;
         return screenPixelPosition;
     }
