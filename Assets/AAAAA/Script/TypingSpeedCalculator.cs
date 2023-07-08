@@ -17,6 +17,10 @@ public class TypingSpeedCalculator : MonoBehaviour
     public Vector2 nowScreenPosition;
     public EyeSwitch _eyeSwith;
     public Animator _EYEanimator;
+    public IncrementalDisplay _incrementalDisplay;
+    public int eyeLevel = 0;
+    public int itemLevel = 0;
+    
 
     private float lastKeyPressTime; // 上一次按键事件的时间戳
     List<bool> inputList = new List<bool>();
@@ -119,7 +123,17 @@ public class TypingSpeedCalculator : MonoBehaviour
     void changeEye()
     {
         _EYEanimator.SetTrigger("Change");
+        eyeLevel+= UnityEngine.Random.Range(0, 3);
+        if (eyeLevel > 10)
+        {
+            _incrementalDisplay.IncrementalImage();
+            eyeLevel = 0;
+            eyeLevel += UnityEngine.Random.Range(0, 3);
+        }
+
     }
+
+    
 
     void Update()
     {
@@ -143,7 +157,7 @@ public class TypingSpeedCalculator : MonoBehaviour
     {
         playerFraction++;
         playerFraction += UnityEngine.Random.Range(0,3);
-        if (playerFraction >= 20)
+        if (playerFraction >= 10)
         {
             playerFraction = 0;
             _dotCilck.DianJiJinDu++;

@@ -5,10 +5,13 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.IO;
 
+
 public class EyeSwitch : MonoBehaviour
 {
     public bool A = false;
     public Image image;
+    
+
     public string[] imagePathList=
     {
         "Assets/AAAAA/Image/眼睛1.png",
