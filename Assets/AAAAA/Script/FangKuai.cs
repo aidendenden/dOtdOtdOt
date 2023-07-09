@@ -6,6 +6,7 @@ public class FangKuai : MonoBehaviour
 {
     public GameObject handxia;
     public Animator _a;
+    public Animator _aaaas;
 
 
     private void Update()
@@ -13,8 +14,9 @@ public class FangKuai : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.S)|| Input.GetKeyDown(KeyCode.D)||Input.GetKeyDown(KeyCode.F)|| Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.X) || Input.GetKeyDown(KeyCode.C))
         {
-            handxia.SetActive(true);
+            
             _a.SetTrigger("st");
+            _aaaas.SetTrigger("st");
         }
     }
 }
