@@ -38,7 +38,16 @@ public class TypingSpeedCalculator : MonoBehaviour
     private float lastKeyPressTime; // 上一次按键事件的时间戳
     List<bool> inputList = new List<bool>();
 
-    public int playerFraction;
+    public float playerFraction;
+
+
+
+
+    private void Awake()
+    {
+        Application.targetFrameRate = 60;
+    }
+
 
     #region 事件
 
@@ -147,12 +156,12 @@ public class TypingSpeedCalculator : MonoBehaviour
     {
         _EYEanimator.SetTrigger("Change");
         eyeLevel+= UnityEngine.Random.Range(0, 3);
-        if (eyeLevel >= 35)
+        if (eyeLevel >= 3)
         {
             _incrementalDisplay.IncrementalImage();
             eyeLevel = 0;
             itemLevel += UnityEngine.Random.Range(0, 3);
-            if(itemLevel >= 3)
+            if(itemLevel >= 2)
             {
 
                 itemLevel = 0;
@@ -189,6 +198,12 @@ public class TypingSpeedCalculator : MonoBehaviour
                     inputNow = keyCode;
                 }
             }
+
+
+            if (Application.targetFrameRate != 60)
+            {
+                Application.targetFrameRate = 60;
+            }
         }
 
         IsInputFast();
@@ -200,10 +215,10 @@ public class TypingSpeedCalculator : MonoBehaviour
     {
         if (isGameStart)
         {
-            playerFraction++;
-            playerFraction += UnityEngine.Random.Range(0, 3);
+
+            playerFraction += UnityEngine.Random.Range(1, 4) * Time.deltaTime;
         }
-        if (playerFraction >= 7)
+        if (playerFraction >= 3)
         {
             playerFraction = 0;
             _dotCilck.DianJiJinDu++;

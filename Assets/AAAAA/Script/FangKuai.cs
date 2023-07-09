@@ -11,7 +11,7 @@ public class FangKuai : MonoBehaviour
     private void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.S)|| Input.GetKeyDown(KeyCode.D)||Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.S)|| Input.GetKeyDown(KeyCode.D)||Input.GetKeyDown(KeyCode.F)|| Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.X) || Input.GetKeyDown(KeyCode.C))
         {
             handxia.active = true;
             _a.SetTrigger("st");
