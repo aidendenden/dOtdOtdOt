@@ -217,7 +217,7 @@ public class TypingSpeedCalculator : MonoBehaviour
         if (isGameStart)
         {
 
-            playerFraction += UnityEngine.Random.Range(1, 4) * Time.deltaTime;
+            playerFraction += UnityEngine.Random.Range(5, 8) * Time.deltaTime;
         }
         if (playerFraction >= 3)
         {

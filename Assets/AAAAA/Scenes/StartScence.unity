@@ -6661,7 +6661,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isGameStart: 0
   timeThreshold: 0.3
-  offset: -50
+  Yoffset: 120
+  Xoffset: 30
   inputNow: 0
   InputSt: {x: 0, y: 0}
   InputEd: {x: 0, y: 0}
