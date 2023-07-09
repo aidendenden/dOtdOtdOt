@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TypingSpeedCalculator : MonoBehaviour
 {
@@ -165,6 +166,7 @@ public class TypingSpeedCalculator : MonoBehaviour
                     _lvshanhu.SetTrigger("up");
                     if (tabLvel >= 2 )
                     {
+                        SceneManager.LoadScene("fin");
                         _zishanhu.SetTrigger("up");
                     }
                 }
