@@ -6,6 +6,9 @@ using UnityEngine.UI;
 
 public class TypingSpeedCalculator : MonoBehaviour
 {
+    public bool isGameStart = false;//是true的时候才会加分
+
+
     public float timeThreshold = 0.5f; // 两次按键之间的时间阈值（秒）
     public float offset = 150f;
     public KeyCode inputNow;
@@ -181,8 +184,11 @@ public class TypingSpeedCalculator : MonoBehaviour
 
     public void scoreCalculation()
     {
-        playerFraction++;
-        playerFraction += UnityEngine.Random.Range(0,3);
+        if (isGameStart)
+        {
+            playerFraction++;
+            playerFraction += UnityEngine.Random.Range(0, 3);
+        }
         if (playerFraction >= 10)
         {
             playerFraction = 0;
