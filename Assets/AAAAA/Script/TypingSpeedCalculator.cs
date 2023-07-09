@@ -26,6 +26,8 @@ public class TypingSpeedCalculator : MonoBehaviour
     public Flutter _flutter;
     public int flyLevel = 0;
     public int tabLvel = 0;
+    public HuaJianan hua;
+    
 
     public Animator _lanshanhu;
     public Animator _lvshanhu;
@@ -45,6 +47,7 @@ public class TypingSpeedCalculator : MonoBehaviour
     public static event KeyDownDelegate ContinuousUpdateDelegate;
     public static event KeyDownDelegate ContinuousEndDelegate;
     public static event KeyDownDelegate LevelUp;
+    
     
     public void StartLevelUp(string message)
     {
@@ -124,17 +127,26 @@ public class TypingSpeedCalculator : MonoBehaviour
         inputList.Add(false);
         inputList.Add(false);
         AddListenerEndDelegate(delegate(string message) { LeftHuaDot(); });
+        if (isGameStart == false) { AddListenerEndDelegate(delegate (string message) { huahua(); }); }
         AddListenerUpdateDelegate(delegate(string message) { scoreCalculation(); });
         //AddListenerLevelUp(delegate (string message) { _eyeSwith.changeImage(UnityEngine.Random.Range(0, 10)); });
         AddListenerLevelUp(delegate (string message) { changeEye(); });
         //ContinuousEndDelegate += _dotCilck.HuaDongDot();
     }
 
+    void huahua()
+    {
+        if (isGameStart == false)
+        {
+            hua.aaaaa();
+        }
+    } 
+
     void changeEye()
     {
         _EYEanimator.SetTrigger("Change");
         eyeLevel+= UnityEngine.Random.Range(0, 3);
-        if (eyeLevel >= 45)
+        if (eyeLevel >= 20)
         {
             _incrementalDisplay.IncrementalImage();
             eyeLevel = 0;
@@ -189,7 +201,7 @@ public class TypingSpeedCalculator : MonoBehaviour
             playerFraction++;
             playerFraction += UnityEngine.Random.Range(0, 3);
         }
-        if (playerFraction >= 10)
+        if (playerFraction >= 3)
         {
             playerFraction = 0;
             _dotCilck.DianJiJinDu++;

@@ -7,7 +7,9 @@ public class ScenceChange : MonoBehaviour
 {
     public bool isFinshed = false;
 
+    public bool AA = false;
 
+    
 
     public void loadStartScence()
     {
@@ -28,7 +30,14 @@ public class ScenceChange : MonoBehaviour
 
     private void Update()
     {
-        ifFinshedgoToMain();
+        //ifFinshedgoToMain();
+
+        if (AA)
+        {
+            AA = false;
+            loadMainScence();
+    
+            }
 
     }
 
