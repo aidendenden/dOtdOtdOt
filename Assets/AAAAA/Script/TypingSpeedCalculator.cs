@@ -43,10 +43,10 @@ public class TypingSpeedCalculator : MonoBehaviour
 
     public delegate void KeyDownDelegate(string message);
 
-    public static event KeyDownDelegate ContinuousStartDelegate;
-    public static event KeyDownDelegate ContinuousUpdateDelegate;
-    public static event KeyDownDelegate ContinuousEndDelegate;
-    public static event KeyDownDelegate LevelUp;
+    public  event KeyDownDelegate ContinuousStartDelegate;
+    public  event KeyDownDelegate ContinuousUpdateDelegate;
+    public  event KeyDownDelegate ContinuousEndDelegate;
+    public  event KeyDownDelegate LevelUp;
     
     
     public void StartLevelUp(string message)
@@ -146,7 +146,7 @@ public class TypingSpeedCalculator : MonoBehaviour
     {
         _EYEanimator.SetTrigger("Change");
         eyeLevel+= UnityEngine.Random.Range(0, 3);
-        if (eyeLevel >= 20)
+        if (eyeLevel >= 35)
         {
             _incrementalDisplay.IncrementalImage();
             eyeLevel = 0;
@@ -201,7 +201,7 @@ public class TypingSpeedCalculator : MonoBehaviour
             playerFraction++;
             playerFraction += UnityEngine.Random.Range(0, 3);
         }
-        if (playerFraction >= 3)
+        if (playerFraction >= 7)
         {
             playerFraction = 0;
             _dotCilck.DianJiJinDu++;
