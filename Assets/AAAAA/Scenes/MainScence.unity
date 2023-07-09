@@ -7842,17 +7842,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   A: 0
   image: {fileID: 2971867802474278899}
-  imagePathList:
-  - "Assets/AAAAA/Image/\u773C\u775B1.png"
-  - "Assets/AAAAA/Image/\u773C\u775B2.png"
-  - "Assets/AAAAA/Image/\u773C\u775B3.png"
-  - "Assets/AAAAA/Image/\u773C\u775B4.png"
-  - "Assets/AAAAA/Image/\u773C\u775B5.png"
-  - "Assets/AAAAA/Image/\u773C\u775B6.png"
-  - "Assets/AAAAA/Image/\u773C\u775B7.png"
-  - "Assets/AAAAA/Image/\u773C\u775B8.png"
-  - "Assets/AAAAA/Image/\u773C\u775B9.png"
-  - "Assets/AAAAA/Image/\u773C\u775B10.png"
+  imageList:
+  - {fileID: 21300000, guid: 485245166a3be22438f9cbd35f75ba97, type: 3}
+  - {fileID: 21300000, guid: 33af6964a108dc744bf930eb19b4342d, type: 3}
+  - {fileID: 21300000, guid: 69855522daf69624b9208eeead22039e, type: 3}
+  - {fileID: 21300000, guid: 35f2f512677662f458add29491c70cef, type: 3}
+  - {fileID: 21300000, guid: 339ecdefa0a65cf49a9b7188302562ad, type: 3}
+  - {fileID: 21300000, guid: a06c409dbaf960549b8b470e1d09d6dc, type: 3}
+  - {fileID: 21300000, guid: faa9626c1fdc9bd4fb5b8c5b5086aff9, type: 3}
+  - {fileID: 21300000, guid: f9a2e7eb2819e334093d6c5fb948d7ef, type: 3}
+  - {fileID: 21300000, guid: e29b97e9fa1c93a41b0dfd3a5877c4ba, type: 3}
+  - {fileID: 21300000, guid: c1502e75bf513a847bcf4cb87baac008, type: 3}
 --- !u!224 &8577528095836415526
 RectTransform:
   m_ObjectHideFlags: 0
