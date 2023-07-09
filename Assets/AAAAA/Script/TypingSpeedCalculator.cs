@@ -11,7 +11,8 @@ public class TypingSpeedCalculator : MonoBehaviour
 
 
     public float timeThreshold = 0.5f; // 两次按键之间的时间阈值（秒）
-    public float offset = 150f;
+    public float Yoffset = 150f;
+    public float Xoffset = 0;
     public KeyCode inputNow;
     public Vector2 InputSt;
     public Vector2 InputEd;
@@ -327,7 +328,8 @@ public class TypingSpeedCalculator : MonoBehaviour
 
         screenPixelPosition.x = (keyboardPosition.x / 10 * screenWidth) - screenWidth / 2;
         screenPixelPosition.y = (keyboardPosition.y / 4 * screenHeight) - screenHeight / 2;
-        screenPixelPosition.y += offset;
+        screenPixelPosition.y += Yoffset;
+        screenPixelPosition.x += Xoffset;
         return screenPixelPosition;
     }
 

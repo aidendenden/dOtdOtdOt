@@ -13,7 +13,7 @@ public class FangKuai : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.S)|| Input.GetKeyDown(KeyCode.D)||Input.GetKeyDown(KeyCode.F))
         {
-            handxia.active = true;
+            handxia.SetActive(true);
             _a.SetTrigger("st");
         }
     }

@@ -12,7 +12,7 @@ public class XiaShou : MonoBehaviour
         if (A)
         {
             A = false;
-            huakuai.active = true;
+            huakuai.SetActive(true);
         }
     }
 }

@@ -13,7 +13,7 @@ public class HuaJianan : MonoBehaviour
         if (A)
         {
             A = false;
-            shoushou.active = true;
+            shoushou.SetActive(true);
         }
     }
 
