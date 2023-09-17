@@ -25,7 +25,7 @@ public class spawn : MonoBehaviour
                     Vector2 b1 = _Ttransform.position;
                     Vector2 c1 = b1 - a1;
                     Vector2 c2 = c1 * Random.Range(0.9f, 1.2f);
-                    Vector2 d1 = a1 + c2 / 3;
+                    Vector2 d1 = (a1 + c2 / 2)/70;
 
 
                     // 在父对象的位置生成一个新的物体

@@ -18,22 +18,12 @@ public class TypingSpeedCalculator : MonoBehaviour
     public Vector2 InputEd;
     public bool isLianXueIng = false;
     public Vector2 HuaDongFangXiang;
-    public DotCilck _dotCilck;
     public Vector2 nowScreenPosition;
-    public EyeSwitch _eyeSwith;
-    public Animator _EYEanimator;
-    public IncrementalDisplay _incrementalDisplay;
-    public int eyeLevel = 0;
-    public int itemLevel = 0;
-    public Flutter _flutter;
-    public int flyLevel = 0;
-    public int tabLvel = 0;
-    public HuaJianan hua;
     
 
-    public Animator _lanshanhu;
-    public Animator _lvshanhu;
-    public Animator _zishanhu;
+    
+
+ 
 
 
     private float lastKeyPressTime; // 上一次按键事件的时间戳
@@ -147,42 +137,12 @@ public class TypingSpeedCalculator : MonoBehaviour
 
     void huahua()
     {
-        if (isGameStart == false)
-        {
-            hua.aaaaa();
-        }
+        Debug.Log("hua");
     } 
 
     void changeEye()
     {
-        _EYEanimator.SetTrigger("Change");
-        eyeLevel+= UnityEngine.Random.Range(0, 3);
-        if (eyeLevel >= 3)
-        {
-            _incrementalDisplay.IncrementalImage();
-            eyeLevel = 0;
-            itemLevel += UnityEngine.Random.Range(0, 3);
-            if(itemLevel >= 2)
-            {
-
-                itemLevel = 0;
-                _lanshanhu.SetTrigger("up");
-                   flyLevel += UnityEngine.Random.Range(0, 3);
-                _flutter.FlutterImage(flyLevel+2);
-                if(flyLevel >= 3)
-                {
-                    flyLevel = 0;
-                    tabLvel++;
-                    _lvshanhu.SetTrigger("up");
-                    if (tabLvel >= 2 )
-                    {
-                        SceneManager.LoadScene("fin");
-                        _zishanhu.SetTrigger("up");
-                    }
-                }
-            }
-
-        }
+        Debug.Log("eye");
 
     }
 
@@ -222,9 +182,9 @@ public class TypingSpeedCalculator : MonoBehaviour
         if (playerFraction >= 3)
         {
             playerFraction = 0;
-            _dotCilck.DianJiJinDu++;
+           
             StartLevelUp("aaaaaa");
-            Debug.Log(_dotCilck.DianJiJinDu);
+           
         }
 
         Debug.Log(playerFraction);
@@ -233,7 +193,7 @@ public class TypingSpeedCalculator : MonoBehaviour
     public void LeftHuaDot()
     {
         
-            _dotCilck.DotShuned();
+          
 
 
         
