@@ -2,25 +2,20 @@ using UnityEngine;
 
 public class CollisionDetectionS : MonoBehaviour
 {
-    public GameObject objectToSpawn; // ÒªÉú³ÉµÄÎïÌå
-    public string targetTag = "SpecialTag"; // ÌØ¶¨±êÇ©
-    public float spawnInterval = 1f; // Éú³É¼ä¸ô
-
-    private float timer = 0f; // ¼ÆÊ±Æ÷
-
-    private void Update()
-    {
-        timer += Time.deltaTime; // Ã¿Ö¡¸üĞÂ¼ÆÊ±Æ÷
-    }
-
+    public GameObject objectToSpawn; // è¦ç”Ÿæˆçš„ç‰©ä½“
+    public string targetTag = "Hand"; // ç‰¹å®šæ ‡ç­¾
+    public float spawnInterval = 1f; // ç”Ÿæˆé—´éš”
+    public Timer _timer;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (timer >= spawnInterval && collision.gameObject.CompareTag(targetTag))
+        if (_timer.timer >= spawnInterval && collision.gameObject.CompareTag(targetTag))
         {
             Vector3 spawnPosition = collision.transform.position;
-            Instantiate(objectToSpawn, spawnPosition, Quaternion.identity);
-            timer = 0f; // ÖØÖÃ¼ÆÊ±Æ÷
+            GameObject dough =Instantiate(objectToSpawn, spawnPosition, Quaternion.identity);
+            dough.GetComponent<CollisionDetectionS>()._timer = _timer;
+            dough.GetComponent<CollisionDetectionS>().objectToSpawn = objectToSpawn;
+            _timer.timer = 0f; // é‡ç½®è®¡æ—¶å™¨
         }
     }
 

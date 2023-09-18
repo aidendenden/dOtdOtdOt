@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2268205080891179006}
   - component: {fileID: 6380535998993623381}
-  - component: {fileID: 5613754038759941890}
   - component: {fileID: 3143649889716644594}
   - component: {fileID: 7417982351588391970}
+  - component: {fileID: 7821804679170491253}
   m_Layer: 0
   m_Name: "\u997C"
   m_TagString: Untagged
@@ -87,21 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5613754038759941890
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5934834691581153905}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfbafed0aa8594b4ba16517f319af973, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectToSpawn: {fileID: 5934834691581153905}
-  targetTag: Hand
-  spawnInterval: 2
 --- !u!58 &3143649889716644594
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -164,3 +149,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &7821804679170491253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5934834691581153905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfbafed0aa8594b4ba16517f319af973, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToSpawn: {fileID: 0}
+  targetTag: Hand
+  spawnInterval: 1
+  _timer: {fileID: 0}
