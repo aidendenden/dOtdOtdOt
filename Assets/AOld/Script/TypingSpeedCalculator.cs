@@ -437,9 +437,28 @@ public enum MyKeyCode
     ///   <para>Not assigned (never returned as the result of a keystroke).</para>
     /// </summary>
     None = 0,
-
+    
+    /// <summary>
+    ///   <para>Minus '-' key.</para>
+    /// </summary>
+    Minus = 45, // 0x0000002D
+   
+    /// <summary>
+    ///   <para>Period '.' key.</para>
+    /// </summary>
+    Period = 46, // 0x0000002E
+    
+    /// <summary>
+    ///   <para>Slash '/' key.</para>
+    /// </summary>
+    Slash = 47, // 0x0000002F
+    
+    /// <summary>
+    ///   <para>The '0' key on the top of the alphanumeric keyboard.</para>
+    /// </summary>
     Alpha0 = 48, // 0x00000030
 
+    
     /// <summary>
     ///   <para>The '1' key on the top of the alphanumeric keyboard.</para>
     /// </summary>
@@ -484,8 +503,77 @@ public enum MyKeyCode
     ///   <para>The '9' key on the top of the alphanumeric keyboard.</para>
     /// </summary>
     Alpha9 = 57, // 0x00000039
+    
+    /// <summary>
+    ///   <para>Colon ':' key.Deprecated if "Use Physical Keys" is enabled in instead.</para>
+    /// </summary>
+    Colon = 58, // 0x0000003A
+    
+    /// <summary>
+    ///   <para>Semicolon ';' key.</para>
+    /// </summary>
+    Semicolon = 59, // 0x0000003B
+    
+    /// <summary>
+    ///   <para>Less than '&lt;' key. Deprecated if "Use Physical Keys" is enabled in instead.</para>
+    /// </summary>
+    Less = 60, // 0x0000003C
+    
+    /// <summary>
+    ///   <para>Equals '=' key.</para>
+    /// </summary>
+    Equals = 61, // 0x0000003D
+    
+    /// <summary>
+    ///   <para>Greater than '&gt;' key. Deprecated if "Use Physical Keys" is enabled in instead.</para>
+    /// </summary>
+    Greater = 62, // 0x0000003E
+    
+    /// <summary>
+    ///   <para>Question mark '?' key. Deprecated if "Use Physical Keys" is enabled in instead.</para>
+    /// </summary>
+    Question = 63, // 0x0000003F
+    
+    /// <summary>
+    ///   <para>At key '@'. Deprecated if "Use Physical Keys" is enabled in instead.</para>
+    /// </summary>
+    At = 64, // 0x00000040
+    
+    /// <summary>
+    ///   <para>Left square bracket key '['.</para>
+    /// </summary>
+    LeftBracket = 91, // 0x0000005B
+    
+    /// <summary>
+    ///   <para>Backslash key '\'.</para>
+    /// </summary>
+    Backslash = 92, // 0x0000005C
+    
+    /// <summary>
+    ///   <para>Right square bracket key ']'.</para>
+    /// </summary>
+    RightBracket = 93, // 0x0000005D
+    
+    /// <summary>
+    ///   <para>Caret key '^'. Deprecated if "Use Physical Keys" is enabled in instead.</para>
+    /// </summary>
+    Caret = 94, // 0x0000005E
+    
+    /// <summary>
+    ///   <para>Underscore '_' key. Deprecated if "Use Physical Keys" is enabled in instead.</para>
+    /// </summary>
+    Underscore = 95, // 0x0000005F
+    
+    /// <summary>
+    ///   <para>Back quote key '`'.</para>
+    /// </summary>
+    BackQuote = 96, // 0x00000060
+    
+    /// <summary>
+    ///   <para>'a' key.</para>
+    /// </summary>
     A = 97, // 0x00000061
-
+    
     /// <summary>
     ///   <para>'b' key.</para>
     /// </summary>
@@ -610,4 +698,29 @@ public enum MyKeyCode
     ///   <para>'z' key.</para>
     /// </summary>
     Z = 122, // 0x0000007A
+    
+    /// <summary>
+    ///   <para>Left curly bracket key '{'. Deprecated if "Use Physical Keys" is enabled in instead.</para>
+    /// </summary>
+    LeftCurlyBracket = 123, // 0x0000007B
+    
+    /// <summary>
+    ///   <para>Pipe '|' key. Deprecated if "Use Physical Keys" is enabled in instead.</para>
+    /// </summary>
+    Pipe = 124, // 0x0000007C
+    
+    /// <summary>
+    ///   <para>Right curly bracket key '}'. Deprecated if "Use Physical Keys" is enabled in instead.</para>
+    /// </summary>
+    RightCurlyBracket = 125, // 0x0000007D
+    
+    /// <summary>
+    ///   <para>Tilde '~' key. Deprecated if "Use Physical Keys" is enabled in instead.</para>
+    /// </summary>
+    Tilde = 126, // 0x0000007E
+   
+    /// <summary>
+    ///   <para>The forward delete key.</para>
+    /// </summary>
+    Delete = 127, // 0x0000007F
 }
