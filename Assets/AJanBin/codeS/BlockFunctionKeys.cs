@@ -10,7 +10,13 @@ public class BlockFunctionKeys : MonoBehaviour
 
     private int keyCount = 0;
     private float timer = 0f;
-    
+
+    // 控制开关状态
+    public bool blockFunctionKeys = true;
+
+#if PLATFORM_STANDALONE_WIN || UNITY_EDITOR_WIN || UNITY_STANDALONE_WIN 
+
+
     // Windows API 导入
     [DllImport("user32.dll")]
     private static extern IntPtr SetWindowsHookEx(int idHook, LowLevelKeyboardProc lpfn, IntPtr hMod, uint dwThreadId);
@@ -37,8 +43,6 @@ public class BlockFunctionKeys : MonoBehaviour
     // 钩子句柄
     private IntPtr hookHandle = IntPtr.Zero;
 
-    // 控制开关状态
-    public bool blockFunctionKeys = true;
 
     // 键盘钩子回调函数
     private IntPtr KeyboardHookCallback(int nCode, IntPtr wParam, IntPtr lParam)
@@ -62,33 +66,7 @@ public class BlockFunctionKeys : MonoBehaviour
         // 安装键盘钩子
         hookHandle = SetWindowsHookEx(WH_KEYBOARD_LL, KeyboardHookCallback, GetModuleHandle(null), 0);
     }
-    
 
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(targetKey))
-        {
-            if (timer <= 0f || keyCount >= targetCount || Time.time - timer > timeLimit)
-            {
-                // 重置计数器和计时器
-                keyCount = 0;
-                timer = Time.time;
-            }
-
-            keyCount++;
-
-            if (keyCount >= targetCount)
-            {
-                // 执行您的操作
-                UpdateBlockFunctionKeys(!blockFunctionKeys);
-                Debug.Log("Key " + targetKey.ToString() + " pressed " + targetCount + " times within " + timeLimit + " seconds.");
-                keyCount = 0; // 重置计数器
-                timer = 0f; // 重置计时器
-            }
-        }
-    }
-    
 
     // Unity 游戏结束时调用
     private void OnApplicationQuit()
@@ -109,4 +87,29 @@ public class BlockFunctionKeys : MonoBehaviour
     // Windows消息常量
     private const int WM_KEYDOWN = 0x0100;
     private const int WM_SYSKEYDOWN = 0x0104;
+#endif
+    private void Update()
+    {
+        if (Input.GetKeyDown(targetKey))
+        {
+            if (timer <= 0f || keyCount >= targetCount || Time.time - timer > timeLimit)
+            {
+                // 重置计数器和计时器
+                keyCount = 0;
+                timer = Time.time;
+            }
+
+            keyCount++;
+
+            if (keyCount >= targetCount)
+            {
+                // 执行您的操作
+                UpdateBlockFunctionKeys(!blockFunctionKeys);
+                Debug.Log("Key " + targetKey.ToString() + " pressed " + targetCount + " times within " + timeLimit +
+                          " seconds.");
+                keyCount = 0; // 重置计数器
+                timer = 0f; // 重置计时器
+            }
+        }
+    }
 }
