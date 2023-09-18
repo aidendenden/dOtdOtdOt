@@ -15,8 +15,7 @@ public class BlockFunctionKeys : MonoBehaviour
     public bool blockFunctionKeys = true;
 
 #if PLATFORM_STANDALONE_WIN || UNITY_EDITOR_WIN || UNITY_STANDALONE_WIN 
-
-
+    
     // Windows API 导入
     [DllImport("user32.dll")]
     private static extern IntPtr SetWindowsHookEx(int idHook, LowLevelKeyboardProc lpfn, IntPtr hMod, uint dwThreadId);
@@ -87,7 +86,9 @@ public class BlockFunctionKeys : MonoBehaviour
     // Windows消息常量
     private const int WM_KEYDOWN = 0x0100;
     private const int WM_SYSKEYDOWN = 0x0104;
+    
 #endif
+    
     private void Update()
     {
         if (Input.GetKeyDown(targetKey))
