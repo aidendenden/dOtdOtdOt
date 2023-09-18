@@ -679,6 +679,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1363528034}
   - component: {fileID: 1363528035}
+  - component: {fileID: 1363528036}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -717,6 +718,22 @@ MonoBehaviour:
     type: 3}
   spawnInterval: 1
   timer: 0
+--- !u!114 &1363528036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1363528032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71c78a9d220e1704ea091c8d32371cd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetKey: 27
+  targetCount: 3
+  timeLimit: 1
+  blockFunctionKeys: 1
 --- !u!1 &1604787818
 GameObject:
   m_ObjectHideFlags: 0
