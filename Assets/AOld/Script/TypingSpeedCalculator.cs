@@ -332,6 +332,10 @@ public class TypingSpeedCalculator : MonoBehaviour
                 return new Vector2(8, 3);
             case KeyCode.Alpha0:
                 return new Vector2(9, 3);
+            case KeyCode.Minus:
+                return new Vector2(10, 3);
+            case KeyCode.Equals:
+                return new Vector2(11, 3);
             case KeyCode.Q:
                 return new Vector2(0, 2);
             case KeyCode.W:
@@ -352,6 +356,10 @@ public class TypingSpeedCalculator : MonoBehaviour
                 return new Vector2(8, 2);
             case KeyCode.P:
                 return new Vector2(9, 2);
+            case KeyCode.LeftBracket:
+                return new Vector2(10, 2);
+            case KeyCode.RightBracket:
+                return new Vector2(11, 2);
             case KeyCode.A:
                 return new Vector2(0, 1);
             case KeyCode.S:
@@ -370,6 +378,10 @@ public class TypingSpeedCalculator : MonoBehaviour
                 return new Vector2(7, 1);
             case KeyCode.L:
                 return new Vector2(8, 1);
+            case KeyCode.Semicolon:
+                return new Vector2(9, 1);
+            case KeyCode.Quote:
+                return new Vector2(10, 1);
             case KeyCode.Z:
                 return new Vector2(0, 0);
             case KeyCode.X:
@@ -384,6 +396,12 @@ public class TypingSpeedCalculator : MonoBehaviour
                 return new Vector2(5, 0);
             case KeyCode.M:
                 return new Vector2(6, 0);
+            case KeyCode.Comma:
+                return new Vector2(7, 0);
+            case KeyCode.Period:
+                return new Vector2(8, 0);
+            case KeyCode.Slash:
+                return new Vector2(9, 0);
 
             default: return new Vector2(0, 0);
         }
@@ -567,7 +585,7 @@ public enum MyKeyCode
     /// <summary>
     ///   <para>Back quote key '`'.</para>
     /// </summary>
-    BackQuote = 96, // 0x00000060
+    Quote = 39, // 0x00000060
     
     /// <summary>
     ///   <para>'a' key.</para>

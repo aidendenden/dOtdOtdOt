@@ -16,11 +16,11 @@ public class Timer : MonoBehaviour
         GameEventManager.OnTrigger += HandleTrigger;
     }
 
-    void HandleTrigger(string message, Transform _transform)
+    void HandleTrigger(string message, Transform _transform,Vector3 v)
     {
         if (String.Equals(message,"to touch")&& timer >= spawnInterval)
         {
-            Vector3 spawnPosition =_transform.position;
+            Vector3 spawnPosition = _transform.position - v/2;
             Instantiate(objectToSpawn, spawnPosition, Quaternion.identity);
             timer = 0f; 
         }
