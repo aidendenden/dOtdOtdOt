@@ -5,15 +5,18 @@ using UnityEngine;
 public class CollisionDetectionS : MonoBehaviour
 {
     public string targetTag = "Hand"; // 特定标签
-    public int touchNumber = 0;
+    public float touchNumber = 0;
 
+    private float touchMax = 5;
     private Transform _transform;
-    private int touchMax = 20;
+    private MangeManger mmanger;
 
 
     private void Start()
     {
         _transform = gameObject.GetComponent<Transform>();
+        mmanger = GameObject.FindGameObjectWithTag("Manger").GetComponent<MangeManger>();
+        touchMax = touchMax/mmanger.Hard;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -21,16 +24,26 @@ public class CollisionDetectionS : MonoBehaviour
 
         if (collision.gameObject.CompareTag(targetTag))
         {
+            Vector3 p = collision.transform.position - _transform.position;
+
             if (touchNumber > touchMax)
             {
 
-                Vector3 p = collision.transform.position - _transform.position;
+                
              
                 GameEventManager.Instance.Triggered("to touch", collision.transform,p);
 
             }
             else {
-                _transform.localScale += new Vector3(0.01f, 0.01f, 0);
+                if(p.x < 0 || p.y < 0)
+                {
+                    _transform.localScale -= p * 0.01f*mmanger.Hard;
+                }
+                if (p.x > 0 || p.y > 0)
+                {
+                    _transform.localScale += p * 0.01f*mmanger.Hard;
+                }
+
                 touchNumber++; 
             }
         }

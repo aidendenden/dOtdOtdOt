@@ -121,7 +121,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 2
+  m_Radius: 1.5
 --- !u!50 &7417982351588391970
 Rigidbody2D:
   serializedVersion: 4
@@ -161,7 +161,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfbafed0aa8594b4ba16517f319af973, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToSpawn: {fileID: 0}
   targetTag: Hand
-  spawnInterval: 1
-  _timer: {fileID: 0}
+  touchNumber: 0
