@@ -11,7 +11,7 @@ public class RotateWebGL : MonoBehaviour {
     //public UnityEvent onOtherError;
     public Transform target;
     void Start() {
-        enabled = false;
+        //enabled = false;
         if (target == null)
 		    target = transform;
         //PICK ONE OF THE SOLUTIONS FOR PERMISSION REQUEST AND REMOVE/COMMENT THE OTHERS
