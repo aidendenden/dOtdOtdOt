@@ -19,6 +19,8 @@ public class TypingSpeedCalculator : MonoBehaviour
     public bool isLianXueIng = false;
     public Vector2 HuaDongFangXiang;
     public Vector2 nowScreenPosition;
+
+    public ForceDirection forceDirectionOne;
     
 
     
@@ -414,12 +416,14 @@ public class TypingSpeedCalculator : MonoBehaviour
         {
             HuaDongFangXiang.x = D.x;
             Debug.Log("向左");
+            
         }
 
         if (D.x > 0)
         {
             HuaDongFangXiang.x = D.x;
             Debug.Log("向右");
+            
         }
 
         if (D.x == 0)
@@ -433,12 +437,14 @@ public class TypingSpeedCalculator : MonoBehaviour
         {
             HuaDongFangXiang.y = D.y;
             Debug.Log("向下");
+            
         }
 
         if (D.y > 0)
         {
             HuaDongFangXiang.y = D.y;
             Debug.Log("向上");
+           
         }
 
         if (D.y == 0)
@@ -455,7 +461,12 @@ public enum MyKeyCode
     ///   <para>Not assigned (never returned as the result of a keystroke).</para>
     /// </summary>
     None = 0,
-    
+
+    /// <summary>
+    ///   <para>Minus '-' key.</para>
+    /// </summary>
+    Comma = 44, // 0x0000002D
+
     /// <summary>
     ///   <para>Minus '-' key.</para>
     /// </summary>
