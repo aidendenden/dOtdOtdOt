@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class spawn : MonoBehaviour
 {
-    public GameObject objectPrefab; // ÓÃÓÚÉú³ÉµÄÎïÌåÔ¤ÖÆÌå
+    public GameObject objectPrefab; // ç”¨äºç”Ÿæˆçš„ç‰©ä½“é¢„åˆ¶ä½“
 
     public GameObject father;
 
@@ -28,9 +28,9 @@ public class spawn : MonoBehaviour
                     Vector2 d1 = (a1 + c2 / 2)/50;
 
 
-                    // ÔÚ¸¸¶ÔÏóµÄÎ»ÖÃÉú³ÉÒ»¸öĞÂµÄÎïÌå
+                    // åœ¨çˆ¶å¯¹è±¡çš„ä½ç½®ç”Ÿæˆä¸€ä¸ªæ–°çš„ç‰©ä½“
                     GameObject newObject = Instantiate(objectPrefab, d1, Quaternion.identity);
-                    // ½«Éú³ÉµÄÎïÌåÉèÖÃÎª¸¸¶ÔÏóµÄ×Ó¶ÔÏó
+                    // å°†ç”Ÿæˆçš„ç‰©ä½“è®¾ç½®ä¸ºçˆ¶å¯¹è±¡çš„å­å¯¹è±¡
 
                     newObject.transform.SetParent(father.transform, false);
                 }
