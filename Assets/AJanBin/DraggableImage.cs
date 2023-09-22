@@ -28,6 +28,6 @@ public class DraggableImage : MonoBehaviour, IPointerDownHandler, IDragHandler
         RectTransformUtility.ScreenPointToLocalPointInRectangle(canvas.transform as RectTransform, eventData.position, eventData.pressEventCamera, out position);
 
         // 设置UI Image的位置
-        imageRectTransform.parent.localPosition = position;
+        imageRectTransform.parent.parent.localPosition = position;
     }
 }
