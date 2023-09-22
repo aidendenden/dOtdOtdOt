@@ -3,20 +3,26 @@ using UnityEngine.EventSystems;
 
 public class ResizeWindow : MonoBehaviour, IPointerDownHandler, IDragHandler
 {
-    private RectTransform imageRectTransform;
+    private RectTransform[] childRectTransforms;
+    private Vector2[] originalSizes;
     private Vector2 dragStartPosition;
-    private Vector2 originalSizeDelta;
 
     private void Start()
     {
-        // 获取UI Image的RectTransform组件
-        imageRectTransform = GetComponent<RectTransform>();
+        // 获取所有子对象的RectTransform组件
+        childRectTransforms = GetComponentsInChildren<RectTransform>();
+
+        // 记录所有子对象的初始大小
+        originalSizes = new Vector2[childRectTransforms.Length];
+        for (int i = 0; i < childRectTransforms.Length; i++)
+        {
+            originalSizes[i] = childRectTransforms[i].sizeDelta;
+        }
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        // 将初始大小和起始拖动位置记录下来
-        originalSizeDelta = imageRectTransform.sizeDelta;
+        // 将起始拖动位置记录下来
         dragStartPosition = eventData.position;
     }
 
@@ -25,7 +31,10 @@ public class ResizeWindow : MonoBehaviour, IPointerDownHandler, IDragHandler
         // 计算拖动的距离
         Vector2 dragDelta = eventData.position - dragStartPosition;
 
-        // 根据拖动距离更新窗口大小
-        imageRectTransform.sizeDelta = originalSizeDelta + dragDelta;
+        // 根据拖动距离更新所有子对象的大小
+        for (int i = 0; i < childRectTransforms.Length; i++)
+        {
+            childRectTransforms[i].sizeDelta = originalSizes[i] + dragDelta;
+        }
     }
 }
