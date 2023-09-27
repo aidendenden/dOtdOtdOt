@@ -7,6 +7,9 @@ public class MangeManger : MonoBehaviour
     [SerializeField]
     [Range(0.1f, 1f)]
     public float Hard = 1;
+
+    public int numberOne = 1;
+    public int numberTwo = 1;
     // Start is called before the first frame update
     void Start()
     {
