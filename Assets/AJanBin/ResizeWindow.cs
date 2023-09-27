@@ -30,7 +30,9 @@ public class ResizeWindow : MonoBehaviour, IPointerDownHandler, IDragHandler, IE
         if (maxVector2 == Vector2.zero)
             maxVector2 = originalSizes[2];
 
-        _difference = originalSizes[0] - originalSizes[1];
+        _difference.x = Mathf.Abs(originalSizes[0].x - originalSizes[1].x);
+        _difference.y = Mathf.Abs(originalSizes[0].y - originalSizes[1].y);
+        
     }
 
     public void OnPointerDown(PointerEventData eventData)
