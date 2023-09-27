@@ -1,11 +1,15 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class ResizeWindow : MonoBehaviour, IPointerDownHandler, IDragHandler
+public class ResizeWindow : MonoBehaviour, IPointerDownHandler, IDragHandler,IEndDragHandler,IBeginDragHandler
 {
     public RectTransform[] childRectTransforms;
     public Vector2[] originalSizes;
     public Vector2 dragStartPosition;
+
+    [Header("限制拉框大小的，不给值也会有默认大小")]
+    public Vector2 mixVector2 ;
+    public Vector2 maxVector2 ;
 
     private void Start()
     {
@@ -19,6 +23,9 @@ public class ResizeWindow : MonoBehaviour, IPointerDownHandler, IDragHandler
         {
             originalSizes[i] = childRectTransforms[i].sizeDelta;
         }
+
+        maxVector2 = originalSizes[2];
+        mixVector2 = originalSizes[0];
     }
 
     public void OnPointerDown(PointerEventData eventData)
@@ -39,12 +46,11 @@ public class ResizeWindow : MonoBehaviour, IPointerDownHandler, IDragHandler
         Vector2 dragDelta = eventData.position - dragStartPosition;
 
         // 根据拖动距离更新所有子对象的大小
-        childRectTransforms[0].sizeDelta = originalSizes[0] + dragDelta;
-        childRectTransforms[1].sizeDelta = originalSizes[1] + dragDelta;
-        // for (int i = 0; i < childRectTransforms.Length; i++)
-        // {
-        //     childRectTransforms[i].sizeDelta = originalSizes[i] + dragDelta;
-        // }
+        for (int i = 0; i < childRectTransforms.Length-1; i++)
+        {
+            var dragSize= originalSizes[i] + dragDelta;
+            childRectTransforms[i].sizeDelta = dragSize;
+        }
     }
     
  
