@@ -576,7 +576,7 @@ public enum MyKeyCode
     /// <summary>
     ///   <para>Backslash key '\'.</para>
     /// </summary>
-    Backslash = 92, // 0x0000005C
+    //Backslash = 92, // 0x0000005C
     
     /// <summary>
     ///   <para>Right square bracket key ']'.</para>
