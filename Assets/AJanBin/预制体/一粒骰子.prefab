@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6a636f10c3514fc4192b46fae54e053a, type: 2}
+  - {fileID: 2100000, guid: fc6b5b2b2d85605479f4d7233ae8acad, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -144,7 +144,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6a636f10c3514fc4192b46fae54e053a, type: 2}
+  - {fileID: 2100000, guid: fc6b5b2b2d85605479f4d7233ae8acad, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -233,7 +233,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TouZiNumber: 3
-  oneOrTwo: 1
+  oneOrTwo: 0
 --- !u!1 &2332153903974708265
 GameObject:
   m_ObjectHideFlags: 0
@@ -307,7 +307,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2de7633ee55847346bdfa61703a34148, type: 2}
+  - {fileID: 2100000, guid: 22593558ce1be4d438dbcf1d328fdebe, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -572,7 +572,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TouZiNumber: 1
-  oneOrTwo: 1
+  oneOrTwo: 0
 --- !u!1 &2483113351317980495
 GameObject:
   m_ObjectHideFlags: 0
@@ -634,7 +634,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6a636f10c3514fc4192b46fae54e053a, type: 2}
+  - {fileID: 2100000, guid: fc6b5b2b2d85605479f4d7233ae8acad, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -756,7 +756,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6a636f10c3514fc4192b46fae54e053a, type: 2}
+  - {fileID: 2100000, guid: fc6b5b2b2d85605479f4d7233ae8acad, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -845,7 +845,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TouZiNumber: 1
-  oneOrTwo: 1
+  oneOrTwo: 0
 --- !u!1 &4178743437351633536
 GameObject:
   m_ObjectHideFlags: 0
@@ -907,7 +907,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6a636f10c3514fc4192b46fae54e053a, type: 2}
+  - {fileID: 2100000, guid: fc6b5b2b2d85605479f4d7233ae8acad, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -990,7 +990,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6a636f10c3514fc4192b46fae54e053a, type: 2}
+  - {fileID: 2100000, guid: fc6b5b2b2d85605479f4d7233ae8acad, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1079,7 +1079,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TouZiNumber: 2
-  oneOrTwo: 1
+  oneOrTwo: 0
 --- !u!1 &6826198297765489400
 GameObject:
   m_ObjectHideFlags: 0
@@ -1147,7 +1147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TouZiNumber: 3
-  oneOrTwo: 1
+  oneOrTwo: 0
 --- !u!1 &6882288204324386005
 GameObject:
   m_ObjectHideFlags: 0
@@ -1209,7 +1209,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6a636f10c3514fc4192b46fae54e053a, type: 2}
+  - {fileID: 2100000, guid: fc6b5b2b2d85605479f4d7233ae8acad, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1298,7 +1298,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TouZiNumber: 2
-  oneOrTwo: 1
+  oneOrTwo: 0
 --- !u!1 &7894235431378744154
 GameObject:
   m_ObjectHideFlags: 0
@@ -1360,7 +1360,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6a636f10c3514fc4192b46fae54e053a, type: 2}
+  - {fileID: 2100000, guid: fc6b5b2b2d85605479f4d7233ae8acad, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
