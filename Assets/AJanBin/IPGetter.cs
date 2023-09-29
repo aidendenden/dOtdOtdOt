@@ -68,6 +68,6 @@ public class IPGetter : MonoBehaviour
     public void GetIp()
     {
         string ipAddress = GetLocalIPv4Address();
-        IPText.text = ipAddress;
+        IPText.text = "My IPv4 Address:"+ipAddress;
     }
 }
