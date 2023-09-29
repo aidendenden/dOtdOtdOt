@@ -9,8 +9,6 @@ public class DraggableImage : MonoBehaviour, IPointerDownHandler, IDragHandler
     private RectTransform parentRectTransform;
     private RectTransform targetRectTransform;
 
-    public string cursor;
-
     [Header("画框移动限制，坐标起始点屏幕中心")] public Vector2 MovementRestrictionsMin;
     public Vector2 MovementRestrictionsMax;
 
@@ -29,7 +27,7 @@ public class DraggableImage : MonoBehaviour, IPointerDownHandler, IDragHandler
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(1))
         {
             planeLocalPos = targetRectTransform.localPosition;
             RectTransformUtility.ScreenPointToLocalPointInRectangle(parentRectTransform, eventData.position,
@@ -40,7 +38,7 @@ public class DraggableImage : MonoBehaviour, IPointerDownHandler, IDragHandler
 
     public void OnDrag(PointerEventData eventData)
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(1))
         {
             Vector2 localPointerPosition;
             //屏幕点到矩形中的局部点
