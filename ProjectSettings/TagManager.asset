@@ -8,6 +8,8 @@ TagManager:
   - Hand
   - Manger
   - PanZi
+  - UIControl
+  - HandPoint
   layers:
   - Default
   - TransparentFX

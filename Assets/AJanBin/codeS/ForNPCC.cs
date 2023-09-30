@@ -7,7 +7,8 @@ public class ForNPCC : MonoBehaviour
 
 
     public GameObject Qustion;
-    
+    public GameObject Eye;
+
     void Start()
     {
         
@@ -21,5 +22,6 @@ public class ForNPCC : MonoBehaviour
     public void SpawnQustion()
     {
         Qustion.SetActive(true);
+        Eye.SetActive(true);
     }
 }
