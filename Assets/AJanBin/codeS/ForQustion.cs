@@ -20,7 +20,9 @@ public class ForQustion : MonoBehaviour
 
     public void SpawnA()
     {
+        Anwser.tag = "QustNow";
         Anwser.SetActive(true);
+
     }
 
 }

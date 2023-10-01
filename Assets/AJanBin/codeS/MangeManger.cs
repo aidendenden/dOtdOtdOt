@@ -15,6 +15,9 @@ public class MangeManger : MonoBehaviour
     public float shrinkThreshold = 50f;
     public float moveSpeed = 50f;
     public float shrinkSpeed = 5f;
+
+    public Animator Eye;
+    public GameObject Stop;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,5 +31,16 @@ public class MangeManger : MonoBehaviour
         {
             moveSpeed -= shrinkSpeed * Time.deltaTime;
         }
+    }
+
+    public void Stopp()
+    {
+        Stop.SetActive(true);
+        Eye.SetTrigger("stop");
+    }
+
+    public void Starr()
+    {
+        Stop.SetActive(false);
     }
 }

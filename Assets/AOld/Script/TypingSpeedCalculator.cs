@@ -415,42 +415,42 @@ public class TypingSpeedCalculator : MonoBehaviour
         if (D.x < 0)
         {
             HuaDongFangXiang.x = D.x;
-            Debug.Log("向左");
+            //Debug.Log("向左");
             
         }
 
         if (D.x > 0)
         {
             HuaDongFangXiang.x = D.x;
-            Debug.Log("向右");
+            //Debug.Log("向右");
             
         }
 
         if (D.x == 0)
         {
             HuaDongFangXiang.x = D.x;
-            Debug.Log("X为0");
+            //Debug.Log("X为0");
         }
 
 
         if (D.y < 0)
         {
             HuaDongFangXiang.y = D.y;
-            Debug.Log("向下");
+            //Debug.Log("向下");
             
         }
 
         if (D.y > 0)
         {
             HuaDongFangXiang.y = D.y;
-            Debug.Log("向上");
+            //Debug.Log("向上");
            
         }
 
         if (D.y == 0)
         {
             HuaDongFangXiang.y = D.y;
-            Debug.Log("y为0");
+            //Debug.Log("y为0");
         }
     }
 }

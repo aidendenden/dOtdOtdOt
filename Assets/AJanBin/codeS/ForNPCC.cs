@@ -7,8 +7,11 @@ public class ForNPCC : MonoBehaviour
 
 
     public GameObject Qustion;
+    public GameObject Qustion2;
     public GameObject Eye;
+    public GameObject stopP;
 
+    public RectTransform npcP;
     void Start()
     {
         
@@ -23,5 +26,16 @@ public class ForNPCC : MonoBehaviour
     {
         Qustion.SetActive(true);
         Eye.SetActive(true);
+        Eye.transform.position = npcP.position;
+        stopP.SetActive(false);
+    }
+
+    public void SpawnQustion2()
+    {
+        Qustion2.SetActive(true);
+        Eye.SetActive(true);
+        Eye.transform.position = npcP.position;
+        stopP.SetActive(false);
+
     }
 }

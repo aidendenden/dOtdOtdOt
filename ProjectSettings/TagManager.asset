@@ -10,6 +10,10 @@ TagManager:
   - PanZi
   - UIControl
   - HandPoint
+  - TouZi
+  - QustNow
+  - QustP
+  - NPC
   layers:
   - Default
   - TransparentFX
