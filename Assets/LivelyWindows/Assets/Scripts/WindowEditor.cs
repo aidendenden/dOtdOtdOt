@@ -6,6 +6,8 @@ using UnityEngine;
 
 namespace LivelyWindows
 {
+	
+#if UNITY_EDITOR
 	[CustomEditor(typeof(Window))]
 	[CanEditMultipleObjects]
 	public class WindowEditor : Editor
@@ -57,4 +59,6 @@ namespace LivelyWindows
 			}
 		}
 	}
+#endif
+
 }
