@@ -10,26 +10,26 @@ namespace LivelyWindows
 	public class WindowProperties
 	{
 		[Header("Setup")]
-		[Tooltip("Offset in pixels to where the frame image starts.  Some 9-sliced images may have transarency around the edges for shadows.")]
+		[Tooltip("到帧图像开始位置的偏移（以像素为单位）。 某些 9 宫格切片图像的边缘可能会出现透明阴影")]
 		public float FrameOffset = 0;
 
-		[Tooltip("Thickness in pixels of the border that can be grabbed when the Allow Resize property is set to true.")]
+		[Tooltip("当允许调整大小属性设置为 true 时，可以抓取的边框厚度（以像素为单位）")]
 		public float FrameThickness = 4;
 
-		[Tooltip("Minimum size in pixels for the window.")]
+		[Tooltip("窗口的最小尺寸（以像素为单位）")]
 		public Vector2 MinSize = new Vector2(200, 100);
 
 		public Vector2 MaxSize = new Vector2(2000, 1000);
 
 		[Header("Movement")]
-		[Tooltip("True if the Panel (RectTransform) can be moved by grabbing the caption.  Make sure the caption height is greater than zero.")]
+		[Tooltip("如果可以通过抓取标题来移动面板 (RectTransform)，则为 true。 确保标题高度大于零")]
 		public bool AllowMoveByCaption;
-
-		[Tooltip("Thickness in pixels of the top caption that can be grabbed when the Allow Move By Caption property set to true.")]
+		
+		[Tooltip("当“允许按标题移动”属性设置为 true 时，可以抓取的顶部标题的厚度（以像素为单位）")]
 		public float CaptionHeight = 0;
 
 		[Header("Resize")]
-		[Tooltip("True if the Panel (RectTransform) can be resized in any direction.")]
+		[Tooltip("如果面板 (RectTransform) 可以在任何方向上调整大小，则为 true")]
 		public bool AllowResize;
 	}
 
