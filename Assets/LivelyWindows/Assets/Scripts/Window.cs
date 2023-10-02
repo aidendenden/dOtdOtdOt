@@ -25,7 +25,7 @@ namespace LivelyWindows
 		[Tooltip("如果可以通过抓取标题来移动面板 (RectTransform)，则为 true。 确保标题高度大于零")]
 		public bool AllowMoveByCaption;
 		
-		[Tooltip("当“允许按标题移动”属性设置为 true 时，可以抓取的顶部标题的厚度（以像素为单位）")]
+		[Tooltip("当“AllowMoveByCaption”属性设置为 true 时，可以抓取的顶部标题的厚度（以像素为单位）")]
 		public float CaptionHeight = 0;
 
 		[Header("Resize")]
