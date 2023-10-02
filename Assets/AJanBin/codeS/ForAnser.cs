@@ -4,22 +4,25 @@ using UnityEngine;
 
 public class ForAnser : MonoBehaviour
 {
-
     public Animator animator;
     
-
     private MangeManger mangeManger;
     private static readonly int Mode = Animator.StringToHash("Mode");
 
     void Start()
     {
-        mangeManger = GameObject.FindGameObjectWithTag("Manger").GetComponent<MangeManger>();
+        GameObject.FindGameObjectWithTag("Manger").TryGetComponent(out mangeManger);
+        var gameOBJ = GameObject.FindGameObjectWithTag("QustNow");
+        if (gameOBJ != null)
+        {
+            gameOBJ.TryGetComponent(out animator);
+        }
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        animator = GameObject.FindGameObjectWithTag("QustNow").GetComponent<Animator>();
         if (mangeManger.numberOne == 1 && mangeManger.numberTwo == 1)
         {
             animator.SetInteger(Mode, 11);

@@ -4,12 +4,12 @@ using UnityEngine.UI;
 public class UIPatrol : MonoBehaviour
 {
    
-    public RectTransform[] patrolPoints; // ´æ´¢Ñ²ÂßµãµÄÊı×é
-    public float moveSpeed = 3f; // ÎïÌåµÄÒÆ¶¯ËÙ¶È
+    public RectTransform[] patrolPoints; // å­˜å‚¨å·¡é€»ç‚¹çš„æ•°ç»„
+    public float moveSpeed = 3f; // ç‰©ä½“çš„ç§»åŠ¨é€Ÿåº¦
     private MangeManger mangerManger;
     
 
-    private int currentPointIndex = 0; // µ±Ç°Ñ²ÂßµãµÄË÷Òı
+    private int currentPointIndex = 0; // å½“å‰å·¡é€»ç‚¹çš„ç´¢å¼•
     private Animator animatorQust;
     private Animator animatorNpc;
 
@@ -22,16 +22,16 @@ public class UIPatrol : MonoBehaviour
     {
         moveSpeed = mangerManger.moveSpeed * 1.1f;
 
-        // »ñÈ¡µ±Ç°Ñ²Âßµã
+        // è·å–å½“å‰å·¡é€»ç‚¹
         RectTransform currentPoint = patrolPoints[currentPointIndex];
 
-        // ¼ÆËãÎïÌåÓëµ±Ç°Ñ²ÂßµãÖ®¼äµÄ·½ÏòÏòÁ¿
+        // è®¡ç®—ç‰©ä½“ä¸å½“å‰å·¡é€»ç‚¹ä¹‹é—´çš„æ–¹å‘å‘é‡
         Vector2 direction = currentPoint.position - transform.position;
 
-        // ÒÆ¶¯ÎïÌå
+        // ç§»åŠ¨ç‰©ä½“
         transform.Translate(direction.normalized * moveSpeed * Time.deltaTime);
 
-        // Èç¹ûÎïÌå½Ó½üµ±Ç°Ñ²Âßµã£¬ÔòÇĞ»»µ½ÏÂÒ»¸öÑ²Âßµã
+        // å¦‚æœç‰©ä½“æ¥è¿‘å½“å‰å·¡é€»ç‚¹ï¼Œåˆ™åˆ‡æ¢åˆ°ä¸‹ä¸€ä¸ªå·¡é€»ç‚¹
         if (Vector2.Distance(transform.position, currentPoint.position) < 1f)
         {
             currentPointIndex = (currentPointIndex + 1) % patrolPoints.Length;
@@ -43,8 +43,12 @@ public class UIPatrol : MonoBehaviour
         if (collision.CompareTag("TouZi"))
         {
             Debug.Log("PENG!");
-            animatorQust = GameObject.FindGameObjectWithTag("QustNow").GetComponent<Animator>();
-            GameObject.FindGameObjectWithTag("QustNow").tag = "QustP";
+            var gameOBJ = GameObject.FindGameObjectWithTag("QustNow");
+            if (gameOBJ != null)
+            {
+                gameObject.TryGetComponent(out animatorQust);
+                gameOBJ.tag = "QustP";
+            }
             animatorQust.SetTrigger("OK");
             mangerManger.Stopp();
 
