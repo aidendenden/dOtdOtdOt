@@ -13,16 +13,16 @@ public class ForAnser : MonoBehaviour
     {
         GameObject.FindGameObjectWithTag("Manger").TryGetComponent(out mangeManger);
         var gameOBJ = GameObject.FindGameObjectWithTag("QustNow");
-        if (gameOBJ != null)
-        {
-            gameOBJ.TryGetComponent(out animator);
-        }
+        animator = gameOBJ.GetComponent<Animator>();
 
     }
 
     // Update is called once per frame
     void Update()
     {
+        var gameOBJ = GameObject.FindGameObjectWithTag("QustNow");
+        animator = gameOBJ.GetComponent<Animator>();
+
         if (mangeManger.numberOne == 1 && mangeManger.numberTwo == 1)
         {
             animator.SetInteger(Mode, 11);

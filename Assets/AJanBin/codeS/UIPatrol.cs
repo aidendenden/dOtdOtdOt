@@ -7,11 +7,14 @@ public class UIPatrol : MonoBehaviour
     public RectTransform[] patrolPoints; // 存储巡逻点的数组
     public float moveSpeed = 3f; // 物体的移动速度
     private MangeManger mangerManger;
-    
+    public float delayTime = 1f; // 延迟时间
+
+
 
     private int currentPointIndex = 0; // 当前巡逻点的索引
     private Animator animatorQust;
     private Animator animatorNpc;
+    private float timer = 0f;
 
     private void Start()
     {
@@ -38,19 +41,34 @@ public class UIPatrol : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("TouZi"))
         {
-            Debug.Log("PENG!");
-            var gameOBJ = GameObject.FindGameObjectWithTag("QustNow");
-            if (gameOBJ != null)
+            timer = 0f;
+        }
+    }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.CompareTag("TouZi"))
+        {
+
+            if (timer >= delayTime)
             {
-                gameObject.TryGetComponent(out animatorQust);
+                timer = 0f;
+                Debug.Log("PENG!");
+                var gameOBJ = GameObject.FindGameObjectWithTag("QustNow");
                 gameOBJ.tag = "QustP";
+                animatorQust = gameOBJ.GetComponent<Animator>();
+                animatorQust.SetTrigger("OK");
+                mangerManger.Stopp();
+                
             }
-            animatorQust.SetTrigger("OK");
-            mangerManger.Stopp();
+            else
+            {
+                timer += Time.deltaTime;
+            }
+           
 
         }
     }

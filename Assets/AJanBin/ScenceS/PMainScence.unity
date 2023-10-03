@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 6539722}
   - component: {fileID: 6539721}
   m_Layer: 0
-  m_Name: "\u56DE\u7B54"
+  m_Name: "\u56DE\u7B542"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -478,7 +478,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 127895564}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -4918,7 +4918,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1970360052}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -5415,7 +5415,7 @@ MonoBehaviour:
     MinSize: {x: 500, y: 800}
     MaxSize: {x: 1000, y: 1600}
     AllowMoveByCaption: 1
-    CaptionHeight: 23
+    CaptionHeight: 80
     AllowResize: 1
 --- !u!114 &2103906479
 MonoBehaviour:
@@ -5555,7 +5555,7 @@ MonoBehaviour:
     MinSize: {x: 800, y: 450}
     MaxSize: {x: 1000, y: 540}
     AllowMoveByCaption: 1
-    CaptionHeight: 23
+    CaptionHeight: 50
     AllowResize: 1
 --- !u!114 &429011367901545118
 MonoBehaviour:
@@ -5991,7 +5991,7 @@ MonoBehaviour:
     MinSize: {x: 800, y: 600}
     MaxSize: {x: 1200, y: 900}
     AllowMoveByCaption: 1
-    CaptionHeight: 23
+    CaptionHeight: 50
     AllowResize: 1
 --- !u!224 &2747396617046696443
 RectTransform:
@@ -6691,7 +6691,8 @@ MonoBehaviour:
   - {fileID: 2820475459874083152}
   - {fileID: 8046238178903292066}
   - {fileID: 2747396617046696443}
-  moveSpeed: 150
+  moveSpeed: 50
+  delayTime: 2
 --- !u!114 &4680052022193858403
 MonoBehaviour:
   m_ObjectHideFlags: 0
