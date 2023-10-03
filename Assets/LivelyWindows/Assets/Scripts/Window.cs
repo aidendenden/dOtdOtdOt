@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 namespace LivelyWindows
 {
@@ -20,6 +21,10 @@ namespace LivelyWindows
 		public Vector2 MinSize = new Vector2(200, 100);
 
 		public Vector2 MaxSize = new Vector2(2000, 1000);
+		
+		public Vector2 MinPos = Vector2.zero;
+
+		public Vector2 MaxPos = Vector2.zero;
 
 		[Header("Movement")]
 		[Tooltip("如果可以通过抓取标题来移动面板 (RectTransform)，则为 true。 确保标题高度大于零")]
@@ -118,6 +123,11 @@ namespace LivelyWindows
 
 		private void Start()
 		{
+			if (Properties.MaxPos == Vector2.zero)
+			{
+				Properties.MaxPos = new Vector2(Canvas.pixelRect.width, Canvas.pixelRect.height);
+			}
+			
 			EventTrigger.Entry entry;
 
 			entry = new EventTrigger.Entry();
@@ -253,8 +263,8 @@ namespace LivelyWindows
 		private void ProcessResize()
 		{
 			var mousePosition = Input.mousePosition;
-			mousePosition.x = Mathf.Clamp(mousePosition.x, 0, Canvas.pixelRect.width);
-			mousePosition.y = Mathf.Clamp(mousePosition.y, 0, Canvas.pixelRect.height);
+			mousePosition.x = Mathf.Clamp(mousePosition.x, Properties.MinPos.x, Properties.MaxPos.x);
+			mousePosition.y = Mathf.Clamp(mousePosition.y, Properties.MinPos.y, Properties.MaxPos.y);
 			var lastMousePosition = LastScreenCursorPosition;
 
 			var deltaPixels = mousePosition - lastMousePosition;

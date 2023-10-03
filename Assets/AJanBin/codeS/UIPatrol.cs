@@ -58,8 +58,11 @@ public class UIPatrol : MonoBehaviour
                 timer = 0f;
                 Debug.Log("PENG!");
                 var gameOBJ = GameObject.FindGameObjectWithTag("QustNow");
-                gameOBJ.tag = "QustP";
-                animatorQust = gameOBJ.GetComponent<Animator>();
+                if (gameOBJ !=null)
+                {
+                    gameOBJ.tag = "QustP";
+                    animatorQust = gameOBJ.GetComponent<Animator>();
+                }
                 animatorQust.SetTrigger("OK");
                 mangerManger.Stopp();
                 
