@@ -5,11 +5,16 @@ using UnityEngine;
 public class Damage : MonoBehaviour
 {
     public bool isTouZi = false;
+    public bool isENE = false;
     public FSMTouZi fsmTouZi;
+    public FSM fsmENE;
     public Animator animator;
 
     public float WuDiTime = 2f;
     public float WuDiTimeTOP = 2f;
+    public float WuDiTimeTOPENE = 2f;
+
+
 
     public string[] DamageType;
     public AudioSource audioSource;
@@ -27,6 +32,16 @@ public class Damage : MonoBehaviour
                 animator.SetTrigger("Hurt");
                 fsmTouZi.parameter.Hp--;
                 WuDiTime = WuDiTimeTOP;
+
+
+            }
+
+            if (isENE == true && WuDiTime <= 0 && fsmENE.parameter.Hp > 0)
+            {
+                audioSource.PlayOneShot(audioSource.clip);
+                animator.SetTrigger("Hurt");
+                fsmENE.parameter.Hp--;
+                WuDiTime = WuDiTimeTOPENE;
 
 
             }

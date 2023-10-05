@@ -5,20 +5,22 @@ using UnityEngine;
 
 public enum StateType
 {
-    Idle,Patrol,Chase,React,Attack
+    Idle,Patrol,Die, React,Attack,
 }
 
 [Serializable]
 public class Parameter
 {
-   
-
+    public GameObject Self;
+    public int Hp;
     public float moveSpeed;
 
     public float idleTime;
 
     public Transform[] patrolPoints;
     public Animator animator;
+    public AnimatorStateInfo info;
+    public Collider collider;
 }
 
 public class FSM : MonoBehaviour
@@ -35,7 +37,7 @@ public class FSM : MonoBehaviour
     {
         states.Add(StateType.Idle, new IdeleState(this));
         states.Add(StateType.Patrol, new PatroState(this));
-        states.Add(StateType.Chase, new ChaseState(this));
+        states.Add(StateType.Die, new DieState(this));
         states.Add(StateType.React, new ReactState(this));
         states.Add(StateType.Attack, new AttackState(this));
 

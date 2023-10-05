@@ -15,6 +15,7 @@ TagManager:
   - QustP
   - NPC
   - Enemy
+  - Bullet
   layers:
   - Default
   - TransparentFX

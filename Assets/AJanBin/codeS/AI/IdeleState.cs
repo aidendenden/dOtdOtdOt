@@ -25,7 +25,12 @@ public class IdeleState :IState
     {
         timer += Time.deltaTime;
 
-        if(timer >= parameter.idleTime)
+        if (parameter.Hp <= 0)
+        {
+            manager.TranitionState(StateType.Die);
+        }
+
+        if (timer >= parameter.idleTime)
         {
             manager.TranitionState(StateType.Patrol);
         }
@@ -66,6 +71,11 @@ public class PatroState : IState
         {
             manager.TranitionState(StateType.Idle);
         }
+
+        if (parameter.Hp <= 0)
+        {
+            manager.TranitionState(StateType.Die);
+        }
     }
 
     public void OnExit()
@@ -80,26 +90,31 @@ public class PatroState : IState
     }
 }
 
-public class ChaseState : IState
+public class DieState : IState
 {
 
     private FSM manager;
 
     private Parameter parameter;
 
-    public ChaseState(FSM manger)
+    public DieState(FSM manger)
     {
         this.manager = manger;
         this.parameter = manger.parameter;
     }
     public void OnEnter()
     {
-
+        parameter.animator.Play("DiRenDie");
+        parameter.collider.enabled = false;
     }
 
     public void OnUpdate()
     {
-
+        parameter.info = parameter.animator.GetCurrentAnimatorStateInfo(0);
+        if (parameter.info.normalizedTime >= 1)
+        {
+            GameObject.Destroy(parameter.Self);
+        }
     }
 
     public void OnExit()

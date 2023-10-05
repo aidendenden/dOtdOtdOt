@@ -107,7 +107,7 @@ public class TypingSpeedCalculator : MonoBehaviour
 
     public void EndDelegate(string message)
     {
-        Debug.Log("EndDelegate: " + message);
+       // Debug.Log("EndDelegate: " + message);
         if (ContinuousEndDelegate != null)
             ContinuousEndDelegate(message);
     }
@@ -189,7 +189,7 @@ public class TypingSpeedCalculator : MonoBehaviour
            
         }
 
-        Debug.Log(playerFraction);
+       // Debug.Log(playerFraction);
     }
 
     public void LeftHuaDot()
@@ -263,7 +263,7 @@ public class TypingSpeedCalculator : MonoBehaviour
     {
         if (inputList[0] == false && inputList[1] == true)
         {
-            Debug.Log("连续开始");
+           // Debug.Log("连续开始");
 
             //StartCoroutine("kaishi");
 
@@ -274,7 +274,7 @@ public class TypingSpeedCalculator : MonoBehaviour
 
         if (inputList[0] == true && inputList[1] == true)
         {
-            Debug.Log("连续中");
+           // Debug.Log("连续中");
             UpdateDelegate("chixuzho");
         }
 
@@ -282,7 +282,7 @@ public class TypingSpeedCalculator : MonoBehaviour
         {
             if (!Input.anyKey)
             {
-                Debug.Log("连续结束");
+               // Debug.Log("连续结束");
                 isLianXueIng = false;
                 InputEd = KeyCodeToV(inputNow);
                 EndDelegate("aaa");
@@ -298,8 +298,8 @@ public class TypingSpeedCalculator : MonoBehaviour
         Vector2 screenPixelPosition = default;
         int screenWidth = Screen.width;
         int screenHeight = Screen.height;
-        Debug.Log(screenWidth);
-        Debug.Log(screenHeight);
+       // Debug.Log(screenWidth);
+        //Debug.Log(screenHeight);
         // float screenDpi = Screen.dpi;
         // ScreenOrientation screenOrientation = Screen.orientation;
 
