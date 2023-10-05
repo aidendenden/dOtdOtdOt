@@ -24,12 +24,13 @@ public class CountDownSystem : MonoBehaviour
     public OperationMath OperationMath=OperationMath.MixedOperations;
 
     [HideInInspector]
-    public int targetNum=UnityEngine.Random.Range(2, 12);
+    public int targetNum=2;
     
     //public Text text;
 
     private void Start()
     {
+        targetNum = UnityEngine.Random.Range(2, 12); 
         TryGetComponent(out gameManager);
         StartTimer();
     }
