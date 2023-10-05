@@ -3273,7 +3273,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parameter:
-    moveSpeed: 5
+    moveSpeed: 2
     idleTime: 2
     patrolPoints:
     - {fileID: 543290067}
@@ -3313,6 +3313,7 @@ GameObject:
   - component: {fileID: 1705427871}
   - component: {fileID: 1705427870}
   - component: {fileID: 1705427872}
+  - component: {fileID: 1705427873}
   m_Layer: 0
   m_Name: Manger
   m_TagString: Manger
@@ -3371,6 +3372,23 @@ MonoBehaviour:
   - {fileID: 1009185079}
   gameManager: {fileID: 1705427870}
   OperationMath: 0
+--- !u!114 &1705427873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1705427869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c3918e338fddc64fae9489e7293e7d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BulletOne: {fileID: 4073559142079294944, guid: 433c1b594dcd43a44a63dc80f7d0a0c0,
+    type: 3}
+  TouZiOne: {fileID: 8046514283713290578}
+  TouZiTwo: {fileID: 676367089}
+  bulletCount: 8
 --- !u!1 &1827229015
 GameObject:
   m_ObjectHideFlags: 0
