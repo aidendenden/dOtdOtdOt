@@ -96,7 +96,11 @@ public class CountDownSystem : MonoBehaviour
 
         if (b)
         {
-            GameEventManager.Instance.Triggered("CountDownOver",transform,new Vector3(num1,num2,targetNum));
+            GameEventManager.Instance.Triggered("CountDownAnswerIsTrue",transform,new Vector3(num1,num2,targetNum));
+        }
+        else
+        {
+            GameEventManager.Instance.Triggered("CountDownAnswerIsFalse",transform,new Vector3(num1,num2,targetNum)); 
         }
         
     }

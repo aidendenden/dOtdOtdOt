@@ -19,11 +19,17 @@ public class FireManger : MonoBehaviour
 
     void Triggered(string message, Transform _transform, Vector3 _vector3)
     {
-        if (string.Equals(message, "CountDownOver"))
+        if (string.Equals(message, "CountDownAnswerIsTrue"))
         {
-            Debug.Log($"筛子1：{_vector3.x},筛子2：{_vector3.y}，目标数{_vector3.z}");
+            Debug.Log($"结果成功：筛子1：{_vector3.x},筛子2：{_vector3.y}，目标数{_vector3.z}");
             FireOne();
         }
+        
+        if (string.Equals(message, "CountDownAnswerIsFalse"))
+        {
+            Debug.Log($"结果失败：筛子1：{_vector3.x},筛子2：{_vector3.y}，目标数{_vector3.z}");
+        }
+        
     }
 
     public void FireOne()
