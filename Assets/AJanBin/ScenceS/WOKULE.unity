@@ -576,9 +576,44 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6648018309789913066, guid: c3a91ccdd9cfb3040b0bf3330415c5aa,
         type: 3}
+      propertyPath: didFinishedTimerTime.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6648018309789913066, guid: c3a91ccdd9cfb3040b0bf3330415c5aa,
+        type: 3}
+      propertyPath: didFinishedTimerTime.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6648018309789913066, guid: c3a91ccdd9cfb3040b0bf3330415c5aa,
+        type: 3}
       propertyPath: didFinishedTimerTime.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1705427872}
+    - target: {fileID: 6648018309789913066, guid: c3a91ccdd9cfb3040b0bf3330415c5aa,
+        type: 3}
+      propertyPath: didFinishedTimerTime.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1705427873}
+    - target: {fileID: 6648018309789913066, guid: c3a91ccdd9cfb3040b0bf3330415c5aa,
+        type: 3}
+      propertyPath: didFinishedTimerTime.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6648018309789913066, guid: c3a91ccdd9cfb3040b0bf3330415c5aa,
+        type: 3}
+      propertyPath: didFinishedTimerTime.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: FireOne
+      objectReference: {fileID: 0}
+    - target: {fileID: 6648018309789913066, guid: c3a91ccdd9cfb3040b0bf3330415c5aa,
+        type: 3}
+      propertyPath: didFinishedTimerTime.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: FireManger, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6648018309789913066, guid: c3a91ccdd9cfb3040b0bf3330415c5aa,
+        type: 3}
+      propertyPath: didFinishedTimerTime.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7668980239639209804, guid: c3a91ccdd9cfb3040b0bf3330415c5aa,
         type: 3}
       propertyPath: m_Pivot.x
@@ -5740,6 +5775,7 @@ GameObject:
   - component: {fileID: 1705427871}
   - component: {fileID: 1705427870}
   - component: {fileID: 1705427872}
+  - component: {fileID: 1705427873}
   m_Layer: 0
   m_Name: Manger
   m_TagString: Manger
@@ -5796,6 +5832,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   circularTimers:
   - {fileID: 1009185079}
+--- !u!114 &1705427873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1705427869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c3918e338fddc64fae9489e7293e7d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BulletOne: {fileID: 4073559142079294944, guid: 433c1b594dcd43a44a63dc80f7d0a0c0,
+    type: 3}
+  TouZiOne: {fileID: 8046514283713290578}
+  TouZiTwo: {fileID: 676367089}
 --- !u!1001 &1723928830
 PrefabInstance:
   m_ObjectHideFlags: 0
