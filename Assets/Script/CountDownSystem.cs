@@ -96,7 +96,7 @@ public class CountDownSystem : MonoBehaviour
 
         if (b)
         {
-            GameEventManager.Instance.Triggered("CountDownOver",transform,Vector3.zero);
+            GameEventManager.Instance.Triggered("CountDownOver",transform,new Vector3(num1,num2,targetNum));
         }
         
     }
