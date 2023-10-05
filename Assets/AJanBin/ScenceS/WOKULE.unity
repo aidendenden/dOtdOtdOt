@@ -5831,6 +5831,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   circularTimers:
   - {fileID: 1009185079}
+  gameManager: {fileID: 1705427870}
+  OperationMath: 0
 --- !u!1001 &1723928830
 PrefabInstance:
   m_ObjectHideFlags: 0
