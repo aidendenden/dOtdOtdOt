@@ -1729,10 +1729,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 392992021833310089, guid: b57d7e7087ba1e141a438be3e2943b11,
+        type: 3}
+      propertyPath: oneOrTwo
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 864467477632115303, guid: b57d7e7087ba1e141a438be3e2943b11,
         type: 3}
       propertyPath: m_PlayOnAwake
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2929506841971647437, guid: b57d7e7087ba1e141a438be3e2943b11,
+        type: 3}
+      propertyPath: oneOrTwo
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4272817904321548695, guid: b57d7e7087ba1e141a438be3e2943b11,
+        type: 3}
+      propertyPath: oneOrTwo
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4933495459786182402, guid: b57d7e7087ba1e141a438be3e2943b11,
+        type: 3}
+      propertyPath: oneOrTwo
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5174902301778031084, guid: b57d7e7087ba1e141a438be3e2943b11,
+        type: 3}
+      propertyPath: oneOrTwo
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5613188428457620939, guid: b57d7e7087ba1e141a438be3e2943b11,
+        type: 3}
+      propertyPath: oneOrTwo
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8575579132621305012, guid: b57d7e7087ba1e141a438be3e2943b11,
         type: 3}
