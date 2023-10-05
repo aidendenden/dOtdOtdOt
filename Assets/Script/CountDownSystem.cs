@@ -24,7 +24,7 @@ public class CountDownSystem : MonoBehaviour
     public OperationMath OperationMath=OperationMath.MixedOperations;
 
     [HideInInspector]
-    public int targetNum=2;
+    public int targetNum=UnityEngine.Random.Range(2, 12);
     
     //public Text text;
 
@@ -36,8 +36,7 @@ public class CountDownSystem : MonoBehaviour
 
     public void StartTimer()
     {
-        targetNum = UnityEngine.Random.Range(2, 12); 
-        Debug.Log(targetNum+"目标数");
+        
         //text.text = "Start";
         foreach (CircularTimer timer in circularTimers)
         {
@@ -65,6 +64,8 @@ public class CountDownSystem : MonoBehaviour
 
     public void ReStart()
     {
+        targetNum = UnityEngine.Random.Range(2, 12); 
+        Debug.Log(targetNum+"目标数");
         foreach (CircularTimer timer in circularTimers)
         {
             timer.StopTimer();
