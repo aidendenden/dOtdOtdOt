@@ -1,9 +1,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using Random = System.Random;
+using System.IO;
 
 public enum OperationMath
 {
@@ -26,20 +28,32 @@ public class CountDownSystem : MonoBehaviour
     [HideInInspector]
     public int targetNum=2;
     
-    //public Text text;
-
+    public List<Sprite> newSprite;
+    
+    public Image image1, image2, image3;
+    
     private void Start()
     {
         targetNum = UnityEngine.Random.Range(2, 12);
         Debug.Log(targetNum+"目标数");
-        TryGetComponent(out gameManager);
+        TryGetComponent(out gameManager); 
         StartTimer();
+    }
+
+
+    private void Update()
+    {
+        image1.sprite = newSprite[gameManager.numberOne];
+        
+        image2.sprite = newSprite[gameManager.numberTwo];
+        
+        image3.sprite = newSprite[targetNum];
+        
     }
 
     public void StartTimer()
     {
         
-        //text.text = "Start";
         foreach (CircularTimer timer in circularTimers)
         {
             timer.StartTimer();
@@ -48,7 +62,6 @@ public class CountDownSystem : MonoBehaviour
 
     public void PauseTimer()
     {
-        //text.text = "Pause";
         foreach (CircularTimer timer in circularTimers)
         {
             timer.PauseTimer();
@@ -57,7 +70,6 @@ public class CountDownSystem : MonoBehaviour
 
     public void StopTimer()
     {
-        //text.text = "Stop";
         foreach (CircularTimer timer in circularTimers)
         {
             timer.StopTimer();
@@ -72,8 +84,8 @@ public class CountDownSystem : MonoBehaviour
             timer.StartTimer();
         }
     }
-
-    public void Scoring()
+    
+    public void DidFinishedTimer()
     {
         int num1 = gameManager.numberOne;
         int num2 = gameManager.numberTwo;
@@ -110,11 +122,6 @@ public class CountDownSystem : MonoBehaviour
         
         targetNum = UnityEngine.Random.Range(2, 12); 
         Debug.Log(targetNum+"目标数");
-    }
-
-    public void DidFinishedTimer()
-    {
-        //text.text = "Finished";
     }
 
     public bool CanReachTargetNumberAdd(int number1, int number2, int target)
@@ -186,4 +193,5 @@ public class CountDownSystem : MonoBehaviour
         // 如果以上条件都不满足，则无法通过加、减、乘、除得到目标数
         return false;
     }
+    
 }
