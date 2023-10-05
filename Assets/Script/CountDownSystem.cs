@@ -22,6 +22,8 @@ public class CountDownSystem : MonoBehaviour
 
     [Header("运算方法")]
     public OperationMath OperationMath=OperationMath.MixedOperations;
+
+    public int targetNum = 2;
     
     //public Text text;
 
@@ -33,6 +35,7 @@ public class CountDownSystem : MonoBehaviour
 
     public void StartTimer()
     {
+        targetNum = UnityEngine.Random.Range(2, 12);
         //text.text = "Start";
         foreach (CircularTimer timer in circularTimers)
         {
@@ -69,7 +72,6 @@ public class CountDownSystem : MonoBehaviour
 
     public void Scoring()
     {
-        int targetNum = UnityEngine.Random.Range(2, 12);
         int num1 = gameManager.numberOne;
         int num2 = gameManager.numberTwo;
 
