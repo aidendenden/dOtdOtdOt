@@ -576,9 +576,44 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6648018309789913066, guid: c3a91ccdd9cfb3040b0bf3330415c5aa,
         type: 3}
+      propertyPath: didFinishedTimerTime.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6648018309789913066, guid: c3a91ccdd9cfb3040b0bf3330415c5aa,
+        type: 3}
+      propertyPath: didFinishedTimerTime.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6648018309789913066, guid: c3a91ccdd9cfb3040b0bf3330415c5aa,
+        type: 3}
       propertyPath: didFinishedTimerTime.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1705427872}
+    - target: {fileID: 6648018309789913066, guid: c3a91ccdd9cfb3040b0bf3330415c5aa,
+        type: 3}
+      propertyPath: didFinishedTimerTime.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1705427872}
+    - target: {fileID: 6648018309789913066, guid: c3a91ccdd9cfb3040b0bf3330415c5aa,
+        type: 3}
+      propertyPath: didFinishedTimerTime.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6648018309789913066, guid: c3a91ccdd9cfb3040b0bf3330415c5aa,
+        type: 3}
+      propertyPath: didFinishedTimerTime.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Scoring
+      objectReference: {fileID: 0}
+    - target: {fileID: 6648018309789913066, guid: c3a91ccdd9cfb3040b0bf3330415c5aa,
+        type: 3}
+      propertyPath: didFinishedTimerTime.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: CountDownSystem, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6648018309789913066, guid: c3a91ccdd9cfb3040b0bf3330415c5aa,
+        type: 3}
+      propertyPath: didFinishedTimerTime.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7668980239639209804, guid: c3a91ccdd9cfb3040b0bf3330415c5aa,
         type: 3}
       propertyPath: m_Pivot.x
