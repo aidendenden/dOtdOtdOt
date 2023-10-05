@@ -10,6 +10,8 @@ public class FireManger : MonoBehaviour
     public Transform TouZiTwo;
 
     public int bulletCount = 8; // ×Óµ¯ÊýÁ¿
+
+
     public void FireOne()
     {
         float angleInterval = 360f / bulletCount;
