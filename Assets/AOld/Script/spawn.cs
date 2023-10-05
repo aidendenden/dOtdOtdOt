@@ -24,7 +24,7 @@ public class spawn : MonoBehaviour
                             _typingSpeedCalculator.KeyCodeToV(_typingSpeedCalculator.inputNow));
                     Vector2 b1 = _Ttransform.position;
                     Vector2 c1 = b1 - a1;
-                    Vector2 c2 = c1 * Random.Range(0.9f, 1.2f);
+                    Vector2 c2 = c1 * Random.Range(0.98f, 1.02f);
                     Vector2 d1 = (a1 + c2 / 2)/50;
 
 

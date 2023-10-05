@@ -1748,7 +1748,8 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Material
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 13400000, guid: 29f7913af4287794ca0f0bf27d4df00d,
+        type: 2}
     - target: {fileID: 4224298111805689686, guid: b57d7e7087ba1e141a438be3e2943b11,
         type: 3}
       propertyPath: m_Interpolate
@@ -4256,7 +4257,8 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Material
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 13400000, guid: 29f7913af4287794ca0f0bf27d4df00d,
+        type: 2}
     - target: {fileID: 4224298111805689686, guid: b57d7e7087ba1e141a438be3e2943b11,
         type: 3}
       propertyPath: m_Interpolate
