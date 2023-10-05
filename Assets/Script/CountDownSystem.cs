@@ -24,12 +24,14 @@ public class CountDownSystem : MonoBehaviour
     public OperationMath OperationMath=OperationMath.MixedOperations;
 
     [HideInInspector]
-    public int targetNum=UnityEngine.Random.Range(2, 12);
+    public int targetNum=2;
     
     //public Text text;
 
     private void Start()
     {
+        targetNum = UnityEngine.Random.Range(2, 12);
+        Debug.Log(targetNum+"目标数");
         TryGetComponent(out gameManager);
         StartTimer();
     }
@@ -64,8 +66,6 @@ public class CountDownSystem : MonoBehaviour
 
     public void ReStart()
     {
-        targetNum = UnityEngine.Random.Range(2, 12); 
-        Debug.Log(targetNum+"目标数");
         foreach (CircularTimer timer in circularTimers)
         {
             timer.StopTimer();
@@ -108,6 +108,8 @@ public class CountDownSystem : MonoBehaviour
             GameEventManager.Instance.Triggered("CountDownAnswerIsFalse",transform,new Vector3(num1,num2,targetNum)); 
         }
         
+        targetNum = UnityEngine.Random.Range(2, 12); 
+        Debug.Log(targetNum+"目标数");
     }
 
     public void DidFinishedTimer()
