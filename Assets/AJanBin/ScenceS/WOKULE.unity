@@ -471,7 +471,7 @@ PrefabInstance:
     - target: {fileID: 6648018309789913066, guid: c3a91ccdd9cfb3040b0bf3330415c5aa,
         type: 3}
       propertyPath: duration
-      value: 1
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6648018309789913066, guid: c3a91ccdd9cfb3040b0bf3330415c5aa,
         type: 3}
@@ -3501,6 +3501,7 @@ MonoBehaviour:
   - {fileID: 1009185079}
   gameManager: {fileID: 1705427870}
   OperationMath: 0
+  targetNum: 2
 --- !u!114 &1705427873
 MonoBehaviour:
   m_ObjectHideFlags: 0
