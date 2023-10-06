@@ -527,7 +527,7 @@ PrefabInstance:
     - target: {fileID: 6648018309789913066, guid: c3a91ccdd9cfb3040b0bf3330415c5aa,
         type: 3}
       propertyPath: didFinishedTimerTime.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6648018309789913066, guid: c3a91ccdd9cfb3040b0bf3330415c5aa,
         type: 3}
@@ -2096,7 +2096,13 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8411640562214140270, guid: b57d7e7087ba1e141a438be3e2943b11, type: 3}
+    - {fileID: 3966975453878632590, guid: b57d7e7087ba1e141a438be3e2943b11, type: 3}
+    - {fileID: 1726474665883063833, guid: b57d7e7087ba1e141a438be3e2943b11, type: 3}
+    - {fileID: 2335616013602387940, guid: b57d7e7087ba1e141a438be3e2943b11, type: 3}
+    - {fileID: 6170080432284486313, guid: b57d7e7087ba1e141a438be3e2943b11, type: 3}
+    - {fileID: 2246902573194916916, guid: b57d7e7087ba1e141a438be3e2943b11, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -4465,7 +4471,6 @@ MonoBehaviour:
   - {fileID: 1009185079}
   gameManager: {fileID: 1705427870}
   OperationMath: 0
-  targetNum: 2
   newSprite:
   - {fileID: 21300000, guid: bd78972740e1b8f40acb460f665d5305, type: 3}
   - {fileID: 21300000, guid: b3475255281542547a3e36a3e21cbf4f, type: 3}
@@ -4480,9 +4485,12 @@ MonoBehaviour:
   - {fileID: 21300000, guid: c11272719fccab44a8afec8851ef615f, type: 3}
   - {fileID: 21300000, guid: 7771db47eb4e266418378037bdc0ca32, type: 3}
   - {fileID: 21300000, guid: f748d5334ef5116449cdb8534d2d6426, type: 3}
-  image1: {fileID: 484958397}
-  image2: {fileID: 1273309683}
-  image3: {fileID: 1381354888}
+  DiceImages:
+  - Answer: {fileID: 1381354888}
+    AnswerNum: 0
+  WaitTime: 5
+  Dice1: {fileID: 484958397}
+  Dice2: {fileID: 1273309683}
 --- !u!114 &1705427873
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5567,7 +5575,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: "\u4E00\u7C92\u9AB0\u5B50 (1)"
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2246902573194916916, guid: b57d7e7087ba1e141a438be3e2943b11, type: 3}
+    - {fileID: 6170080432284486313, guid: b57d7e7087ba1e141a438be3e2943b11, type: 3}
+    - {fileID: 1726474665883063833, guid: b57d7e7087ba1e141a438be3e2943b11, type: 3}
+    - {fileID: 2335616013602387940, guid: b57d7e7087ba1e141a438be3e2943b11, type: 3}
+    - {fileID: 3966975453878632590, guid: b57d7e7087ba1e141a438be3e2943b11, type: 3}
+    - {fileID: 8411640562214140270, guid: b57d7e7087ba1e141a438be3e2943b11, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
