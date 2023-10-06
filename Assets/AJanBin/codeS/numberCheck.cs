@@ -6,6 +6,7 @@ public class numberCheck : MonoBehaviour
 {
     public int TouZiNumber = 1;
     public bool oneOrTwo = true;
+    public FSMTouZi fsmTouZi;
 
     private MangeManger mangermanger;
     // Start is called before the first frame update
@@ -17,12 +18,19 @@ public class numberCheck : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (oneOrTwo&& fsmTouZi.parameter.Life==false)
+        {
+            mangermanger.numberOne = 0;
+        }
+        if (!oneOrTwo && fsmTouZi.parameter.Life == false)
+        {
+            mangermanger.numberTwo = 0;
+        }
     }
 
     private void OnTriggerStay(Collider other)
     {
-     if(other.CompareTag("PanZi")&&oneOrTwo) {
+     if(other.CompareTag("PanZi")&&oneOrTwo&& fsmTouZi.parameter.Life ==true) {
             mangermanger.numberOne = TouZiNumber;
         }
 
@@ -34,7 +42,7 @@ public class numberCheck : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if(other.CompareTag("PanZi") && oneOrTwo) {
+        if(other.CompareTag("PanZi") && oneOrTwo&& fsmTouZi.parameter.Life == true) {
             mangermanger.numberOne = 0;
         }
 

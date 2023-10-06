@@ -57,6 +57,7 @@ public class TouZiDieingState : IState
     }
     public void OnEnter()
     {
+        parameter.rigidbody.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionZ;
         parameter.Life = false;
         parameter.rigidbody.useGravity = false;
         parameter.collider.isTrigger = true;
@@ -88,6 +89,7 @@ public class TouZiDieingState : IState
         parameter.ReBack = 0f;
         parameter.Life = true;
         parameter.rigidbody.useGravity = true;
+        parameter.rigidbody.constraints = RigidbodyConstraints.None;
         parameter.collider.isTrigger = false;
         parameter.ReBackAudio.PlayOneShot(parameter.ReBackAudio.clip);
     }
