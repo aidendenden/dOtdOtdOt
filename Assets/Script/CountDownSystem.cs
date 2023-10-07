@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.Contracts;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -16,6 +17,13 @@ public enum OperationMath
     MixedOperations
 }
 
+[Serializable]
+public class DiceImage
+{
+    public Image Answer;
+    public int AnswerNum;
+}
+
 public class CountDownSystem : MonoBehaviour
 {
     public CircularTimer[] circularTimers;
@@ -24,33 +32,66 @@ public class CountDownSystem : MonoBehaviour
 
     [Header("运算方法")]
     public OperationMath OperationMath=OperationMath.MixedOperations;
-
-    [HideInInspector]
-    public int targetNum=2;
     
     public List<Sprite> newSprite;
     
-    public Image image1, image2, image3;
+    [Serialize]
+    public List<DiceImage> DiceImages;
+
+    [Header("间隔时间")] 
+    public float WaitTime = 1f;
     
+    private WaitForSeconds waitTime;
+
+    public Image Dice1, Dice2;
+
+
+    private void Awake()
+    {
+        waitTime = new WaitForSeconds(WaitTime); 
+    }
+
     private void Start()
     {
-        targetNum = UnityEngine.Random.Range(2, 12);
-        Debug.Log(targetNum+"目标数");
-        TryGetComponent(out gameManager); 
-        StartTimer();
+        TryGetComponent(out gameManager);
+        StartCoroutine(GameStart());
     }
 
 
     private void Update()
     {
-        image1.sprite = newSprite[gameManager.numberOne];
+        Dice1.sprite = newSprite[gameManager.numberOne];
         
-        image2.sprite = newSprite[gameManager.numberTwo];
-        
-        image3.sprite = newSprite[targetNum];
+        Dice2.sprite = newSprite[gameManager.numberTwo];
         
     }
 
+    
+    
+    private IEnumerator GameStart()
+    {
+        while (true)
+        {
+            // 调用您希望在每个时间间隔后执行的方法
+            int index = 0;
+            foreach (CircularTimer timer in circularTimers)
+            {
+                int _int = UnityEngine.Random.Range(1, 2);
+                if (_int==1)
+                {
+                    var _ = UnityEngine.Random.Range(2, 12);
+                    Debug.Log(_+"目标数");
+                    DiceImages[index].AnswerNum=_;
+                    DiceImages[index].Answer.sprite = newSprite[_];
+                    timer.StartTimer(); 
+                }
+                index++;
+            }
+
+            yield return waitTime;
+        }
+    }
+    
     public void StartTimer()
     {
         
@@ -85,7 +126,7 @@ public class CountDownSystem : MonoBehaviour
         }
     }
     
-    public void DidFinishedTimer()
+    public void DidFinishedTimer(int index)
     {
         int num1 = gameManager.numberOne;
         int num2 = gameManager.numberTwo;
@@ -95,33 +136,30 @@ public class CountDownSystem : MonoBehaviour
         switch (OperationMath)
         {
             case OperationMath.Addition:
-                b=CanReachTargetNumberAdd(num1, num2, targetNum);
+                b=CanReachTargetNumberAdd(num1, num2,  DiceImages[index].AnswerNum);
                 break;
             case OperationMath.Subtraction:
-                b=CanReachTargetNumberSub(num1, num2, targetNum);
+                b=CanReachTargetNumberSub(num1, num2,  DiceImages[index].AnswerNum);
                 break;
             case OperationMath.Multiplication:
-                b=CanReachTargetNumberMultiply(num1, num2, targetNum);
+                b=CanReachTargetNumberMultiply(num1, num2,  DiceImages[index].AnswerNum);
                 break;
             case OperationMath.Division:
-                b=CanReachTargetNumberDivision(num1, num2, targetNum);
+                b=CanReachTargetNumberDivision(num1, num2,  DiceImages[index].AnswerNum);
                 break;
             case OperationMath.MixedOperations:
-                b=CanReachTargetNumberMix(num1, num2, targetNum);
+                b=CanReachTargetNumberMix(num1, num2,  DiceImages[index].AnswerNum);
                 break;
         }
 
         if (b)
         {
-            GameEventManager.Instance.Triggered("CountDownAnswerIsTrue",transform,new Vector3(num1,num2,targetNum));
+            GameEventManager.Instance.Triggered("CountDownAnswerIsTrue",transform,new Vector3(num1,num2, DiceImages[index].AnswerNum));
         }
         else
         {
-            GameEventManager.Instance.Triggered("CountDownAnswerIsFalse",transform,new Vector3(num1,num2,targetNum)); 
+            GameEventManager.Instance.Triggered("CountDownAnswerIsFalse",transform,new Vector3(num1,num2, DiceImages[index].AnswerNum)); 
         }
-        
-        targetNum = UnityEngine.Random.Range(2, 12); 
-        Debug.Log(targetNum+"目标数");
     }
 
     public bool CanReachTargetNumberAdd(int number1, int number2, int target)

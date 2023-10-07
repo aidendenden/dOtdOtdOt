@@ -6,9 +6,23 @@ using UnityEngine.Events;
 
 public class CircularTimer : MonoBehaviour
 {
-    public enum CountDirection { countUp, countDown }
-    public enum FillDirection { fillUp, fillDown }
-    public enum FillType { tick, smooth }
+    public enum CountDirection
+    {
+        countUp,
+        countDown
+    }
+
+    public enum FillDirection
+    {
+        fillUp,
+        fillDown
+    }
+
+    public enum FillType
+    {
+        tick,
+        smooth
+    }
 
     [System.Serializable]
     public class FillSettings
@@ -21,7 +35,7 @@ public class CircularTimer : MonoBehaviour
         public Image headCapImage;
         public Image tailCapImage;
     }
-    
+
     [System.Serializable]
     public class BackgroundSettings
     {
@@ -29,7 +43,7 @@ public class CircularTimer : MonoBehaviour
         public Color color;
         public Image backgroundImage;
     }
-    
+
     [System.Serializable]
     public class TextSettings
     {
@@ -39,36 +53,30 @@ public class CircularTimer : MonoBehaviour
         public Color color;
         public CountDirection countType;
     }
-    
-    
-    [Header("倒计时时长")]
-    public float duration=10;
-    
-    [Header("填充条设置")]
-    public FillSettings fillSettings;
-    
-    [Header("背景设置")]
-    public BackgroundSettings backgroundSettings;
-    
-    [Header("文字设置")]
-    public TextSettings textSettings;
-    
-    [Header("倒计时结束，事件绑定")]
-    [Tooltip("如果倒计时结束去做什么")]
+
+
+    [Header("倒计时时长")] public float duration = 10;
+
+    [Header("填充条设置")] public FillSettings fillSettings;
+
+    [Header("背景设置")] public BackgroundSettings backgroundSettings;
+
+    [Header("文字设置")] public TextSettings textSettings;
+
+    [Header("倒计时结束，事件绑定")] [Tooltip("如果倒计时结束去做什么")]
     public UnityEvent didFinishedTimerTime;
 
     public float CurrentTime { get; private set; }
     // float AfterImageTime;
-    
-    [HideInInspector]
-    public bool isPaused = true;
+
+    [HideInInspector] public bool isPaused = true;
 
     void Update()
     {
         if (!isPaused)
         {
             CurrentTime += Time.deltaTime;
-            
+
             if (CurrentTime >= duration)
             {
                 isPaused = true;
@@ -88,6 +96,7 @@ public class CircularTimer : MonoBehaviour
                     {
                         fillSettings.fillImage.fillAmount = (float)System.Math.Round(CurrentTime / duration, 1);
                     }
+
                     break;
                 case FillDirection.fillUp:
                     if (fillSettings.fillType == FillType.smooth)
@@ -96,10 +105,13 @@ public class CircularTimer : MonoBehaviour
                     }
                     else if (fillSettings.fillType == FillType.tick)
                     {
-                        fillSettings.fillImage.fillAmount = (float)System.Math.Round((duration - CurrentTime) / duration, 1);
+                        fillSettings.fillImage.fillAmount =
+                            (float)System.Math.Round((duration - CurrentTime) / duration, 1);
                     }
+
                     break;
             }
+
             UpdateUI();
         }
     }
@@ -113,8 +125,10 @@ public class CircularTimer : MonoBehaviour
     public void UpdateUI()
     {
         fillSettings.fillImage.color = fillSettings.color;
+
         fillSettings.headCapImage.color = fillSettings.color;
         fillSettings.tailCapImage.color = fillSettings.color;
+
 
         textSettings.text.color = textSettings.color;
 
@@ -167,6 +181,7 @@ public class CircularTimer : MonoBehaviour
                     {
                         textSettings.text.text = time.ToString("F0");
                     }
+
                     break;
                 case CountDirection.countDown:
                     if (textSettings.millisecond)
@@ -177,6 +192,7 @@ public class CircularTimer : MonoBehaviour
                     {
                         textSettings.text.text = (duration - time).ToString("F0");
                     }
+
                     break;
             }
         }
