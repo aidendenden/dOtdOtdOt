@@ -20,6 +20,7 @@ public enum OperationMath
 [Serializable]
 public class DiceImage
 {
+    public GameObject GameOBJ;
     public Image Answer;
     public int AnswerNum;
 }
@@ -82,6 +83,7 @@ public class CountDownSystem : MonoBehaviour
                     var _ = UnityEngine.Random.Range(2, 12);
                     Debug.Log(_+"目标数");
                     DiceImages[index].AnswerNum=_;
+                    DiceImages[index].GameOBJ.SetActive(true);
                     DiceImages[index].Answer.sprite = newSprite[_];
                     timer.StartTimer(); 
                 }
@@ -160,6 +162,8 @@ public class CountDownSystem : MonoBehaviour
         {
             GameEventManager.Instance.Triggered("CountDownAnswerIsFalse",transform,new Vector3(num1,num2, DiceImages[index].AnswerNum)); 
         }
+        
+        DiceImages[index].GameOBJ.SetActive(false);
     }
 
     public bool CanReachTargetNumberAdd(int number1, int number2, int target)

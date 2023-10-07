@@ -4486,7 +4486,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 7771db47eb4e266418378037bdc0ca32, type: 3}
   - {fileID: 21300000, guid: f748d5334ef5116449cdb8534d2d6426, type: 3}
   DiceImages:
-  - Answer: {fileID: 1381354888}
+  - GameOBJ: {fileID: 974133279}
+    Answer: {fileID: 1381354888}
     AnswerNum: 0
   WaitTime: 5
   Dice1: {fileID: 484958397}
