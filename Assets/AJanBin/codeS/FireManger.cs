@@ -36,7 +36,7 @@ public class FireManger : MonoBehaviour
         if (string.Equals(message, "CountDownAnswerIsFalse"))
         {
             Debug.Log($"结果失败：筛子一：{_vector3.x},筛子二：{_vector3.y}，目标数{_vector3.z}");
-            // BooomOne(12);
+             BooomOne(12);
 
         }
         
