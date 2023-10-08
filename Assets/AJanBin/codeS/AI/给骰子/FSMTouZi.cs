@@ -67,20 +67,7 @@ public class FSMTouZi : MonoBehaviour
         currenState.OnEnter();
     }
 
-    public void Flipto(Transform target)
-    {
-        if (target != null)
-        {
-            if(transform.position.x > target.position.x)
-            {
-                transform.localScale = new Vector3(-1, 1, 1);
-            }
-            else if (transform.position.x < target.position.x)
-            {
-                transform.localScale = new Vector3(1, 1, 1);
-            }
-        }
-    }
+
 
     private void OnTriggerEnter(Collider other)
     {

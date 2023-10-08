@@ -63,7 +63,8 @@ public class PatroState : IState
 
     public void OnUpdate()
     {
-        manager.Flipto(parameter.patrolPoints[patrolPostion]);
+        //manager.TurnTO(parameter.patrolPoints[patrolPostion]);
+        //manager.Flipto(parameter.patrolPoints[patrolPostion]);
 
         manager.transform.position = Vector3.MoveTowards(manager.transform.position, parameter.patrolPoints[patrolPostion].position, parameter.moveSpeed * Time.deltaTime);
 

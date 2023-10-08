@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 5953328427786258569}
   - component: {fileID: 7840213104067756237}
   - component: {fileID: 5091363075827700962}
+  - component: {fileID: 1140087882873425900}
   m_Layer: 4
   m_Name: EnemyOne
   m_TagString: Enemy
@@ -74,8 +75,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parameter:
     Self: {fileID: 2099931007746073148}
-    Hp: 1
-    moveSpeed: 3
+    Hp: 3
+    moveSpeed: 10
     idleTime: 0.5
     patrolPoints:
     - {fileID: 0}
@@ -151,7 +152,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 0.6282202
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -322,3 +323,16 @@ MonoBehaviour:
   - {fileID: 21300000, guid: e1c41aabc7e4e09418c7a68e107ce445, type: 3}
   - {fileID: 21300000, guid: 0879dc98703396f4ebb333d7c474f622, type: 3}
   - {fileID: 21300000, guid: e447c67b54d09f64fb528353b80f5b02, type: 3}
+--- !u!114 &1140087882873425900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2099931007746073148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9daf4339c9a1d7544aa292eecc7ac768, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
