@@ -13,9 +13,6 @@ public class FireManger : MonoBehaviour
 
     public GameObject HaHaHa;
 
-    public Animator Demo;
-    public Animator Angle;
-
 
     public GameObject BoooMPrefab; // 物体预制体
     
@@ -32,23 +29,33 @@ public class FireManger : MonoBehaviour
 
     void Triggered(string message, Transform _transform, Vector3 _vector3)
     {
-        if (string.Equals(message, "CountDownAnswerIsTrue"))
+        if (message.Contains("CountDownAnswerIsTrue"))
         {
-            Debug.Log($"结果成功：筛子一：{_vector3.x},筛子二：{_vector3.y}，目标数{_vector3.z}");
-            //FireOne(8);
+            int startIndex = message.IndexOf(":") + 1; // 获取冒号之后的索引
+            string valueString = message.Substring(startIndex); // 获取冒号之后的字符串
+            int value;
+
+            if (int.TryParse(valueString, out value))
+            {
+                Debug.Log($"第{value+1}颗筛子,出结果了.结果成功：筛子一：{_vector3.x},筛子二：{_vector3.y}，目标数{_vector3.z}");
+            }
+            FireOne(8);
             HAHA();
-
-
         }
         
-        if (string.Equals(message, "CountDownAnswerIsFalse"))
+        if (message.Contains("CountDownAnswerIsFalse"))
         {
-            Debug.Log($"结果失败：筛子一：{_vector3.x},筛子二：{_vector3.y}，目标数{_vector3.z}");
-           // BooomOne(12);
-            //HAHA();
+            int startIndex = message.IndexOf(":") + 1; // 获取冒号之后的索引
+            string valueString = message.Substring(startIndex); // 获取冒号之后的字符串
+            int value;
 
+            if (int.TryParse(valueString, out value))
+            {
+                Debug.Log($"第{value+1}颗筛子,出结果了.结果失败：筛子一：{_vector3.x},筛子二：{_vector3.y}，目标数{_vector3.z}");
+            }
+            BooomOne(12);
+            HAHA();
         }
-        
     }
 
     public void FireOne(int B)
