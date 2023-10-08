@@ -11,6 +11,9 @@ public class FireManger : MonoBehaviour
     public Transform TouZiTwo;
 
 
+    public GameObject HaHaHa;
+
+
     public GameObject BoooMPrefab; // 物体预制体
     
 
@@ -30,13 +33,16 @@ public class FireManger : MonoBehaviour
         {
             Debug.Log($"结果成功：筛子一：{_vector3.x},筛子二：{_vector3.y}，目标数{_vector3.z}");
             FireOne(8);
-            
+            HAHA();
+
+
         }
         
         if (string.Equals(message, "CountDownAnswerIsFalse"))
         {
             Debug.Log($"结果失败：筛子一：{_vector3.x},筛子二：{_vector3.y}，目标数{_vector3.z}");
-             BooomOne(12);
+            BooomOne(12);
+            HAHA();
 
         }
         
@@ -88,6 +94,11 @@ public class FireManger : MonoBehaviour
 
         // 创建物体实例
         Instantiate(BoooMPrefab, position, Quaternion.identity);
+    }
+
+    public void HAHA()
+    {
+        HaHaHa.SetActive(true);
     }
 
 }
