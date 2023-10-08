@@ -21,6 +21,9 @@ public class FireManger : MonoBehaviour
 
     public Transform T1;
     public Transform T2;
+    public Animator Demo;
+    public Animator Angle;
+
 
     private void Start()
     {
@@ -39,6 +42,15 @@ public class FireManger : MonoBehaviour
             {
                 Debug.Log($"第{value+1}颗筛子,出结果了.结果成功：筛子一：{_vector3.x},筛子二：{_vector3.y}，目标数{_vector3.z}");
             }
+
+            if (value == 1)
+            {
+                Demo.Play("恶魔走了");
+            }
+            if (value == 0)
+            {
+                Angle.Play("天使走了");
+            }
             FireOne(8);
             HAHA();
         }
@@ -53,8 +65,16 @@ public class FireManger : MonoBehaviour
             {
                 Debug.Log($"第{value+1}颗筛子,出结果了.结果失败：筛子一：{_vector3.x},筛子二：{_vector3.y}，目标数{_vector3.z}");
             }
+            if (value == 1)
+            {
+                Demo.Play("恶魔走了");
+            }
+            if (value == 0)
+            {
+                Angle.Play("天使走了");
+            }
             BooomOne(12);
-            HAHA();
+           
         }
     }
 

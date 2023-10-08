@@ -18,13 +18,13 @@ public class FunctionCaller : MonoBehaviour
     private void CallFunctionOne()
     {
         Demo.Play("真正的恶魔出现");
-        countDownSystem.TimerStart(0);
+        countDownSystem.TimerStart(1);
         Debug.Log("恶魔");
     }
     private void CallFunctionTwo()
     {
         Angle.Play("天使");
-        countDownSystem.TimerStart(1);
+        countDownSystem.TimerStart(0);
         Debug.Log("天使");
     }
 }

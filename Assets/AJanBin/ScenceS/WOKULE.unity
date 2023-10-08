@@ -5626,19 +5626,19 @@ MonoBehaviour:
   gameManager: {fileID: 1705427870}
   OperationMath: 0
   newSprite:
-  - {fileID: 21300000, guid: bd78972740e1b8f40acb460f665d5305, type: 3}
-  - {fileID: 21300000, guid: b3475255281542547a3e36a3e21cbf4f, type: 3}
-  - {fileID: 21300000, guid: 602ab9495d0b9d04c986edc9abf97165, type: 3}
-  - {fileID: 21300000, guid: b382afd9c4521a74e8cb057b7a16b820, type: 3}
-  - {fileID: 21300000, guid: abf34b6a61f4fc548babc071a4e3c27e, type: 3}
-  - {fileID: 21300000, guid: 103e53fc297a1164482d26801398f302, type: 3}
-  - {fileID: 21300000, guid: d80c5165ab085204c90a1430b3d5bcf9, type: 3}
-  - {fileID: 21300000, guid: bb03faf695cdbf04da3528c4fdd79443, type: 3}
-  - {fileID: 21300000, guid: 0421f993ca757604ea7612b8c3175536, type: 3}
-  - {fileID: 21300000, guid: d3d097d45253ed749b871bc26bae0a46, type: 3}
+  - {fileID: 21300000, guid: b9949d94d9fec1c4aa6bedc55f00f9fb, type: 3}
+  - {fileID: 21300000, guid: 41fded5145bde6f4f993a9aabded7a17, type: 3}
+  - {fileID: 21300000, guid: 96266b938250b6b48a1db6c15c48a7da, type: 3}
+  - {fileID: 21300000, guid: e76531dfb422731469db68b5e012362c, type: 3}
+  - {fileID: 21300000, guid: 1797a90f4980ba942a49e0bec626fbd4, type: 3}
+  - {fileID: 21300000, guid: 3b5a42648f713d048b3b6ec149ca356d, type: 3}
+  - {fileID: 21300000, guid: d0fe181f6f291b34c97283efb6b5c33e, type: 3}
+  - {fileID: 21300000, guid: 069c60ac7a92ae741baa345dd5892526, type: 3}
+  - {fileID: 21300000, guid: 0728436bae7e8b0409d5d17fabc90289, type: 3}
+  - {fileID: 21300000, guid: fabd5287fe7139446b9e0dac1baf22e6, type: 3}
   - {fileID: 21300000, guid: c11272719fccab44a8afec8851ef615f, type: 3}
-  - {fileID: 21300000, guid: 7771db47eb4e266418378037bdc0ca32, type: 3}
-  - {fileID: 21300000, guid: f748d5334ef5116449cdb8534d2d6426, type: 3}
+  - {fileID: 21300000, guid: 4dea41c61e7bd39408247174acbc22ba, type: 3}
+  - {fileID: 21300000, guid: ba4a7ea681db15745b1fdfac81576eed, type: 3}
   DiceImages:
   - Answer: {fileID: 1000613459}
     AnswerNum: 0
@@ -5664,13 +5664,13 @@ MonoBehaviour:
   TouZiOne: {fileID: 8046514283713290578}
   TouZiTwo: {fileID: 676367089}
   HaHaHa: {fileID: 908754270}
-  Demo: {fileID: 0}
-  Angle: {fileID: 0}
   BoooMPrefab: {fileID: 1957887257978427726, guid: b6fce6d65f8f82b49bfcf13bfb5800cd,
     type: 3}
   bulletCount: 8
   T1: {fileID: 324826291}
   T2: {fileID: 837730537}
+  Demo: {fileID: 1276633969}
+  Angle: {fileID: 804189203}
 --- !u!114 &1705427874
 MonoBehaviour:
   m_ObjectHideFlags: 0
