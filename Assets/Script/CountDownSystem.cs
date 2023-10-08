@@ -164,11 +164,11 @@ public class CountDownSystem : MonoBehaviour
 
         if (b)
         {
-            GameEventManager.Instance.Triggered("CountDownAnswerIsTrue",transform,new Vector3(num1,num2, DiceImages[index].AnswerNum));
+            GameEventManager.Instance.Triggered($"CountDownAnswerIsTrue:{index}",transform,new Vector3(num1,num2, DiceImages[index].AnswerNum));
         }
         else
         {
-            GameEventManager.Instance.Triggered("CountDownAnswerIsFalse",transform,new Vector3(num1,num2, DiceImages[index].AnswerNum)); 
+            GameEventManager.Instance.Triggered($"CountDownAnswerIsFalse:{index}",transform,new Vector3(num1,num2, DiceImages[index].AnswerNum)); 
         }
         
     }
