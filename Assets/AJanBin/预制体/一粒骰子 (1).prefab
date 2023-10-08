@@ -150,8 +150,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TouZiNumber: 1
-  oneOrTwo: 0
-  fsmTouZi: {fileID: 0}
+  oneOrTwo: 1
+  fsmTouZi: {fileID: 4267431899269179670}
 --- !u!1 &1076838173176224970
 GameObject:
   m_ObjectHideFlags: 0
@@ -581,8 +581,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TouZiNumber: 5
-  oneOrTwo: 0
-  fsmTouZi: {fileID: 0}
+  oneOrTwo: 1
+  fsmTouZi: {fileID: 4267431899269179670}
 --- !u!1 &2482193087366440817
 GameObject:
   m_ObjectHideFlags: 0
@@ -816,8 +816,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TouZiNumber: 2
-  oneOrTwo: 0
-  fsmTouZi: {fileID: 0}
+  oneOrTwo: 1
+  fsmTouZi: {fileID: 4267431899269179670}
 --- !u!1 &2911410851086937465
 GameObject:
   m_ObjectHideFlags: 0
@@ -968,8 +968,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TouZiNumber: 4
-  oneOrTwo: 0
-  fsmTouZi: {fileID: 0}
+  oneOrTwo: 1
+  fsmTouZi: {fileID: 4267431899269179670}
 --- !u!1 &3749112415369777285
 GameObject:
   m_ObjectHideFlags: 0
@@ -981,7 +981,6 @@ GameObject:
   - component: {fileID: 1653026437132103081}
   - component: {fileID: 6752596229350941237}
   - component: {fileID: 8768292201843407412}
-  - component: {fileID: 8411640562214140270}
   m_Layer: 0
   m_Name: 6
   m_TagString: Untagged
@@ -1054,28 +1053,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &8411640562214140270
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3749112415369777285}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &3881665710874156352
 GameObject:
   m_ObjectHideFlags: 0
@@ -1271,8 +1248,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TouZiNumber: 6
-  oneOrTwo: 0
-  fsmTouZi: {fileID: 0}
+  oneOrTwo: 1
+  fsmTouZi: {fileID: 4267431899269179670}
 --- !u!1 &5298257260307768584
 GameObject:
   m_ObjectHideFlags: 0
@@ -1284,7 +1261,6 @@ GameObject:
   - component: {fileID: 5148710163564134208}
   - component: {fileID: 3341253168081394667}
   - component: {fileID: 7254340218270068948}
-  - component: {fileID: 1726474665883063833}
   m_Layer: 0
   m_Name: 3
   m_TagString: Untagged
@@ -1357,28 +1333,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &1726474665883063833
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5298257260307768584}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &5419155556394688695
 GameObject:
   m_ObjectHideFlags: 0
@@ -1888,7 +1842,6 @@ GameObject:
   - component: {fileID: 5701780424375305268}
   - component: {fileID: 8033898426518126283}
   - component: {fileID: 8871998784560602000}
-  - component: {fileID: 2246902573194916916}
   m_Layer: 0
   m_Name: 2
   m_TagString: Untagged
@@ -1961,28 +1914,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &2246902573194916916
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6562677921689408163}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &7265867642065711536
 GameObject:
   m_ObjectHideFlags: 0
@@ -1994,7 +1925,6 @@ GameObject:
   - component: {fileID: 1002623945440767210}
   - component: {fileID: 5130158974938733647}
   - component: {fileID: 8322550873057851925}
-  - component: {fileID: 6170080432284486313}
   m_Layer: 0
   m_Name: 5
   m_TagString: Untagged
@@ -2067,28 +1997,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &6170080432284486313
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7265867642065711536}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &7406283076936578083
 GameObject:
   m_ObjectHideFlags: 0
@@ -2356,7 +2264,6 @@ GameObject:
   - component: {fileID: 2610319423783894560}
   - component: {fileID: 8151635192705459012}
   - component: {fileID: 6243537046753217239}
-  - component: {fileID: 3966975453878632590}
   m_Layer: 0
   m_Name: 1
   m_TagString: Untagged
@@ -2429,28 +2336,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &3966975453878632590
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8039282190226450066}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &8514979114421875430
 GameObject:
   m_ObjectHideFlags: 0
@@ -2462,7 +2347,6 @@ GameObject:
   - component: {fileID: 2973170673953447236}
   - component: {fileID: 1828096153460054347}
   - component: {fileID: 3266329018651479228}
-  - component: {fileID: 2335616013602387940}
   m_Layer: 0
   m_Name: 4
   m_TagString: Untagged
@@ -2535,28 +2419,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &2335616013602387940
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8514979114421875430}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &8575579132621305012
 GameObject:
   m_ObjectHideFlags: 0
@@ -2640,7 +2502,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f00925c487c1db04bacdfb1dd8565cf7, type: 2}
+  - {fileID: 2100000, guid: 938e58fcb0829954eaa451af4969e812, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2707,9 +2569,9 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 2
   m_Constraints: 0
-  m_CollisionDetection: 1
+  m_CollisionDetection: 3
 --- !u!114 &3044092890529749052
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2833,7 +2695,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outlineMode: 3
-  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineColor: {r: 1, g: 0, b: 0, a: 1}
   outlineWidth: 10
   precomputeOutline: 0
   bakeKeys: []
@@ -3058,8 +2920,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TouZiNumber: 3
-  oneOrTwo: 0
-  fsmTouZi: {fileID: 0}
+  oneOrTwo: 1
+  fsmTouZi: {fileID: 4267431899269179670}
 --- !u!1 &8810727658406658731
 GameObject:
   m_ObjectHideFlags: 0

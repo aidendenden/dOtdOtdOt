@@ -13,6 +13,9 @@ public class FireManger : MonoBehaviour
 
     public GameObject HaHaHa;
 
+    public Animator Demo;
+    public Animator Angle;
+
 
     public GameObject BoooMPrefab; // 物体预制体
     
@@ -32,7 +35,7 @@ public class FireManger : MonoBehaviour
         if (string.Equals(message, "CountDownAnswerIsTrue"))
         {
             Debug.Log($"结果成功：筛子一：{_vector3.x},筛子二：{_vector3.y}，目标数{_vector3.z}");
-            FireOne(8);
+            //FireOne(8);
             HAHA();
 
 
@@ -41,8 +44,8 @@ public class FireManger : MonoBehaviour
         if (string.Equals(message, "CountDownAnswerIsFalse"))
         {
             Debug.Log($"结果失败：筛子一：{_vector3.x},筛子二：{_vector3.y}，目标数{_vector3.z}");
-            BooomOne(12);
-            HAHA();
+           // BooomOne(12);
+            //HAHA();
 
         }
         
