@@ -20,15 +20,16 @@ public enum OperationMath
 [Serializable]
 public class DiceImage
 {
-    public GameObject GameOBJ;
-    public Image Answer;
+    public SpriteRenderer Answer;
     public int AnswerNum;
 }
 
 public class CountDownSystem : MonoBehaviour
 {
-    public CircularTimer[] circularTimers;
+    //public CircularTimer[] circularTimers;
 
+    public CircleTimerSprite[] circularTimers;
+    
     public MangeManger gameManager;
 
     [Header("运算方法")]
@@ -55,7 +56,7 @@ public class CountDownSystem : MonoBehaviour
     private void Start()
     {
         TryGetComponent(out gameManager);
-        StartCoroutine(GameStart());
+        //StartCoroutine(GameStart());
     }
 
 
@@ -67,15 +68,23 @@ public class CountDownSystem : MonoBehaviour
         
     }
 
+    public void TimerStart(int index)
+    {
+        var _ = UnityEngine.Random.Range(2, 12);
+        Debug.Log(_+"目标数");
+        DiceImages[index].AnswerNum=_;
+        DiceImages[index].Answer.sprite = newSprite[_];
+        circularTimers[index].StartTimer(); 
+    }
     
     
-    private IEnumerator GameStart()
+    private IEnumerator EnumeratorGameStart()
     {
         while (true)
         {
             // 调用您希望在每个时间间隔后执行的方法
             int index = 0;
-            foreach (CircularTimer timer in circularTimers)
+            foreach (CircleTimerSprite timer in circularTimers)
             {
                 int _int = UnityEngine.Random.Range(1, 2);
                 if (_int==1)
@@ -83,7 +92,6 @@ public class CountDownSystem : MonoBehaviour
                     var _ = UnityEngine.Random.Range(2, 12);
                     Debug.Log(_+"目标数");
                     DiceImages[index].AnswerNum=_;
-                    DiceImages[index].GameOBJ.SetActive(true);
                     DiceImages[index].Answer.sprite = newSprite[_];
                     timer.StartTimer(); 
                 }
@@ -97,7 +105,7 @@ public class CountDownSystem : MonoBehaviour
     public void StartTimer()
     {
         
-        foreach (CircularTimer timer in circularTimers)
+        foreach (CircleTimerSprite timer in circularTimers)
         {
             timer.StartTimer();
         }
@@ -105,7 +113,7 @@ public class CountDownSystem : MonoBehaviour
 
     public void PauseTimer()
     {
-        foreach (CircularTimer timer in circularTimers)
+        foreach (CircleTimerSprite timer in circularTimers)
         {
             timer.PauseTimer();
         }
@@ -113,7 +121,7 @@ public class CountDownSystem : MonoBehaviour
 
     public void StopTimer()
     {
-        foreach (CircularTimer timer in circularTimers)
+        foreach (CircleTimerSprite timer in circularTimers)
         {
             timer.StopTimer();
         }
@@ -121,7 +129,7 @@ public class CountDownSystem : MonoBehaviour
 
     public void ReStart()
     {
-        foreach (CircularTimer timer in circularTimers)
+        foreach (CircleTimerSprite timer in circularTimers)
         {
             timer.StopTimer();
             timer.StartTimer();
@@ -163,7 +171,6 @@ public class CountDownSystem : MonoBehaviour
             GameEventManager.Instance.Triggered("CountDownAnswerIsFalse",transform,new Vector3(num1,num2, DiceImages[index].AnswerNum)); 
         }
         
-        DiceImages[index].GameOBJ.SetActive(false);
     }
 
     public bool CanReachTargetNumberAdd(int number1, int number2, int target)
