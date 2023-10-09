@@ -47,7 +47,7 @@ public class FireManger : MonoBehaviour
             {
                 Demo.Play("恶魔走了");
             }
-            if (value == 0)
+            else if (value == 0)
             {
                 Angle.Play("天使走了");
             }
@@ -69,7 +69,7 @@ public class FireManger : MonoBehaviour
             {
                 Demo.Play("恶魔走了");
             }
-            if (value == 0)
+            else if (value == 0)
             {
                 Angle.Play("天使走了");
             }

@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class FunctionCaller : MonoBehaviour
@@ -9,22 +10,43 @@ public class FunctionCaller : MonoBehaviour
     public Animator Demo;
     public Animator Angle;
 
+    private WaitForSeconds waitTimeOne;
+    private WaitForSeconds waitTimeTwo;
+    
+    private void Awake()
+    {
+        waitTimeOne = new WaitForSeconds(intervalone);
+        waitTimeTwo = new WaitForSeconds(intervaltwo); 
+    }
+    
     private void Start()
     {
-        InvokeRepeating("CallFunctionOne", 0f, intervalone);
-        InvokeRepeating("CallFunctionTwo", 0f, intervaltwo);
+        StartCoroutine(EnumeratorGameStartOne());
+        StartCoroutine(EnumeratorGameStartTwo());
     }
 
-    private void CallFunctionOne()
+    private IEnumerator EnumeratorGameStartOne()
     {
-        Demo.Play("ÕæÕýµÄ¶ñÄ§³öÏÖ");
-        countDownSystem.TimerStart(1);
-        Debug.Log("¶ñÄ§");
+        while (true)
+        {
+            Demo.Play("ï¿½ï¿½ï¿½ï¿½ï¿½Ä¶ï¿½Ä§ï¿½ï¿½ï¿½ï¿½");
+            countDownSystem.TimerStart(0);
+            Debug.Log("ï¿½ï¿½Ä§");
+
+            yield return waitTimeOne;
+        }
     }
-    private void CallFunctionTwo()
+
+
+    private IEnumerator EnumeratorGameStartTwo()
     {
-        Angle.Play("ÌìÊ¹");
-        countDownSystem.TimerStart(0);
-        Debug.Log("ÌìÊ¹");
+        while (true)
+        {
+            Angle.Play("ï¿½ï¿½Ê¹");
+            countDownSystem.TimerStart(1);
+            Debug.Log("ï¿½ï¿½Ê¹");
+            yield return waitTimeTwo;
+        }
     }
+    
 }

@@ -43,14 +43,14 @@ public class CountDownSystem : MonoBehaviour
     [Header("间隔时间")] 
     public float WaitTime = 1f;
     
-    private WaitForSeconds waitTime;
+    //private WaitForSeconds waitTime;
 
     public Image Dice1, Dice2;
 
 
     private void Awake()
     {
-        waitTime = new WaitForSeconds(WaitTime); 
+        //waitTime = new WaitForSeconds(WaitTime); 
     }
 
     private void Start()
@@ -78,29 +78,29 @@ public class CountDownSystem : MonoBehaviour
     }
     
     
-    private IEnumerator EnumeratorGameStart()
-    {
-        while (true)
-        {
-            // 调用您希望在每个时间间隔后执行的方法
-            int index = 0;
-            foreach (CircleTimerSprite timer in circularTimers)
-            {
-                int _int = UnityEngine.Random.Range(1, 2);
-                if (_int==1)
-                {
-                    var _ = UnityEngine.Random.Range(2, 12);
-                    Debug.Log(_+"目标数");
-                    DiceImages[index].AnswerNum=_;
-                    DiceImages[index].Answer.sprite = newSprite[_];
-                    timer.StartTimer(); 
-                }
-                index++;
-            }
-
-            yield return waitTime;
-        }
-    }
+    // private IEnumerator EnumeratorGameStart()
+    // {
+    //     while (true)
+    //     {
+    //         // 调用您希望在每个时间间隔后执行的方法
+    //         int index = 0;
+    //         foreach (CircleTimerSprite timer in circularTimers)
+    //         {
+    //             int _int = UnityEngine.Random.Range(1, 2);
+    //             if (_int==1)
+    //             {
+    //                 var _ = UnityEngine.Random.Range(2, 12);
+    //                 Debug.Log(_+"目标数");
+    //                 DiceImages[index].AnswerNum=_;
+    //                 DiceImages[index].Answer.sprite = newSprite[_];
+    //                 timer.StartTimer(); 
+    //             }
+    //             index++;
+    //         }
+    //
+    //         yield return waitTime;
+    //     }
+    // }
     
     public void StartTimer()
     {
