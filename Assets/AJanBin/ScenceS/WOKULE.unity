@@ -2571,7 +2571,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc2a9ea898b7c6f48ad3cc1ecb67f921, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 10
+  duration: 12
   tailCapImage: {fileID: 418442745}
   didFinishedTimerTime:
     m_PersistentCalls:
