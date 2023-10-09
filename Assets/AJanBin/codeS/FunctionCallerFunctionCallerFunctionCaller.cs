@@ -15,14 +15,18 @@ public class FunctionCaller : MonoBehaviour
     
     private void Awake()
     {
-        waitTimeOne = new WaitForSeconds(intervalone);
-        waitTimeTwo = new WaitForSeconds(intervaltwo); 
+        //waitTimeOne = new WaitForSeconds(intervalone);
+       // waitTimeTwo = new WaitForSeconds(intervaltwo); 
     }
     
     private void Start()
     {
-        StartCoroutine(EnumeratorGameStartOne());
-        StartCoroutine(EnumeratorGameStartTwo());
+
+        Demo.Play("真正的恶魔出现");
+        countDownSystem.TimerStart(0);
+        Debug.Log("恶魔");
+        //StartCoroutine(EnumeratorGameStartOne());
+        //StartCoroutine(EnumeratorGameStartTwo());
     }
 
     private IEnumerator EnumeratorGameStartOne()

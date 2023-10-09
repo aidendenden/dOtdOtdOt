@@ -1935,18 +1935,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1705427872}
-        m_TargetAssemblyTypeName: CountDownSystem, Assembly-CSharp
-        m_MethodName: StopTimer
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
   isPaused: 1
   _fillAmount: 0
 --- !u!1 &592047629
@@ -2571,7 +2559,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc2a9ea898b7c6f48ad3cc1ecb67f921, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 12
+  duration: 10
   tailCapImage: {fileID: 418442745}
   didFinishedTimerTime:
     m_PersistentCalls:
@@ -2580,18 +2568,6 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: CountDownSystem, Assembly-CSharp
         m_MethodName: DidFinishedTimer
         m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1705427872}
-        m_TargetAssemblyTypeName: CountDownSystem, Assembly-CSharp
-        m_MethodName: StopTimer
-        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5591,7 +5567,6 @@ GameObject:
   - component: {fileID: 1705427870}
   - component: {fileID: 1705427872}
   - component: {fileID: 1705427873}
-  - component: {fileID: 1705427874}
   m_Layer: 0
   m_Name: Manger
   m_TagString: Manger
@@ -5697,23 +5672,10 @@ MonoBehaviour:
   T2: {fileID: 837730537}
   Demo: {fileID: 1276633969}
   Angle: {fileID: 804189203}
---- !u!114 &1705427874
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1705427869}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5506af529bc4f34fab3234df83bf966, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   intervalone: 15
   intervaltwo: 12
   countDownSystem: {fileID: 1705427872}
-  Demo: {fileID: 1276633969}
-  Angle: {fileID: 804189203}
+  duration: 5
 --- !u!1001 &1732467399
 PrefabInstance:
   m_ObjectHideFlags: 0

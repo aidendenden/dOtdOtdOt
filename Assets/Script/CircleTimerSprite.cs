@@ -35,7 +35,7 @@ public class CircleTimerSprite : MonoBehaviour
     {
         if (!isPaused)
         {
-            Debug.Log("www21212");
+           // Debug.Log("www21212");
             CurrentTime += Time.deltaTime;
 
             if (CurrentTime >= duration)

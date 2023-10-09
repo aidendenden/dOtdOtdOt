@@ -24,10 +24,50 @@ public class FireManger : MonoBehaviour
     public Animator Demo;
     public Animator Angle;
 
+    public float intervalone = 15f;
+    public float intervaltwo = 12f;
+    public CountDownSystem countDownSystem;
 
+    public float duration = 5f; // 计时器持续时间
+    private bool isTimerRunning = false; // 计时器是否正在运行
+
+
+    public void SpawnDemo()
+    {
+        Demo.Play("真正的恶魔出现");
+        countDownSystem.TimerStart(0);
+        Debug.Log("恶魔");
+    }
+
+    public void SpawnAngle()
+    {
+        Angle.Play("天使");
+        countDownSystem.TimerStart(1);
+        Debug.Log("天使");
+        
+    }
+
+    private void Update()
+    {
+        
+        if (isTimerRunning)
+        {
+            duration -= Time.deltaTime;
+            if (duration <= 0f)
+            {
+                TimerFinished();
+            }
+        }
+    }
+
+    private void TimerFinished()
+    {
+        SpawnDemo();
+    }
     private void Start()
     {
         GameEventManager.OnTrigger += Triggered;
+        SpawnDemo();
     }
 
     void Triggered(string message, Transform _transform, Vector3 _vector3)
@@ -53,6 +93,8 @@ public class FireManger : MonoBehaviour
             }
             FireOne(8);
             HAHA();
+            duration = 3f;
+            isTimerRunning = true;
         }
         
         if (message.Contains("CountDownAnswerIsFalse"))
@@ -74,7 +116,9 @@ public class FireManger : MonoBehaviour
                 Angle.Play("天使走了");
             }
             BooomOne(12);
-           
+            duration = 3f;
+            isTimerRunning = true;
+
         }
     }
 
