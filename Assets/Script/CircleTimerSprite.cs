@@ -81,7 +81,9 @@ public class CircleTimerSprite : MonoBehaviour
 
     public void StartTimer()
     {
+       
         isPaused = false;
+        
     }
 
     public void StopTimer()

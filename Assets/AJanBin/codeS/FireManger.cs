@@ -28,8 +28,11 @@ public class FireManger : MonoBehaviour
     public float intervaltwo = 12f;
     public CountDownSystem countDownSystem;
 
-    public float duration = 5f; // 计时器持续时间
-    private bool isTimerRunning = false; // 计时器是否正在运行
+    public float durationD = 5f; // 计时器持续时间
+    private bool isTimerRunningD = false; // 计时器是否正在运行
+
+    public float durationA = 5f; // 计时器持续时间
+    private bool isTimerRunningA = false; // 计时器是否正在运行
 
 
     public void SpawnDemo()
@@ -50,24 +53,43 @@ public class FireManger : MonoBehaviour
     private void Update()
     {
         
-        if (isTimerRunning)
+        if (isTimerRunningD)
         {
-            duration -= Time.deltaTime;
-            if (duration <= 0f)
+            durationD -= Time.deltaTime;
+            if (durationD <= 0f)
             {
-                TimerFinished();
+                TimerFinishedD();
+                isTimerRunningD = false;
+            }
+        }
+
+
+        if (isTimerRunningA)
+        {
+            durationA -= Time.deltaTime;
+            if (durationA <= 0f)
+            {
+                TimerFinishedA();
+                isTimerRunningA = false;
             }
         }
     }
 
-    private void TimerFinished()
+    private void TimerFinishedD()
     {
         SpawnDemo();
+
+    }
+    private void TimerFinishedA()
+    {
+        SpawnAngle();
+
     }
     private void Start()
     {
         GameEventManager.OnTrigger += Triggered;
         SpawnDemo();
+        SpawnAngle();
     }
 
     void Triggered(string message, Transform _transform, Vector3 _vector3)
@@ -86,15 +108,18 @@ public class FireManger : MonoBehaviour
             if (value == 0)
             {
                 Demo.Play("恶魔走了");
+                durationD = 3f;
+                isTimerRunningD = true;
             }
             else if (value == 1)
             {
                 Angle.Play("天使走了");
+                durationA = 5f;
+                isTimerRunningA = true;
             }
-            FireOne(8);
+            BooomOne(12);
             HAHA();
-            duration = 3f;
-            isTimerRunning = true;
+           
         }
         
         if (message.Contains("CountDownAnswerIsFalse"))
@@ -110,14 +135,17 @@ public class FireManger : MonoBehaviour
             if (value == 0)
             {
                 Demo.Play("恶魔走了");
+                durationD = 3f;
+                isTimerRunningD = true;
             }
             else if (value == 1)
             {
                 Angle.Play("天使走了");
+                durationA = 5f;
+                isTimerRunningA = true;
             }
-            BooomOne(12);
-            duration = 3f;
-            isTimerRunning = true;
+            
+            
 
         }
     }

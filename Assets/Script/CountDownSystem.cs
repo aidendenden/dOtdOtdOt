@@ -42,10 +42,10 @@ public class CountDownSystem : MonoBehaviour
 
     [Header("间隔时间")] 
     public float WaitTime = 1f;
-    
+
     //private WaitForSeconds waitTime;
 
-    public Image Dice1, Dice2;
+    public SpriteRenderer Dice1, Dice2, Dice3, Dice4;
 
 
     private void Awake()
@@ -63,9 +63,11 @@ public class CountDownSystem : MonoBehaviour
     private void Update()
     {
         Dice1.sprite = newSprite[gameManager.numberOne];
-        
+        Dice3.sprite = newSprite[gameManager.numberOne];
+
         Dice2.sprite = newSprite[gameManager.numberTwo];
-        
+        Dice4.sprite = newSprite[gameManager.numberTwo];
+
     }
 
     public void TimerStart(int index)
@@ -171,6 +173,7 @@ public class CountDownSystem : MonoBehaviour
             GameEventManager.Instance.Triggered($"CountDownAnswerIsFalse:{index}",transform,new Vector3(num1,num2, DiceImages[index].AnswerNum)); 
         }
         
+
     }
 
     public bool CanReachTargetNumberAdd(int number1, int number2, int target)
