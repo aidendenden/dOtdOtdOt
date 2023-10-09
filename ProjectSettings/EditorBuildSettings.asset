@@ -6,9 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/AJanBin/ScenceS/PMainScence.unity
-    guid: 7f5c98c530934d546b50c892ad2c88b4
-  - enabled: 1
     path: Assets/AJanBin/ScenceS/StartScenss.unity
     guid: 50c3d27ae73e5dd4983963939de468c8
+  - enabled: 1
+    path: Assets/AJanBin/ScenceS/PMainScence.unity
+    guid: 7f5c98c530934d546b50c892ad2c88b4
   m_configObjects: {}

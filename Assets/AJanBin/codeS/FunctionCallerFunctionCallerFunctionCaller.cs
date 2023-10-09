@@ -22,7 +22,7 @@ public class FunctionCaller : MonoBehaviour
     private void Start()
     {
         StartCoroutine(EnumeratorGameStartOne());
-        //StartCoroutine(EnumeratorGameStartTwo());
+        StartCoroutine(EnumeratorGameStartTwo());
     }
 
     private IEnumerator EnumeratorGameStartOne()

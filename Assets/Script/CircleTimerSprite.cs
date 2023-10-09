@@ -15,9 +15,9 @@ public class CircleTimerSprite : MonoBehaviour
     [Header("倒计时结束，事件绑定")] [Tooltip("如果倒计时结束去做什么")]
     public UnityEvent didFinishedTimerTime;
 
-    [HideInInspector] public bool isPaused = true;
+    public bool isPaused = true;
 
-    private float _fillAmount = 0f;
+    public float _fillAmount = 0f;
     
     public float fillAmount
     {
@@ -35,6 +35,7 @@ public class CircleTimerSprite : MonoBehaviour
     {
         if (!isPaused)
         {
+            Debug.Log("www21212");
             CurrentTime += Time.deltaTime;
 
             if (CurrentTime >= duration)
