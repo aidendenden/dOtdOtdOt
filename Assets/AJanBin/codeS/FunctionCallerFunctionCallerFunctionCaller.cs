@@ -22,16 +22,16 @@ public class FunctionCaller : MonoBehaviour
     private void Start()
     {
         StartCoroutine(EnumeratorGameStartOne());
-        StartCoroutine(EnumeratorGameStartTwo());
+        //StartCoroutine(EnumeratorGameStartTwo());
     }
 
     private IEnumerator EnumeratorGameStartOne()
     {
         while (true)
         {
-            Demo.Play("�����Ķ�ħ����");
+            Demo.Play("真正的恶魔出现");
             countDownSystem.TimerStart(0);
-            Debug.Log("��ħ");
+            Debug.Log("恶魔");
 
             yield return waitTimeOne;
         }
@@ -42,9 +42,9 @@ public class FunctionCaller : MonoBehaviour
     {
         while (true)
         {
-            Angle.Play("��ʹ");
+            Angle.Play("天使");
             countDownSystem.TimerStart(1);
-            Debug.Log("��ʹ");
+            Debug.Log("天使");
             yield return waitTimeTwo;
         }
     }

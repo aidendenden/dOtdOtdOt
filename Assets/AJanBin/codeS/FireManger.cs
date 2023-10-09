@@ -43,11 +43,11 @@ public class FireManger : MonoBehaviour
                 Debug.Log($"第{value+1}颗筛子,出结果了.结果成功：筛子一：{_vector3.x},筛子二：{_vector3.y}，目标数{_vector3.z}");
             }
 
-            if (value == 1)
+            if (value == 0)
             {
                 Demo.Play("恶魔走了");
             }
-            else if (value == 0)
+            else if (value == 1)
             {
                 Angle.Play("天使走了");
             }
@@ -65,11 +65,11 @@ public class FireManger : MonoBehaviour
             {
                 Debug.Log($"第{value+1}颗筛子,出结果了.结果失败：筛子一：{_vector3.x},筛子二：{_vector3.y}，目标数{_vector3.z}");
             }
-            if (value == 1)
+            if (value == 0)
             {
                 Demo.Play("恶魔走了");
             }
-            else if (value == 0)
+            else if (value == 1)
             {
                 Angle.Play("天使走了");
             }
