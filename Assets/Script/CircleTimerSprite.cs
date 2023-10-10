@@ -43,6 +43,9 @@ public class CircleTimerSprite : MonoBehaviour
                 isPaused = true;
                 CurrentTime = duration;
                 didFinishedTimerTime.Invoke();
+                CurrentTime = 0;
+                isPaused = true;
+                ResetTimer();
             }
 
             fillAmount = (duration - CurrentTime) / duration;
