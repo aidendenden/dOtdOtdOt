@@ -21,12 +21,20 @@ public class FireManger : MonoBehaviour
 
     public Transform T1;
     public Transform T2;
+
+    public Transform E1;
+    public Transform E2;
     public Animator Demo;
     public Animator Angle;
 
     public float intervalone = 15f;
     public float intervaltwo = 12f;
     public CountDownSystem countDownSystem;
+    public Sprite[] FuHao;
+    public SpriteRenderer FuHaoHao;
+    public SpriteRenderer FuHaoHaoA;
+    public GameObject EnemyOne;
+
 
     public float durationD = 5f; // 计时器持续时间
     private bool isTimerRunningD = false; // 计时器是否正在运行
@@ -37,6 +45,18 @@ public class FireManger : MonoBehaviour
 
     public void SpawnDemo()
     {
+
+        if (1 == UnityEngine.Random.Range(0, 2))
+        {
+            countDownSystem.judgmentsBased1 = JudgmentsBased.MoreThan;
+            FuHaoHao.sprite = FuHao[0]; 
+        }
+        else
+        {
+            countDownSystem.judgmentsBased1 = JudgmentsBased.LessThan;
+            FuHaoHao.sprite = FuHao[1];
+        }
+       
         Demo.Play("真正的恶魔出现");
         countDownSystem.TimerStart(0);
         Debug.Log("恶魔");
@@ -44,6 +64,17 @@ public class FireManger : MonoBehaviour
 
     public void SpawnAngle()
     {
+
+        if (1 == UnityEngine.Random.Range(0, 2))
+        {
+            countDownSystem.judgmentsBased2 = JudgmentsBased.MoreThan;
+            FuHaoHaoA.sprite = FuHao[1];
+        }
+        else
+        {
+            countDownSystem.judgmentsBased2 = JudgmentsBased.LessThan;
+            FuHaoHaoA.sprite = FuHao[0];
+        }
         Angle.Play("天使");
         countDownSystem.TimerStart(1);
         Debug.Log("天使");
@@ -110,14 +141,16 @@ public class FireManger : MonoBehaviour
                 Demo.Play("恶魔走了");
                 durationD = 3f;
                 isTimerRunningD = true;
+                EnemyOneSpawn(3);
             }
             else if (value == 1)
             {
                 Angle.Play("天使走了");
-                durationA = 5f;
+                durationA = 3f;
                 isTimerRunningA = true;
+                FireOne(12);
             }
-            FireOne(12);
+           
             HAHA();
            
         }
@@ -137,15 +170,17 @@ public class FireManger : MonoBehaviour
                 Demo.Play("恶魔走了");
                 durationD = 3f;
                 isTimerRunningD = true;
+               
+
             }
             else if (value == 1)
             {
                 Angle.Play("天使走了");
-                durationA = 5f;
+                durationA = 3f;
                 isTimerRunningA = true;
             }
-            
-            
+           // HAHA();
+
 
         }
     }
@@ -170,7 +205,7 @@ public class FireManger : MonoBehaviour
             Vector3 R = new Vector3(0f, 0f, angle);
             GameObject bullet = Instantiate(BulletOne, TouZiTwo.position, Quaternion.identity);
             bullet.transform.rotation = Quaternion.Euler(90f, 0f, angle);
-            bullet.GetComponent<Bullet>().speed = 5f;
+            bullet.GetComponent<Bullet>().speed = 7f;
             bullet.GetComponent<Bullet>().SetSpeed();
         }
     }
@@ -180,22 +215,32 @@ public class FireManger : MonoBehaviour
     {
         for (int i = 0; i < generationCount; i++)
         {
-            GenerateObject();
+            GenerateObject(BoooMPrefab, T1, T2);
         }
     }
 
-    public void GenerateObject()
+    public void EnemyOneSpawn(int generationCount)
+    {
+        for (int i = 0; i < generationCount; i++)
+        {
+            GenerateObject(EnemyOne,E1,E2);
+        }
+    }
+
+    public void GenerateObject(GameObject a,Transform tt1,Transform tt2)
     {
            
 
 
         // 在指定范围内随机生成位置
-        Vector3 position = new Vector3(UnityEngine.Random.Range(T1.position.x, T2.position.x),
-                                       UnityEngine.Random.Range(T1.position.y, T2.position.y),
-                                       UnityEngine.Random.Range(T1.position.z, T2.position.z));
+        Vector3 position = new Vector3(UnityEngine.Random.Range(tt1.position.x, tt2.position.x),
+                                       UnityEngine.Random.Range(tt1.position.y, tt2.position.y),
+                                       UnityEngine.Random.Range(tt1.position.z, tt2.position.z));
 
+        GameObject b = a;
         // 创建物体实例
-        Instantiate(BoooMPrefab, position, Quaternion.identity);
+        Instantiate(b, position, Quaternion.identity);
+        b.SetActive(true);
     }
 
     public void HAHA()

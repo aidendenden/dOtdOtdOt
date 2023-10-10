@@ -18,13 +18,14 @@ GameObject:
   - component: {fileID: 7840213104067756237}
   - component: {fileID: 5091363075827700962}
   - component: {fileID: 1140087882873425900}
+  - component: {fileID: 4266740797555064568}
   m_Layer: 4
   m_Name: EnemyOne
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7193506994620345232
 Transform:
   m_ObjectHideFlags: 0
@@ -75,8 +76,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parameter:
     Self: {fileID: 2099931007746073148}
-    Hp: 3
-    moveSpeed: 10
+    Hp: 1
+    moveSpeed: 5
     idleTime: 0.5
     patrolPoints:
     - {fileID: 0}
@@ -330,9 +331,27 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2099931007746073148}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9daf4339c9a1d7544aa292eecc7ac768, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+--- !u!114 &4266740797555064568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2099931007746073148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
