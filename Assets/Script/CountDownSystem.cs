@@ -41,9 +41,11 @@ public class CountDownSystem : MonoBehaviour
 
     public MangeManger gameManager;
 
-    [Header("运算方法")] public OperationMath OperationMath = OperationMath.MixedOperations;
+    [Header("运算方法")] 
+    public OperationMath OperationMath = OperationMath.MixedOperations;
 
-    [Header("判断方法")] public JudgmentsBased judgmentsBased1 = JudgmentsBased.Equal;
+    [Header("判断方法")] 
+    public JudgmentsBased judgmentsBased1 = JudgmentsBased.Equal;
     public JudgmentsBased judgmentsBased2 = JudgmentsBased.MoreThan;
 
     public List<Sprite> newSprite;
