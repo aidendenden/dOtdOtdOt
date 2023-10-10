@@ -76,7 +76,7 @@ public class CircleTimerSprite : MonoBehaviour
 
     public void PauseTimer()
     {
-        isPaused = true;
+       // isPaused = true;
     }
 
     public void StartTimer()
@@ -90,7 +90,7 @@ public class CircleTimerSprite : MonoBehaviour
     {
         CurrentTime = 0;
         //AfterImageTime = 0;
-        isPaused = true;
+        //isPaused = true;
         ResetTimer();
     }
 
