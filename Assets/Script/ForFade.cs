@@ -50,5 +50,13 @@ public class ForFade : MonoBehaviour
         {
             animator.SetTrigger("In");
         }
+        if (StartMode == 3)
+        {
+            animator.SetTrigger("Both");
+        }
+        if (StartMode == 4)
+        {
+            animator.SetTrigger("Change");
+        }
     }
 }

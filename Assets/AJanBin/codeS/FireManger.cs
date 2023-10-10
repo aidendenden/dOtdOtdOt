@@ -117,7 +117,7 @@ public class FireManger : MonoBehaviour
                 durationA = 5f;
                 isTimerRunningA = true;
             }
-            BooomOne(12);
+            FireOne(12);
             HAHA();
            
         }
