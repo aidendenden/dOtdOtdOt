@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/AJanBin/ScenceS/StartScenss.unity
     guid: 50c3d27ae73e5dd4983963939de468c8
   - enabled: 1
-    path: Assets/AJanBin/ScenceS/PMainScence.unity
-    guid: 7f5c98c530934d546b50c892ad2c88b4
+    path: Assets/AJanBin/ScenceS/WOKULE.unity
+    guid: 16f473e04882e2b4babdd93e0a78cf02
   m_configObjects: {}
