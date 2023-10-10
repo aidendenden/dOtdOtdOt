@@ -48,7 +48,8 @@ public class CircleTimerSprite : MonoBehaviour
                 ResetTimer();
             }
 
-            fillAmount = (duration - CurrentTime) / duration;
+            //fillAmount = (duration - CurrentTime) / duration;
+            fillAmount = CurrentTime / duration;
 
             UpdateUI();
         }
@@ -99,6 +100,6 @@ public class CircleTimerSprite : MonoBehaviour
 
     void ResetTimer()
     {
-        fillAmount = 1;
+        fillAmount = 0;
     }
 }
