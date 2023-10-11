@@ -58,5 +58,9 @@ public class ForFade : MonoBehaviour
         {
             animator.SetTrigger("Change");
         }
+        if (StartMode == 5)
+        {
+            animator.Play("omggg");
+        }
     }
 }
