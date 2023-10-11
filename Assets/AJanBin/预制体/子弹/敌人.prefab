@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
-  explosionPrefab: {fileID: 1957887257978427726, guid: 66bcb62a885402041ac268ba5f977fed,
+  explosionPrefab: {fileID: 7070170364281360970, guid: 5069077d5906b3a459286ff50951f187,
     type: 3}
 --- !u!54 &5678372754822756686
 Rigidbody:

@@ -3309,8 +3309,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 0b853564b424ead44b169a832d042b74, type: 3}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: 8a0347318e17e0448a276ef7754d7dd9, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -3970,7 +3970,7 @@ PrefabInstance:
     - target: {fileID: 7125211527260700864, guid: 89bc7940f13daa340834aadd7a32529c,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: 1200
       objectReference: {fileID: 0}
     - target: {fileID: 7125211527260700864, guid: 89bc7940f13daa340834aadd7a32529c,
         type: 3}
@@ -6750,6 +6750,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c3918e338fddc64fae9489e7293e7d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bad: {fileID: 884510807}
+  good: {fileID: 2112860144}
   cccccc: {fileID: 568771252}
   Diff: 1
   BulletOne: {fileID: 4073559142079294944, guid: e4ce076b463e0084c9b1ce73f5613631,
@@ -7010,7 +7012,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1740666142
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8047,7 +8049,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 2596d7eb067eb7b42bbe37a565324de6, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

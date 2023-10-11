@@ -29,7 +29,7 @@ public class Damage : MonoBehaviour
 
             if (isTouZi == true && WuDiTime<=0&& fsmTouZi.parameter.Hp>0)
             {
-                audioSource.PlayOneShot(audioSource.clip);
+                //audioSource.PlayOneShot(audioSource.clip);
                 animator.SetTrigger("Hurt");
                 if (other.tag == "HP")
                 {
@@ -60,7 +60,7 @@ public class Damage : MonoBehaviour
 
             if (isENE == true && WuDiTime <= 0 && fsmENE.parameter.Hp > 0)
             {
-                audioSource.PlayOneShot(audioSource.clip);
+                //audioSource.PlayOneShot(audioSource.clip);
                 animator.SetTrigger("Hurt");
                 fsmENE.parameter.Hp--;
                 WuDiTime = WuDiTimeTOPENE;

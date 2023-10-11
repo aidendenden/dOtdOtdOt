@@ -7,7 +7,8 @@ using UnityEngine;
 
 public class FireManger : MonoBehaviour
 {
-
+    public AudioSource bad;
+    public AudioSource good;
     public CircleTimerSprite cccccc;
     public int Diff = 1;
     public GameObject BulletOne;
@@ -139,11 +140,13 @@ public class FireManger : MonoBehaviour
             if (value == 0)
             {
                 Demo.Play("恶魔走了");
+                good.PlayOneShot(good.clip);
                 durationD = 3f;
                 isTimerRunningD = true;
                 if(cccccc.duration-1 >= 5)
                 {
                     cccccc.duration--;
+
                 }
                
 
@@ -155,6 +158,7 @@ public class FireManger : MonoBehaviour
                 durationA = 3f;
                 isTimerRunningA = true;
                 FireHP(1);
+                good.PlayOneShot(good.clip);
                 if (cccccc.duration - 1 >= 5)
                 {
                     cccccc.duration--;
@@ -182,7 +186,8 @@ public class FireManger : MonoBehaviour
                 isTimerRunningD = true;
                 FireOne(1);
                 cccccc.duration++;
-               
+                bad.PlayOneShot(bad.clip);
+
 
 
 
