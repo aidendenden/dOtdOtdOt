@@ -1,12 +1,21 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Net;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class FireManger : MonoBehaviour
 {
-    public GameObject BulletOne;
 
+    public CircleTimerSprite cccccc;
+    public int Diff = 1;
+    public GameObject BulletOne;
+    public GameObject BulletOneH;
+    public GameObject BulletTwo;
+
+    public Transform BooomPointOne;
+    public Transform BooomPointTwo;
     public Transform TouZiOne;
     public Transform TouZiTwo;
 
@@ -65,16 +74,7 @@ public class FireManger : MonoBehaviour
     public void SpawnAngle()
     {
 
-        if (1 == UnityEngine.Random.Range(0, 2))
-        {
-            countDownSystem.judgmentsBased2 = JudgmentsBased.MoreThan;
-            FuHaoHaoA.sprite = FuHao[1];
-        }
-        else
-        {
-            countDownSystem.judgmentsBased2 = JudgmentsBased.LessThan;
-            FuHaoHaoA.sprite = FuHao[0];
-        }
+        
         Angle.Play("天使");
         countDownSystem.TimerStart(1);
         Debug.Log("天使");
@@ -141,17 +141,27 @@ public class FireManger : MonoBehaviour
                 Demo.Play("恶魔走了");
                 durationD = 3f;
                 isTimerRunningD = true;
-                EnemyOneSpawn(3);
+                if(cccccc.duration-1 >= 5)
+                {
+                    cccccc.duration--;
+                }
+               
+
+
             }
             else if (value == 1)
             {
                 Angle.Play("天使走了");
                 durationA = 3f;
                 isTimerRunningA = true;
-                FireOne(12);
+                FireHP(1);
+                if (cccccc.duration - 1 >= 5)
+                {
+                    cccccc.duration--;
+                }
             }
            
-            HAHA();
+            
            
         }
         
@@ -170,7 +180,11 @@ public class FireManger : MonoBehaviour
                 Demo.Play("恶魔走了");
                 durationD = 3f;
                 isTimerRunningD = true;
+                FireOne(1);
+                cccccc.duration++;
                
+
+
 
             }
             else if (value == 1)
@@ -178,8 +192,9 @@ public class FireManger : MonoBehaviour
                 Angle.Play("天使走了");
                 durationA = 3f;
                 isTimerRunningA = true;
+                //FireOne(1);
             }
-           // HAHA();
+           
 
 
         }
@@ -206,6 +221,62 @@ public class FireManger : MonoBehaviour
             GameObject bullet = Instantiate(BulletOne, TouZiTwo.position, Quaternion.identity);
             bullet.transform.rotation = Quaternion.Euler(90f, 0f, angle);
             bullet.GetComponent<Bullet>().speed = 7f;
+            bullet.GetComponent<Bullet>().SetSpeed();
+        }
+    }
+
+
+    public void FireHP(int B)
+    {
+        float angleInterval = 360f / bulletCount;
+
+        for (int i = 0; i < B; i++)
+        {
+            float angle = i * angleInterval;
+            Vector3 R = new Vector3(0f, 0f, angle);
+            GameObject bullet = Instantiate(BulletOneH, TouZiOne.position, Quaternion.identity);
+            bullet.transform.rotation = Quaternion.Euler(90f, 0f, angle);
+            bullet.GetComponent<Bullet>().speed = 7f;
+            bullet.GetComponent<Bullet>().SetSpeed();
+        }
+
+        for (int i = 0; i < B; i++)
+        {
+            float angle = i * angleInterval;
+            Vector3 R = new Vector3(0f, 0f, angle);
+            GameObject bullet = Instantiate(BulletOneH, TouZiTwo.position, Quaternion.identity);
+            bullet.transform.rotation = Quaternion.Euler(90f, 0f, angle);
+            bullet.GetComponent<Bullet>().speed = 7f;
+            bullet.GetComponent<Bullet>().SetSpeed();
+        }
+    }
+
+
+    public void FireTwo(int B)
+    {
+        float angleInterval = 360f / bulletCount;
+        Vector3 pp = GenerateRandomPoint(E1,E2);
+        Vector3 bb = GenerateRandomPoint(E1,E2);
+
+
+        for (int i = 0; i < B; i++)
+        {
+            float angle = i * angleInterval;
+            Vector3 R = new Vector3(0f, 0f, angle);
+
+            GameObject bullet = Instantiate(BulletTwo,pp, Quaternion.identity);
+            bullet.transform.rotation = Quaternion.Euler(90f, 0f, angle);
+            bullet.GetComponent<Bullet>().speed = 7f;
+            bullet.GetComponent<Bullet>().SetSpeed();
+        }
+
+        for (int i = 0; i < B; i++)
+        {
+            float angle = i * angleInterval;
+            Vector3 R = new Vector3(0f, 0f, angle);
+            GameObject bullet = Instantiate(BulletTwo, bb, Quaternion.identity);
+            bullet.transform.rotation = Quaternion.Euler(90f, 0f, angle);
+            bullet.GetComponent<Bullet>().speed = 5f;
             bullet.GetComponent<Bullet>().SetSpeed();
         }
     }
@@ -246,6 +317,16 @@ public class FireManger : MonoBehaviour
     public void HAHA()
     {
         HaHaHa.SetActive(true);
+    }
+
+
+    private Vector3 GenerateRandomPoint(Transform TTT1,Transform TTT2)
+    {
+        float randomX = UnityEngine.Random.Range(TTT1.position.x, TTT2.position.x);
+        float randomY = UnityEngine.Random.Range(TTT1.position.y, TTT2.position.y);
+        float randomZ = UnityEngine.Random.Range(TTT1.position.z, TTT2.position.z);
+
+        return new Vector3(randomX, randomY, randomZ);
     }
 
 }

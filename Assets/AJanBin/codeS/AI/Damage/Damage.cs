@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Damage : MonoBehaviour
 {
+    public GameObject ChangeS;
     public bool isTouZi = false;
     public bool isENE = false;
     public FSMTouZi fsmTouZi;
@@ -30,8 +31,29 @@ public class Damage : MonoBehaviour
             {
                 audioSource.PlayOneShot(audioSource.clip);
                 animator.SetTrigger("Hurt");
-                fsmTouZi.parameter.Hp--;
-                WuDiTime = WuDiTimeTOP;
+                if (other.tag == "HP")
+                {
+                    if (fsmTouZi.parameter.Hp < 3)
+                    {
+                        fsmTouZi.parameter.Hp++;
+                    }
+                    
+                    WuDiTime = WuDiTimeTOP;
+                }
+                else
+                {
+                    if (fsmTouZi.parameter.Hp - 1 <= 0)
+                    {
+                        ChangeS.SetActive(true);
+                    }
+                    else
+                    {
+                        fsmTouZi.parameter.Hp--;
+                    }
+                    
+                    WuDiTime = WuDiTimeTOP;
+                }
+                
 
 
             }

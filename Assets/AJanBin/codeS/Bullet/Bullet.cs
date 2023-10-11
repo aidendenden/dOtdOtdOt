@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
@@ -25,11 +26,24 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag =="Enemy")
+        if (gameObject.tag == "Enemy")
         {
-            Instantiate(explosionPrefab, transform.position, Quaternion.identity);
-            Destroy(gameObject);
+            if (other.tag == "TouZi")
+            {
+                Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+                Destroy(gameObject);
+            }
+
         }
+        else
+        {
+            if (other.tag == "Enemy")
+            {
+                Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+                Destroy(gameObject);
+            }
+        }
+        
     }
    
 }
