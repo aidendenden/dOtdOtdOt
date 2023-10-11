@@ -12,12 +12,17 @@ public class CircleTimerSprite : MonoBehaviour
 
     public float CurrentTime { get; private set; }
 
-    [Header("倒计时结束，事件绑定")] [Tooltip("如果倒计时结束去做什么")]
-    public UnityEvent didFinishedTimerTime;
+   // [Header("倒计时结束，事件绑定")] [Tooltip("如果倒计时结束去做什么")]
+   // public UnityEvent didFinishedTimerTime;
 
+    [HideInInspector]
     public bool isPaused = true;
 
+    [HideInInspector]
     public float _fillAmount = 0f;
+
+    public CountDownSystem countDownSystem;
+    public int index;
     
     public float fillAmount
     {
@@ -42,7 +47,7 @@ public class CircleTimerSprite : MonoBehaviour
             {
                 isPaused = true;
                 CurrentTime = duration;
-                didFinishedTimerTime.Invoke();
+                countDownSystem.DidFinishedTimer(index);
                 CurrentTime = 0;
                 isPaused = true;
                 ResetTimer();
